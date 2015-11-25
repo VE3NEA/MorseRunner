@@ -54,7 +54,7 @@ begin
   Modul := TModulator.Create;
   Agc := TVolumeControl.Create(nil);
 
-  Filt.Points := Round(0.7 * 11025 / Ini.BandWidth);
+  Filt.Points := Round(0.7 * DEFAULTRATE / Ini.BandWidth);
   Filt.Passes := 3;
   Filt.SamplesInInput := Ini.BufSize;
   Filt.GainDb := 10 * Log10(500/Ini.Bandwidth);
@@ -64,7 +64,7 @@ begin
   Filt2.SamplesInInput := Filt.SamplesInInput;
   Filt2.GainDb := Filt.GainDb;
 
-  Modul.SamplesPerSec := 11025;
+  Modul.SamplesPerSec := DEFAULTRATE;
   Modul.CarrierFreq := Ini.Pitch;
 
   Agc.NoiseInDb := 76;
@@ -140,14 +140,14 @@ begin
       Blk := Stations[Stn].GetBlock;
       for i:=0 to High(Blk) do
         begin
-        Bfo := Stations[Stn].Bfo - RitPhase - i * TWO_PI * Ini.Rit / 11025;
+        Bfo := Stations[Stn].Bfo - RitPhase - i * TWO_PI * Ini.Rit / DEFAULTRATE;
         ReIm.Re[i] := ReIm.Re[i] + Blk[i] * Cos(Bfo);
         ReIm.Im[i] := ReIm.Im[i] - Blk[i] * Sin(Bfo);
         end;
       end;               
 
   //Rit
-  RitPhase := RitPhase + Ini.BufSize * TWO_PI * Ini.Rit / 11025;
+  RitPhase := RitPhase + Ini.BufSize * TWO_PI * Ini.Rit / DEFAULTRATE;
   while RitPhase > TWO_PI do RitPhase := RitPhase - TWO_PI;
   while RitPhase < -TWO_PI do RitPhase := RitPhase + TWO_PI;
   

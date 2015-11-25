@@ -33,7 +33,7 @@ type
     function GetSendDelay: integer;
     function GetReplyTimeout: integer;
     function GetWpm: integer;
-    function GetNR: string;
+    function GetNR: integer;
     procedure MsgReceived(AMsg: TStationMessages);
     procedure SetState(AState: TOperatorState);
     function GetReply: TStationMessage;
@@ -71,11 +71,9 @@ begin
     else Result := Round(Ini.Wpm * 0.5 * (1 + Random));
 end;
 
-function TDxOperator.GetNR: string;
+function TDxOperator.GetNR: integer;
 begin
-  if RunMode = rmCustom
-    then
-    else Result := IntToStr(1 + Round(Random * Tst.Minute * Skills));
+  Result := 1 + Round(Random * Tst.Minute * Skills);
 end;
 
 function TDxOperator.GetReplyTimeout: integer;

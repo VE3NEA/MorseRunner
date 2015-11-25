@@ -50,7 +50,7 @@ var
   i: integer;
 begin
   FBandwidth := Value;
-  Filt.Points := Ceil(0.37 * 11025  / ((Ini.BufSize div 4) * Value));
+  Filt.Points := Ceil(0.37 * DEFAULTRATE  / ((Ini.BufSize div 4) * Value));
   for i:=0 to Filt.Points*3 do FGain := NewGain;
 end;
 

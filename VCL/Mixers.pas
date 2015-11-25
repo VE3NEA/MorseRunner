@@ -233,7 +233,7 @@ begin
   for i:=0 to Cnt-1 do
     begin
     Cs[i] := Cs[i] * FGain;
-    Sn[i] := Cs[i] * FGain;
+    Sn[i] := Sn[i] * FGain;
     end;
 end;
 

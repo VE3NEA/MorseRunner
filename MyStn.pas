@@ -53,7 +53,7 @@ end;
 procedure TMyStation.Init;
 begin
   MyCall := Ini.Call;
-  NR := '1';
+  NR := 1;
   RST := 599;
   Pitch := Ini.Pitch;
   Wpm := Ini.Wpm;

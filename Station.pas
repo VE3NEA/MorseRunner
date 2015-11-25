@@ -42,8 +42,7 @@ type
     Envelope: TSingleArray;
     State: TStationState;
 
-    NR: string;
-    RST: integer;
+    NR, RST: integer;
     MyCall, HisCall: string;
 
     Msg: TStationMessages;
@@ -169,7 +168,7 @@ end;
 
 procedure TStation.SetPitch(const Value: integer);
 begin
-  FPitch := 11025;
+  FPitch := Value;
   dPhi := TWO_PI * FPitch / DEFAULTRATE;
 end;
 

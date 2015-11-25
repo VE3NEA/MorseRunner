@@ -295,7 +295,7 @@ begin
   FromIni;
 
   MakeKeyer;
-  Keyer.Rate := 11025;
+  Keyer.Rate := DEFAULTRATE;
   Keyer.BufSize := Ini.BufSize;
 
   Panel2.DoubleBuffered := true;
@@ -582,7 +582,7 @@ begin
   Ini.Bandwidth := 100 + BwNo * 50;
   ComboBox2.ItemIndex := BwNo;
 
-  Tst.Filt.Points := Round(0.7 * 11025 / Ini.BandWidth);
+  Tst.Filt.Points := Round(0.7 * DEFAULTRATE / Ini.BandWidth);
   Tst.Filt.GainDb := 10 * Log10(500/Ini.Bandwidth);
   Tst.Filt2.Points := Tst.Filt.Points;
   Tst.Filt2.GainDb := Tst.Filt.GainDb;
@@ -725,7 +725,7 @@ end;
 procedure TMainForm.Run(Value: TRunMode);
 const
   Title: array[TRunMode] of string =
-    ('', 'Pile-Up', 'Single Calls', 'COMPETITION', 'H S T', 'Custom');
+    ('', 'Pile-Up', 'Single Calls', 'COMPETITION', 'H S T');
 var
   BCompet, BStop: boolean;
 begin
@@ -812,7 +812,7 @@ begin
     begin
     Tst.Me.AbortSend;
     Tst.BlockNumber := 0;
-    Tst.Me.Nr := '1';
+    Tst.Me.Nr := 1;
     Log.Clear;
     WipeBoxes;
     RichEdit1.Visible := true;

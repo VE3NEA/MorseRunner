@@ -22,8 +22,7 @@ const
 
 
 type
-  TRunMode = (rmStop, rmPileup, rmSingle, rmWpx, rmHst, rmCustom);
-
+  TRunMode = (rmStop, rmPileup, rmSingle, rmWpx, rmHst);
   
 var
   Call: string = 'VE3NEA';
