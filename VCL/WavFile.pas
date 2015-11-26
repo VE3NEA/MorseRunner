@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1533 Delphi 10 changes
+
 unit WavFile;
 
 //TSingleArray input and output buffers are normalized: Abs() <= 32767
@@ -16,7 +19,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  MMSystem, SndTypes;
+  MMSystem, SndTypes, PermHint; //grg PermHint added
 
 type
   TByteArray = array of byte;
@@ -541,8 +544,8 @@ end;
 procedure TAlWavFile.WriteInfo;
 var
   i: integer;
-  InfName: string;
-  InfValue: string;
+  InfName: AnsiString; //grg1 was String
+  InfValue: AnsiString; //grg1 was String
   ckInfoLIST, ckInfoPiece: TMmckInfo;
 begin
   //remove invalid info entries
@@ -559,15 +562,19 @@ begin
   //save info entries
   for i:= 0 to FInfo.Count-1 do
     begin
-    InfName := Copy(FInfo[i], 1, 4);
-    InfValue := Copy(FInfo[i], 6, MAXINT);
-    //create subchunk
-    ckInfoPiece.ckId := mmioStringToFOURCCA(PChar(InfName), 0);
+    InfName := AnsiString(Copy(FInfo[i], 1, 4)); //grg1 typecast
+
+
+
+    InfValue := AnsiString(Copy(FInfo[i], 6, MAXINT)); //grg1 typecast    //create subchunk
+	//create subchunk
+    ckInfoPiece.ckId := mmioStringToFOURCCA(PAnsiChar(InfName), 0); //grg
     ckInfoPiece.ckSize := Length(InfValue);
     rc := mmioCreateChunk(FHandle, @ckInfoPiece, 0);
     ChkErr;
     //save subchunk data
-    rc := mmioWrite(FHandle, PChar(InfValue), Length(InfValue));
+
+    rc := mmioWrite(FHandle, PAnsiChar(InfValue), Length(InfValue)); //grg
     ErrIf(rc <> Length(InfValue), 'WAV write error');
     //exit subchunk
     rc := mmioAscend(FHandle, @ckInfoPiece, 0);

@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1447 Delphi 10 changes done
+
 unit DxStn;
 
 interface
@@ -36,7 +39,7 @@ begin
   inherited Create(nil);
 
   HisCall := Ini.Call;
-  MyCall := PickCall;
+  MyCall := string(PickCall); //grg1 typecast
 
   Oper := TDxOperator.Create;
   Oper.Call := MyCall;

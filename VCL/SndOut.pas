@@ -3,13 +3,16 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1522 Delphi 10 changes
+
 unit SndOut;
 
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  BaseComp, MMSystem, SndTypes, SndCustm, Math;
+  BaseComp, MMSystem, SndTypes, SndCustm, Math, Ini; //grg added Ini
 
 type
   TAlSoundOut = class(TCustomSoundInOut)

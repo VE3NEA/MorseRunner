@@ -3,15 +3,18 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1439 Delphi 10 Changes done
+
 unit CallLst;
 
 interface
 
 uses
-  SysUtils, Classes, Ini;
+  SysUtils, Classes, Ini, StrUtils, Windows;
 
 procedure LoadCallList;
-function PickCall: string;
+function PickCall: AnsiString;
 
 var
   Calls: TStringList;
@@ -35,21 +38,25 @@ const
   INDEXBYTES = INDEXSIZE * SizeOf(Integer);
 var
   i: integer;
-  P, Pe: PChar;
-  L: TList;
+  P, Pe, myP: PAnsiChar;
+  L: TStringList;
+  mystring: string;
+  myansichar : AnsiChar;
+  mychar : char;
+  mypstring : ^string;
 
-  FileName: string;
+  FileName: AnsiString;
   FFileSize: integer;
 
   FIndex: array[0..INDEXSIZE-1] of integer;
-  Data: string;
+  Data: AnsiString;
 begin
   Calls.Clear;
 
-  FileName := ExtractFilePath(ParamStr(0)) + 'Master.dta';
-  if not FileExists(FileName) then Exit;
+  FileName := AnsiString(ExtractFilePath(ParamStr(0)) + 'Master.dta'); //grg1 typecast
+  if not FileExists(string(FileName)) then Exit;    //grg1 typecast
 
-  with TFileStream.Create(FileName, fmOpenRead) do
+  with TFileStream.Create(string(FileName), fmOpenRead) do   //grg1 typecast
     try
       FFileSize := Size;
       if FFileSize < INDEXBYTES then Exit;
@@ -64,40 +71,59 @@ begin
     end;
 
 
-  L := TList.Create;
+  L := TStringList.Create;
   try
     //list pointers to calls
-    L.Capacity := 20000;
-      P := @Data[1];
+    //grg L.Capacity := 20000;
+    P := @Data[1];
     Pe := P + Length(Data);
     while P < Pe do
       begin
-      L.Add(TObject(P));
-      P := P + StrLen(P) + 1;
+        myP := P;
+        myansichar := myP^;
+        mystring := '';
+        while myansichar <> #0 do
+          begin
+            mychar := widechar(myansichar);
+            mystring := mystring + mychar;
+            myP := myP + 1;
+            myansichar := myP^;
+          end;
+        L.Add(mystring); //grg test L.Add(@mystring); //grg
+        P := P + length(mystring) + 1; //grg test P := P + StrLen(P) + 1;
       end;
-    //delete dupes
-    L.Sort(CompareCalls);
-    for i:=L.Count-1 downto 1 do
-      if StrComp(PChar(L[i]), PChar(L[i-1])) = 0
-        then L[i] := nil;
+//grg fix later    //delete dupes
+//grg fix later    L.Sort(CompareCalls);
+//grg fix later    for i:=L.Count-1 downto 1 do
+//grg fix later      if StrComp(PChar(L[i]), PChar(L[i-1])) = 0
+//grg fix later        then L[i] := nil;
+// grg Since we now use TStringlist the Dupe removal should be done using TStringlist means, not as above..
     //put calls to Lst
     Calls.Capacity := L.Count;
     for i:=0 to L.Count-1 do
-      if L[i] <> nil then Calls.Add(PChar(L[i]));
+      begin
+        mystring := L.Strings[i];
+        mypstring := @mystring;
+        if mypstring <> nil then
+          begin
+            //grg Calls.Add(PChar(L[i]));
+            Calls.Add(mypstring^);
+          end;
+      end;
   finally
     L.Free;
   end;
 end;
 
 
-function PickCall: string;
+function PickCall: AnsiString;
 var
   Idx: integer;
 begin
   if Calls.Count = 0 then begin Result := 'P29SX'; Exit; end;
 
   Idx := Random(Calls.Count);
-  Result := Calls[Idx];
+  Result := AnsiString(Calls[Idx]);
 
   if Ini.RunMode = rmHst then Calls.Delete(Idx);
 end;
