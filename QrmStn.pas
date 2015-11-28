@@ -30,7 +30,7 @@ begin
   inherited Create(nil);
 
   Patience := 1 + Random(5);
-  MyCall := PickCall;
+  MyCall := string(PickCall);
   HisCall := Ini.Call;
   Amplitude := 5000 + 25000 * Random;
   Pitch := Round(RndGaussLim(0, 300));

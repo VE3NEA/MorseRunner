@@ -19,7 +19,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  MMSystem, SndTypes, PermHint; //grg PermHint added
+  MMSystem, SndTypes; //grg ve3nea , PermHint; //grg PermHint added
 
 type
   TByteArray = array of byte;

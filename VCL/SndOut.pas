@@ -12,7 +12,7 @@ interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  BaseComp, MMSystem, SndTypes, SndCustm, Math, Ini; //grg added Ini
+  BaseComp, MMSystem, SndTypes, SndCustm, Math; //grg ve3nea , Ini; //grg added Ini
 
 type
   TAlSoundOut = class(TCustomSoundInOut)

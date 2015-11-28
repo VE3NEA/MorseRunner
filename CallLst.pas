@@ -45,7 +45,7 @@ var
   mychar : char;
   mypstring : ^string;
 
-  FileName: AnsiString;
+  FileName: TFileName; //grg ve3nea FileName: AnsiString;
   FFileSize: integer;
 
   FIndex: array[0..INDEXSIZE-1] of integer;
@@ -53,7 +53,8 @@ var
 begin
   Calls.Clear;
 
-  FileName := AnsiString(ExtractFilePath(ParamStr(0)) + 'Master.dta'); //grg1 typecast
+  //grg ve3nea FileName := AnsiString(ExtractFilePath(ParamStr(0)) + 'Master.dta'); //grg1 typecast
+  FileName := TFileName(ExtractFilePath(ParamStr(0)) + 'Master.dta');
   if not FileExists(string(FileName)) then Exit;    //grg1 typecast
 
   with TFileStream.Create(string(FileName), fmOpenRead) do   //grg1 typecast
