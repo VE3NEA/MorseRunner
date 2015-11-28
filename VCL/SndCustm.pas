@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1521 Delphi 10 changes
+
 unit SndCustm;
 
 interface
@@ -95,7 +98,7 @@ end;
 procedure TWaitThread.ProcessEvent;
 begin
   try
-    if Msg.wParam = Owner.DeviceHandle then
+    if Msg.wParam = cardinal(Owner.DeviceHandle) then //grg typecast
       Owner.BufferDone(PWaveHdr(Msg.lParam));
   except on E: Exception do
     begin
@@ -197,7 +200,8 @@ begin
       FEnabled := true;
       try Start; except FreeAndNil(FThread); raise; end;
       //device started ok, wait for events
-      FThread.Resume;
+      //grg fix later FThread.Resume;
+      FThread.Start; //grg check later
       end
     else
       begin

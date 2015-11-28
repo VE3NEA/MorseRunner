@@ -3,13 +3,16 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1443 Delphi 10 changes done
+
 unit Contest;
 
 interface
 
 uses
   SysUtils, SndTypes, Station, StnColl, MyStn, Math,  Ini,
-  MovAvg, Mixers, VolumCtl, RndFunc, TypInfo, DxStn, DxOper, Log;
+  MovAvg, Mixers, VolumCtl, RndFunc, TypInfo, DxStn, DxOper, Log, System.Classes; //grg added System.Classes
 
 type
   TContest = class

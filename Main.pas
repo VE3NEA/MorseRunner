@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 16112015 1501 Delphi 10 Changes done
+
 unit Main;
 
 interface
@@ -12,7 +15,7 @@ uses
   Buttons, SndCustm, SndOut, Contest, Ini, MorseKey, CallLst,
   VolmSldr, VolumCtl, StdCtrls, Station, Menus, ExtCtrls, Log, MAth,
   ComCtrls, Spin, SndTypes, ShellApi, jpeg, ToolWin, ImgList, Crc32, 
-  WavFile, IniFiles;
+  WavFile, IniFiles, System.ImageList; //grg added , System.ImageList;
 
 const
   WM_TBDOWN = WM_USER+1;
@@ -351,17 +354,17 @@ end;
 
 procedure TMainForm.Edit1KeyPress(Sender: TObject; var Key: Char);
 begin
-  if not (Key in ['A'..'Z', 'a'..'z', '0'..'9', '/', '?', #8]) then Key := #0;
+   if not CharInSet(Key, ['A'..'Z', 'a'..'z', '0'..'9', '/', '?', #8]) then Key := #0;   //grg1
 end;
 
 procedure TMainForm.Edit2KeyPress(Sender: TObject; var Key: Char);
 begin
-  if not (Key in ['0'..'9', #8]) then Key := #0;
+   if not CharInSet(Key, ['0'..'9', #8]) then Key := #0;   //grg1
 end;
 
 procedure TMainForm.Edit3KeyPress(Sender: TObject; var Key: Char);
 begin
-  if not (Key in ['0'..'9', #8]) then Key := #0;
+   if not CharInSet(Key, ['0'..'9', #8]) then Key := #0;   //grg1
 end;
 
 
