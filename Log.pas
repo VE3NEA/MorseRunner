@@ -262,6 +262,8 @@ end;
 procedure LastQsoToScreen;
 const
   EM_SCROLLCARET = $B7;
+  EM_SCROLL = $B5; //grg test
+  SB_LINEDOWN = $01; //grg test
 var
   S: string;
 begin
@@ -279,7 +281,8 @@ begin
 //grg fix later    MainForm.RichEdit1.SelStart := Length(MainForm.RichEdit1.Text) - 5;
 //grg fix later    MainForm.RichEdit1.SelLength := 3;
 //grg fix later    MainForm.RichEdit1.SelAttributes.Color := clRed;
-  MainForm.RichEdit1.Perform(EM_SCROLLCARET, 0, 0);
+// grg broken in Delphi 10   MainForm.RichEdit1.Perform(EM_SCROLLCARET, 0, 0); //grg This original line does not scroll down in Delphi 10 anymore after logscreen care at bottom of RichEdit1
+  MainForm.RichEdit1.Perform(EM_SCROLL, SB_LINEDOWN, 0); //grg this scolls down when cursor at bottom line and new QSO logged
 end;
 
 
