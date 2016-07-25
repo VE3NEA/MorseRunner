@@ -3,12 +3,15 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
 unit PermHint;
+{$MODE Delphi}
 
 interface
 
 uses
-  Windows, SysUtils, Classes, Graphics, Controls, Forms;
+  LCLIntf, LCLType, LMessages, SysUtils, Classes, Graphics, Controls, Forms,
+  Windows, interfacebase;
 
 type
   TPermanentHintWindow = class(THintWindow)
@@ -39,16 +42,17 @@ procedure TPermanentHintWindow.ShowHint(Txt: string);
 var
   P: TPoint;
 begin
-  GetCursorPos(P);
-  ShowHintAt(Txt, P.x, P.y + GetCursorHeightMargin);
+//  GetCursorPos(P);
+//  ShowHintAt(Txt, P.x, P.y + GetCursorHeightMargin);
 end;
+
 
 
 procedure TPermanentHintWindow.HideHint;
 begin
-  ReleaseHandle;
-  Application.ShowHint := true;
-  Active := false;
+//  ReleaseHandle;
+//  Application.ShowHint := true;
+//  Active := false;
 end;
 
 
@@ -57,20 +61,18 @@ procedure TPermanentHintWindow.ShowHintAt(Txt: string; x, y: integer);
 var
   R: TRect;
 begin
-  Active := true;
-  Application.ShowHint := false;
-  R := CalcHintRect(Screen.Width, Txt, nil);
-  OffsetRect(R, x, y);
-  ActivateHint(R, Txt);
-  Update;
+//  Active := true;
+//  Application.ShowHint := false;
+//  R := CalcHintRect(Screen.Width, Txt, nil);
+//  OffsetRect(R, x, y);
+//  ActivateHint(R, Txt);
+//  Update;
 end;
 
 
 
 //copied from Forms.pas
 
-{ Return number of scanlines between the scanline containing cursor hotspot
-  and the last scanline included in the cursor mask. }
 function GetCursorHeightMargin: Integer;
 var
   IconInfo: TIconInfo;
@@ -93,7 +95,7 @@ var
     end;
 
 begin
-  { Default value is entire icon height }
+{
   Result := GetSystemMetrics(SM_CYCURSOR);
   if GetIconInfo(GetCursor, IconInfo) then
   try
@@ -104,17 +106,15 @@ begin
     if GetDIB(IconInfo.hbmMask, 0, Bitmap^, Bits^) and
       (Bitmap^.biBitCount = 1) then
     begin
-      { Point Bits to the end of this bottom-up bitmap }
+
       with Bitmap^ do
       begin
         BytesPerScanline := ((biWidth * biBitCount + 31) and not 31) div 8;
         ImageSize := biWidth * BytesPerScanline;
         Bits := Pointer(DWORD(Bits) + BitmapBitsSize - ImageSize);
-        { Use the width to determine the height since another mask bitmap
-          may immediately follow }
+
         Result := FindScanline(Bits, ImageSize, $FF);
-        { In case the and mask is blank, look for an empty scanline in the
-          xor mask. }
+
         if (Result = 0) and (biHeight >= 2 * biWidth) then
           Result := FindScanline(Pointer(DWORD(Bits) - ImageSize),
           ImageSize, $00);
@@ -129,11 +129,16 @@ begin
     if IconInfo.hbmColor <> 0 then DeleteObject(IconInfo.hbmColor);
     if IconInfo.hbmMask <> 0 then DeleteObject(IconInfo.hbmMask);
   end;
+  }
 end;
 
 
 
 
 
+
+
+
 end.
+
 

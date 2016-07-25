@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit Log;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, SysUtils, Classes, Graphics, RndFunc, Math;
+  LCLIntf, LCLType, LMessages, SysUtils, Classes, Graphics, RndFunc, Math;
 
 
 procedure SaveQso;
@@ -60,8 +62,8 @@ begin
     else MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent      Pref   Chk');
   MainForm.RichEdit1.SelStart := 1;
   MainForm.RichEdit1.SelLength := Length(MainForm.RichEdit1.Lines[0]);
-  MainForm.RichEdit1.SelAttributes.Style := [fsUnderline];
-  MainForm.RichEdit1.SelAttributes.Color := clBlue;
+//  MainForm.RichEdit1.Font.Style := [fsUnderline];
+  MainForm.RichEdit1.Font.Color := clBlack;
 
   if Ini.RunMode = rmHst then Empty := '' else Empty := '0';
 
@@ -273,7 +275,7 @@ begin
   MainForm.RichEdit1.Lines.Add(S);
   MainForm.RichEdit1.SelStart := Length(MainForm.RichEdit1.Text) - 5;
   MainForm.RichEdit1.SelLength := 3;
-  MainForm.RichEdit1.SelAttributes.Color := clRed;
+  MainForm.RichEdit1.Font.Color := clBlack;
   MainForm.RichEdit1.Perform(EM_SCROLLCARET, 0, 0);
 end;
 

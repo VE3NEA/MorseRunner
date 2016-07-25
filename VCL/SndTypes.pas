@@ -1,9 +1,11 @@
 unit SndTypes;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, SysUtils, MMSystem, Math, ComObj;
+  LCLIntf, LCLType, LMessages, SysUtils, MMSystem, Math, ComObj;
 
 const
   FOUR_PI = 4 * Pi;

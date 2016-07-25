@@ -5,6 +5,8 @@
 //------------------------------------------------------------------------------
 unit WavFile;
 
+{$MODE Delphi}
+
 //TSingleArray input and output buffers are normalized: Abs() <= 32767
 
 //to do: direct read/write mmio buffer like in lowpass.c MS demo (sdk_Graphics_AUDIO_lowpass.exe)
@@ -15,7 +17,7 @@ unit WavFile;
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   MMSystem, SndTypes;
 
 type

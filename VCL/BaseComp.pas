@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit BaseComp;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Controls, Forms;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Controls, Forms;
 
 type
   {this component adds a window handle to the standard TControl

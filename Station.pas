@@ -5,6 +5,8 @@
 //------------------------------------------------------------------------------
 unit Station;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -96,9 +98,9 @@ begin
   Include(Msg, AMsg);
 
   case AMsg of
-    msgCQ: SendText('CQ <my> TEST');
+    msgCQ: SendText('CQ <my>');
     msgNR: SendText('<#>');
-    msgTU: SendText('TU');
+    msgTU: SendText('TU <my>');
     msgMyCall: SendText('<my>');
     msgHisCall: SendText('<his>');
     msgB4: SendText('QSO B4');
@@ -112,7 +114,7 @@ begin
     msgDeMyCallNr2: SendText('DE <my> <my> <#>');
     msgMyCallNr2: SendText('<my> <my> <#>');
     msgNrQm: SendText('NR?');
-    msgLongCQ: SendText('CQ CQ TEST <my> <my> TEST');
+    msgLongCQ: SendText('CQ CQ TEST <my> <my>');
     msgQrl: SendText('QRL?');
     msgQrl2: SendText('QRL?   QRL?');
     msqQsy: SendText('<his>  QSY QSY');

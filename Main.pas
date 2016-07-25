@@ -5,23 +5,30 @@
 //------------------------------------------------------------------------------
 unit Main;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Buttons, SndCustm, SndOut, Contest, Ini, MorseKey, CallLst,
   VolmSldr, VolumCtl, StdCtrls, Station, Menus, ExtCtrls, Log, MAth,
-  ComCtrls, Spin, SndTypes, ShellApi, jpeg, ToolWin, ImgList, Crc32, 
-  WavFile, IniFiles;
+  ComCtrls, Spin, SndTypes, ToolWin, ImgList, FileUtil, Crc32,
+  WavFile, IniFiles, Windows;
 
 const
   WM_TBDOWN = WM_USER+1;
 
 type
+
+  { TMainForm }
+
   TMainForm = class(TForm)
     AlSoundOut1: TAlSoundOut;
     MainMenu1: TMainMenu;
     File1: TMenuItem;
+    N40dB1: TMenuItem;
+    N50dB1: TMenuItem;
     Send1: TMenuItem;
     CQ1: TMenuItem;
     Number1: TMenuItem;
@@ -59,7 +66,7 @@ type
     Panel5: TPanel;
     Exit1: TMenuItem;
     Panel6: TPanel;
-    RichEdit1: TRichEdit;
+    RichEdit1: TMemo;
     Label12: TLabel;
     Label13: TLabel;
     Label14: TLabel;
@@ -112,8 +119,6 @@ type
     ToolBar1: TToolBar;
     ToolButton1: TToolButton;
     Label10: TLabel;
-    VolumeSlider1: TVolumeSlider;
-    Label18: TLabel;
     WebPage1: TMenuItem;
     Settings1: TMenuItem;
     Call1: TMenuItem;
@@ -195,6 +200,7 @@ type
     Panel11: TPanel;
     ListView1: TListView;
     Operator1: TMenuItem;
+    VolumeSlider1: TVolumeSlider;
     procedure FormCreate(Sender: TObject);
     procedure AlSoundOut1BufAvailable(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -205,6 +211,8 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure Edit1Enter(Sender: TObject);
+    procedure N40dB1Click(Sender: TObject);
+    procedure N50dB1Click(Sender: TObject);
     procedure SendClick(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
@@ -222,6 +230,7 @@ type
     procedure Edit1Change(Sender: TObject);
     procedure RunMNUClick(Sender: TObject);
     procedure RunBtnClick(Sender: TObject);
+    procedure SpinEdit4Change(Sender: TObject);
     procedure ViewScoreBoardMNUClick(Sender: TObject);
     procedure ViewScoreTable1Click(Sender: TObject);
     procedure FormKeyUp(Sender: TObject; var Key: Word;
@@ -263,6 +272,7 @@ type
     procedure IncSpeed;
   public
     CompetitionMode: boolean;
+    NoRepeats: boolean;
     procedure Run(Value: TRunMode);
     procedure WipeBoxes;
     procedure PopupScoreWpx;
@@ -283,7 +293,7 @@ implementation
 
 uses ScoreDlg;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TMainForm.FormCreate(Sender: TObject);
 begin
@@ -439,11 +449,11 @@ begin
 }
 
     VK_UP:
-      if GetKeyState(VK_CONTROL) >= 0 then IncRit(1)
+      if GetKeyState(VK_CONTROL) >= 0 then IncRit(-1)
       else if RunMode <> rmHst then SetBw(ComboBox2.ItemIndex+1);
 
     VK_DOWN:
-      if GetKeyState(VK_CONTROL) >= 0  then IncRit(-1)
+      if GetKeyState(VK_CONTROL) >= 0  then IncRit(1)
       else if RunMode <> rmHst then SetBw(ComboBox2.ItemIndex-1);
 
     VK_PRIOR: //PgUp
@@ -535,6 +545,18 @@ begin
   if P > 1 then
     begin Edit1.SelStart := P-1; Edit1.SelLength := 1; end;
 end;
+
+procedure TMainForm.N40dB1Click(Sender: TObject);
+begin
+
+end;
+
+procedure TMainForm.N50dB1Click(Sender: TObject);
+begin
+
+end;
+
+
 
 
 procedure TMainForm.IncSpeed;
@@ -674,10 +696,10 @@ end;
 procedure TMainForm.About1Click(Sender: TObject);
 const
   Msg = 'CW CONTEST SIMULATOR'#13#13 +
-        'Copyright © 2004-2006 Alex Shovkoplyas, VE3NEA'#13#13 +
+        'Copyright Â© 2004-2006 Alex Shovkoplyas, VE3NEA'#13#13 +
         've3nea@dxatlas.com'#13;
 begin
-  Application.MessageBox(Msg, 'Morse Runner 1.68', MB_OK or MB_ICONINFORMATION);
+  Application.MessageBox(Msg, 'Morse Runner 1.68+', MB_OK or MB_ICONINFORMATION);
 end;          
 
 
@@ -686,7 +708,7 @@ var
   FileName: string;
 begin
   FileName := ExtractFilePath(ParamStr(0)) + 'readme.txt';
-  ShellExecute(GetDesktopWindow, 'open', PChar(FileName), '', '', SW_SHOWNORMAL);
+   OpenDocument(PChar(FileName)); { *Converted from ShellExecute* }
 end;
 
 
@@ -846,6 +868,11 @@ begin
     else Tst.FStopPressed := true;
 end;
 
+procedure TMainForm.SpinEdit4Change(Sender: TObject);
+begin
+  //Db := 80 * (SpinEdit4.Value - 0.75);
+end;
+
 procedure TMainForm.WmTbDown(var Msg: TMessage);
 begin
   TToolbutton(Msg.LParam).Down := Boolean(Msg.WParam);
@@ -855,7 +882,7 @@ end;
 procedure TMainForm.SetToolbuttonDown(Toolbutton: TToolbutton;
   ADown: boolean);
 begin
-  Windows.PostMessage(Handle, WM_TBDOWN, Integer(ADown), Integer(Toolbutton));
+     PostMessage(Handle, WM_TBDOWN, Integer(ADown), Integer(Toolbutton));
 end;
 
 
@@ -877,7 +904,7 @@ begin
   FName := ChangeFileExt(ParamStr(0), '.lst');
   with TStringList.Create do
     try
-      if FileExists(FName) then LoadFromFile(FName);
+      if FileExistsUTF8(FName) { *Converted from FileExists* } then LoadFromFile(FName);
       Add(S);
       SaveToFile(FName);
     finally Free; end;
@@ -908,7 +935,7 @@ begin
   FName := ExtractFilePath(ParamStr(0)) + 'HstResults.txt';
   with TStringList.Create do
     try
-      if FileExists(FName) then LoadFromFile(FName);
+      if FileExistsUTF8(FName) { *Converted from FileExists* } then LoadFromFile(FName);
       Add(S);
       SaveToFile(FName);
     finally Free; end;
@@ -919,7 +946,7 @@ end;
 
 procedure OpenWebPage(Url: string);
 begin
-  ShellExecute(GetDesktopWindow, 'open', PChar(Url), '', '', SW_SHOWNORMAL);
+   OpenDocument(PChar(Url)); { *Converted from ShellExecute* }
 end;
 
 
@@ -934,7 +961,7 @@ var
 begin
   RichEdit1.Clear;
   FName := ChangeFileExt(ParamStr(0), '.lst');
-  if FileExists(FName)
+  if FileExistsUTF8(FName) { *Converted from FileExists* }
     then RichEdit1.Lines.LoadFromFile(FName)
     else RichEdit1.Lines.Add('Your score table is empty');
   RichEdit1.Visible := true;
@@ -1071,7 +1098,7 @@ begin
   Stp := RunMode = rmStop;
 
   AudioRecordingEnabled1.Enabled := Stp;
-  PlayRecordedAudio1.Enabled := Stp and FileExists(ChangeFileExt(ParamStr(0), '.wav'));
+  PlayRecordedAudio1.Enabled := Stp and FileExistsUTF8(ChangeFileExt(ParamStr(0), '.wav')); { *Converted from FileExists* }
 
   AudioRecordingEnabled1.Checked := Ini.SaveWav;
 end;
@@ -1081,7 +1108,7 @@ var
   FileName: string;
 begin
   FileName := ChangeFileExt(ParamStr(0), '.wav');
-  ShellExecute(GetDesktopWindow, 'open', PChar(FileName), '', '', SW_SHOWNORMAL);
+   OpenDocument(PChar(FileName)); { *Converted from ShellExecute* }
 end;
 
 

@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit CallLst;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, Classes, Ini;
+  SysUtils, Classes, Ini, FileUtil;
 
 procedure LoadCallList;
 function PickCall: string;
@@ -47,7 +49,7 @@ begin
   Calls.Clear;
 
   FileName := ExtractFilePath(ParamStr(0)) + 'Master.dta';
-  if not FileExists(FileName) then Exit;
+  if not FileExistsUTF8(FileName) { *Converted from FileExists* } then Exit;
 
   with TFileStream.Create(FileName, fmOpenRead) do
     try

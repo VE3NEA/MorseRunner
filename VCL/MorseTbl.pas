@@ -6,6 +6,8 @@
 unit
   MorseTbl;
 
+{$MODE Delphi}
+
 interface
 
 const

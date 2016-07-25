@@ -5,6 +5,8 @@
 //------------------------------------------------------------------------------
 unit Contest;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -104,6 +106,7 @@ var
   i, Stn: integer;
   Bfo: Single;
   Smg, Rfg: Single;
+  Temp: Single;
 begin
   //minimize audio output delay
   SetLength(Result, 1);
@@ -157,6 +160,7 @@ begin
     begin
     Blk := Me.GetBlock;
     //self-mon. gain
+    Temp := MainForm.VolumeSlider1.Value;
     Smg := Power(10, (MainForm.VolumeSlider1.Value - 0.75) * 4);
     Rfg := 1;
     for i:=0 to High(Blk) do

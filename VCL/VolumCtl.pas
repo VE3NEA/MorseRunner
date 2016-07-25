@@ -5,12 +5,14 @@
 //------------------------------------------------------------------------------
 unit VolumCtl;
 
+{$MODE Delphi}
+
 interface
 
 //{$DEFINE DEBUG}
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   SndTypes, Math;
 
 type

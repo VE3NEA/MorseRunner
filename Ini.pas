@@ -5,6 +5,8 @@
 //------------------------------------------------------------------------------
 unit Ini;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -82,6 +84,8 @@ begin
       MainForm.SetQsk(ReadBool(SEC_STN, 'Qsk', Qsk));
       CallsFromKeyer := ReadBool(SEC_STN, 'CallsFromKeyer', CallsFromKeyer);
 
+      MainForm.NoRepeats := ReadBool(SEC_STN, 'NoRepeats', false);
+
       Activity := ReadInteger(SEC_BND, 'Activity', Activity);
       MainForm.SpinEdit3.Value := Activity;
 
@@ -108,6 +112,9 @@ begin
 
       V := ReadInteger(SEC_STN, 'SelfMonVolume', 0);
       MainForm.VolumeSlider1.Value := V / 80 + 0.75;
+
+      V := ReadInteger(SEC_SYS, 'SoundDevice', -1);
+      MainForm.AlSoundOut1.DeviceID := V;
 
       SaveWav := ReadBool(SEC_STN, 'SaveWav', SaveWav);
     finally

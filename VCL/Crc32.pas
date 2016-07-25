@@ -5,9 +5,11 @@
 //------------------------------------------------------------------------------
 unit Crc32;
 
+{$MODE Delphi}
+
 interface
 
-uses SysUtils, Windows;
+uses SysUtils, LCLIntf, LCLType, LMessages;
 
 function CalculateCRC32(AStr: string; ACrc: DWord): DWord;
 

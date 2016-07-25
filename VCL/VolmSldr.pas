@@ -1,9 +1,11 @@
 unit VolmSldr;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   Math, PermHint;
 
 type
@@ -151,7 +153,8 @@ end;
 
 procedure TVolumeSlider.SetValue(const Value: Single);
 begin
-  FValue := Max(0, Min(1, Value));
+  // FValue := Max(0, Min(1, Value));
+  FValue := Value;
   UpdateHint;
   Invalidate;
 end;

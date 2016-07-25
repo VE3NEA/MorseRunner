@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit SndOut;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   BaseComp, MMSystem, SndTypes, SndCustm, Math;
 
 type
@@ -77,7 +79,21 @@ end;
 procedure TAlSoundOut.Start;
 var
   i: integer;
-begin
+  numdev: integer;
+
+  begin
+  //open device
+  numdev := waveoutgetnumdevs();
+
+  if DeviceID > (numdev - 1) Then
+    begin
+    if DeviceID <> WAVE_MAPPER Then
+      begin
+      ShowMessage('SoundDevice must be less than the number of sound output devices - 1');
+      Halt;
+      end;
+  end;
+
   //open device
   rc := waveOutOpen(@DeviceHandle, DeviceID, @WaveFmt, GetThreadID, 0, CALLBACK_THREAD);
   CheckErr;

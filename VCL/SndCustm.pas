@@ -5,11 +5,13 @@
 //------------------------------------------------------------------------------
 unit SndCustm;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Forms, SyncObjs, MMSystem, SndTypes,
-  Ini;
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Forms, SyncObjs, MMSystem, SndTypes,
+  Ini, Windows, Dialogs;
 
 type
   TCustomSoundInOut = class;
@@ -146,7 +148,8 @@ end;
 
 procedure TCustomSoundInOut.Err(Txt: string);
 begin
-  raise ESoundError.Create(Txt);
+ // raise ESoundError.Create(Txt);
+ ShowMessage(Txt);
 end;
 
 
@@ -195,7 +198,8 @@ begin
       //FThread.Priority := tpTimeCritical;
       //start
       FEnabled := true;
-      try Start; except FreeAndNil(FThread); raise; end;
+     // try Start; except FreeAndNil(FThread); raise; end;
+      try Start; except FreeAndNil(FThread); end;
       //device started ok, wait for events
       FThread.Resume;
       end
