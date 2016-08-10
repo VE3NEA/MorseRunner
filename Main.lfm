@@ -1,7 +1,7 @@
 object MainForm: TMainForm
-  Left = 958
+  Left = 1136
   Height = 443
-  Top = 428
+  Top = 174
   Width = 759
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
@@ -384,8 +384,8 @@ object MainForm: TMainForm
       Left = 68
       Height = 40
       Top = 53
-      Width = 330
-      Caption = 'Morse Runner 1.68+'
+      Width = 359
+      Caption = 'Morse Runner 1.68.1+'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clGreen
       Font.Height = -35

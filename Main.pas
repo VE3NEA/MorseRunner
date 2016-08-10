@@ -14,7 +14,7 @@ uses
   Buttons, SndCustm, SndOut, Contest, Ini, MorseKey, CallLst,
   VolmSldr, VolumCtl, StdCtrls, Station, Menus, ExtCtrls, Log, MAth,
   ComCtrls, Spin, SndTypes, ToolWin, ImgList, FileUtil, Crc32,
-  WavFile, IniFiles, Windows;
+  WavFile, IniFiles, Windows, UdpHandler;
 
 const
   WM_TBDOWN = WM_USER+1;
@@ -201,6 +201,7 @@ type
     ListView1: TListView;
     Operator1: TMenuItem;
     VolumeSlider1: TVolumeSlider;
+    UdpThread : TUdpThread;
     procedure FormCreate(Sender: TObject);
     procedure AlSoundOut1BufAvailable(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -261,18 +262,17 @@ type
   private
     MustAdvance: boolean;
     procedure ProcessSpace;
-    procedure SendMsg(Msg: TStationMessage);
-    procedure ProcessEnter;
+    // procedure ProcessEnter;
     procedure EnableCtl(Ctl: TWinControl; AEnable: boolean);
     procedure WmTbDown(var Msg: TMessage); message WM_TBDOWN;
     procedure SetToolbuttonDown(Toolbutton: TToolbutton; ADown: boolean);
-    procedure IncRit(dF: integer);
     procedure UpdateRitIndicator;
     procedure DecSpeed;
     procedure IncSpeed;
   public
     CompetitionMode: boolean;
     NoRepeats: boolean;
+    Name: string;
     procedure Run(Value: TRunMode);
     procedure WipeBoxes;
     procedure PopupScoreWpx;
@@ -284,6 +284,9 @@ type
     procedure SetPitch(PitchNo: integer);
     procedure SetBw(BwNo: integer);
     procedure ReadCheckboxes;
+    procedure ProcessEnter;
+    procedure IncRit(dF: integer);
+    procedure SendMsg(Msg: TStationMessage);
   end;
 
 var
@@ -856,16 +859,24 @@ begin
       if SaveWav then AlWavFile1.OpenWrite;
       end;
 
+  UdpThread := TUdpThread.Create(True); // This way it doesn't start automatically
+    //...
+    //[Here the code initialises anything required before the threads starts executing]
+    //...
+  UdpThread.Start;
+
   AlSoundOut1.Enabled := not BStop;
 end;
-
-
 
 procedure TMainForm.RunBtnClick(Sender: TObject);
 begin
   if RunMode = rmStop
     then Run(rmPileUp)
-    else Tst.FStopPressed := true;
+    else
+    begin
+      Tst.FStopPressed := true;
+      UdpThread.Terminate;
+    end;
 end;
 
 procedure TMainForm.SpinEdit4Change(Sender: TObject);
