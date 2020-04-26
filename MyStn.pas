@@ -55,7 +55,14 @@ end;
 procedure TMyStation.Init;
 begin
   MyCall := Ini.Call;
-  NR := 1;
+  if Ini.ContestName = 'cqwpx' then
+  begin
+       NR := 1;
+  end
+  else
+  begin
+       NR := StrToInt(Ini.NR);
+  end;
   RST := 599;
   Pitch := Ini.Pitch;
   Wpm := Ini.Wpm;

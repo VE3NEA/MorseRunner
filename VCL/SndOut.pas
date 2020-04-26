@@ -11,7 +11,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  BaseComp, MMSystem, SndTypes, SndCustm, Math;
+  BaseComp, MMSystem, SndTypes, SndCustm, Math, Ini;
 
 type
   TAlSoundOut = class(TCustomSoundInOut)
@@ -29,6 +29,7 @@ type
   public
     function PutData(Data: TSingleArray): boolean;
     procedure Purge;
+    procedure ChangeSoundLevel;
   published
     property Enabled;
     property DeviceID;
@@ -68,8 +69,25 @@ begin
     else Err('Unknown error: ' + IntToStr(rc));
 end;
 
-
-
+procedure TAlSoundOut.ChangeSoundLevel;
+begin
+     if Ini.RadioAudio = 1 then
+     begin
+       waveOutSetVolume(DeviceID, $0000FFFF);
+     end
+     else if Ini.RadioAudio = 2 then
+     begin
+       waveOutSetVolume(DeviceID, $FFFF0000);
+     end
+     else if Ini.RadioAudio = 0 then
+     begin
+       waveOutSetVolume(DeviceID, $FFFFFFFF);
+     end
+     else if Ini.RadioAudio = 3 then
+     begin
+       waveOutSetVolume(DeviceID, $00000000);
+     end;
+end;
 
 
 
@@ -96,6 +114,17 @@ var
 
   //open device
   rc := waveOutOpen(@DeviceHandle, DeviceID, @WaveFmt, GetThreadID, 0, CALLBACK_THREAD);
+
+  waveOutSetVolume(DeviceID, $FFFFFFFF);
+  if Ini.RadioAudio = 1 then
+    begin
+       waveOutSetVolume(DeviceID, $0000FFFF);
+    end
+  else if Ini.RadioAudio = 2 then
+  begin
+      waveOutSetVolume(DeviceID, $FFFF0000);
+  end;
+
   CheckErr;
 
   //send all buffers to the player

@@ -1,13 +1,13 @@
 object MainForm: TMainForm
-  Left = 1136
+  Left = 778
   Height = 443
-  Top = 174
-  Width = 759
+  Top = 206
+  Width = 777
   BorderIcons = [biSystemMenu]
   BorderStyle = bsSingle
   Caption = 'Morse Runner'
   ClientHeight = 423
-  ClientWidth = 759
+  ClientWidth = 777
   Color = clBtnFace
   Font.Color = clWindowText
   Font.Height = -11
@@ -20,25 +20,26 @@ object MainForm: TMainForm
   OnKeyDown = FormKeyDown
   OnKeyPress = FormKeyPress
   OnKeyUp = FormKeyUp
+  OnShow = FormShow
   Position = poDesktopCenter
   LCLVersion = '1.4.4.0'
   object Bevel1: TBevel
     Left = 0
     Height = 2
     Top = 0
-    Width = 759
+    Width = 777
     Align = alTop
   end
   object Panel1: TPanel
     Left = 0
     Height = 119
     Top = 304
-    Width = 759
+    Width = 777
     Align = alBottom
     BevelInner = bvRaised
     BevelOuter = bvLowered
     ClientHeight = 119
-    ClientWidth = 759
+    ClientWidth = 777
     TabOrder = 0
     object Label1: TLabel
       Left = 14
@@ -50,7 +51,7 @@ object MainForm: TMainForm
     end
     object SpeedButton4: TSpeedButton
       Tag = 1
-      Left = 10
+      Left = 14
       Height = 17
       Top = 66
       Width = 61
@@ -132,8 +133,8 @@ object MainForm: TMainForm
       Left = 222
       Height = 13
       Top = 10
-      Width = 14
-      Caption = 'Nr.'
+      Width = 25
+      Caption = 'Zone'
       ParentColor = False
     end
     object Bevel2: TBevel
@@ -187,6 +188,7 @@ object MainForm: TMainForm
       Font.Name = 'MS Sans Serif'
       Font.Style = [fsBold]
       MaxLength = 4
+      OnEnter = Edit3Enter
       OnKeyPress = Edit3KeyPress
       ParentFont = False
       TabOrder = 2
@@ -327,7 +329,7 @@ object MainForm: TMainForm
     Left = 0
     Height = 8
     Top = 296
-    Width = 759
+    Width = 777
     Align = alBottom
     BevelOuter = bvNone
     TabOrder = 1
@@ -336,18 +338,18 @@ object MainForm: TMainForm
     Left = 0
     Height = 294
     Top = 2
-    Width = 547
+    Width = 578
     Align = alClient
     BevelOuter = bvNone
     BorderStyle = bsSingle
     ClientHeight = 290
-    ClientWidth = 543
+    ClientWidth = 574
     TabOrder = 2
     object Shape1: TShape
       Left = 0
       Height = 249
       Top = 0
-      Width = 543
+      Width = 574
       Align = alClient
       Brush.Color = 16711401
       Pen.Style = psClear
@@ -384,8 +386,8 @@ object MainForm: TMainForm
       Left = 68
       Height = 40
       Top = 53
-      Width = 359
-      Caption = 'Morse Runner 1.68.1+'
+      Width = 452
+      Caption = 'Morse Runner 1.70+CQWW'
       Font.CharSet = ANSI_CHARSET
       Font.Color = clGreen
       Font.Height = -35
@@ -399,7 +401,7 @@ object MainForm: TMainForm
       Height = 13
       Top = 106
       Width = 245
-      Caption = 'Copyright © 2004-2016 Alex Shovkoplyas, VE3NEA'
+      Caption = 'Copyright © 2004-2017 Alex Shovkoplyas, VE3NEA'
       ParentColor = False
     end
     object Label16: TLabel
@@ -414,7 +416,7 @@ object MainForm: TMainForm
       Left = 0
       Height = 41
       Top = 249
-      Width = 543
+      Width = 574
       Align = alBottom
       BorderStyle = bsNone
       Font.CharSet = ANSI_CHARSET
@@ -433,19 +435,19 @@ object MainForm: TMainForm
       Height = 13
       Top = 128
       Width = 111
-      Caption = 'Modified by N2IC, 2016'
+      Caption = 'Modified by N2IC, 2020'
       ParentColor = False
     end
   end
   object Panel9: TPanel
-    Left = 547
+    Left = 578
     Height = 294
     Top = 2
-    Width = 212
+    Width = 199
     Align = alRight
     BevelOuter = bvNone
     ClientHeight = 294
-    ClientWidth = 212
+    ClientWidth = 199
     TabOrder = 3
     object GroupBox3: TGroupBox
       Left = 7
@@ -673,16 +675,24 @@ object MainForm: TMainForm
         TabOrder = 4
         TabStop = False
       end
+      object Label20: TLabel
+        Left = 10
+        Height = 13
+        Top = 118
+        Width = 25
+        Caption = 'Zone'
+        ParentColor = False
+      end
     end
     object Panel10: TPanel
       Left = 0
       Height = 31
       Top = 263
-      Width = 212
+      Width = 199
       Align = alBottom
       BevelOuter = bvNone
       ClientHeight = 31
-      ClientWidth = 212
+      ClientWidth = 199
       TabOrder = 2
       object Label8: TLabel
         Left = 171
@@ -742,7 +752,7 @@ object MainForm: TMainForm
     end
   end
   object VolumeSlider1: TVolumeSlider
-    Left = 640
+    Left = 704
     Height = 20
     Hint = '-15.0 dB'
     Top = 136
@@ -762,7 +772,7 @@ object MainForm: TMainForm
     Height = 13
     Top = 106
     Width = 245
-    Caption = 'Copyright © 2004-2016 Alex Shovkoplyas, VE3NEA'
+    Caption = 'Copyright © 2004-2020 Alex Shovkoplyas, VE3NEA'
     ParentColor = False
   end
   object Label18: TLabel
@@ -773,14 +783,23 @@ object MainForm: TMainForm
     Caption = 'Label18'
     ParentColor = False
   end
+  object Edit5: TEdit
+    Left = 656
+    Height = 21
+    Top = 135
+    Width = 24
+    OnChange = Edit5Change
+    TabOrder = 4
+    Text = '8'
+  end
   object AlSoundOut1: TAlSoundOut
     SamplesPerSec = 11025
     BufCount = 8
     OnBufAvailable = AlSoundOut1BufAvailable
   end
   object MainMenu1: TMainMenu
-    left = 356
-    top = 148
+    left = 304
+    top = 160
     object File1: TMenuItem
       Caption = 'File'
       OnClick = File1Click
@@ -1264,8 +1283,8 @@ object MainForm: TMainForm
     end
   end
   object PopupMenu1: TPopupMenu
-    left = 356
-    top = 176
+    left = 440
+    top = 152
     object PileupMNU: TMenuItem
       Tag = 1
       Caption = 'Pile-Up'
@@ -1297,7 +1316,7 @@ object MainForm: TMainForm
     end
   end
   object ImageList1: TImageList
-    left = 384
+    left = 416
     top = 176
     Bitmap = {
       4C69020000001000000010000000000000000000000000000000000000000000

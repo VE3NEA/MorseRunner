@@ -33,12 +33,19 @@ uses
 
 { TDxStation }
 
+var callzone: string;
+    stringlist: TStringList;
+
 constructor TDxStation.CreateStation;
 begin
   inherited Create(nil);
+  stringlist := TStringList.Create;
+  stringlist.Delimiter := ';';
 
   HisCall := Ini.Call;
-  MyCall := PickCall;
+  callzone := PickCallAndZone;
+  stringlist.DelimitedText := callzone;
+  MyCall := stringlist[0];
 
   Oper := TDxOperator.Create;
   Oper.Call := MyCall;
@@ -47,7 +54,31 @@ begin
   NrWithError := Ini.Lids and (Random < 0.1);
 
   Wpm := Oper.GetWpm;
-  NR := Oper.GetNR;
+  If Ini.ContestName = 'cqwpx' then
+  begin
+      NR := Oper.GetNR;
+  end
+  else
+  begin
+       NR := StrToInt(stringlist[1]);
+  end;
+  //if LeftStr(Oper.Call, 1) = 'K' then
+  //begin
+  //NR := Random(3) + 3;
+  //end
+  //else if LeftStr(Oper.Call, 1) = 'W' then
+  //begin
+  //NR := Random(3) + 3;
+  //end
+  //else if LeftStr(Oper.Call, 1) = 'N' then
+  //begin
+  //NR := Random(3) + 3;
+  //end
+  //else if LeftStr(Oper.Call, 1) = 'A' then
+  //begin
+  //NR := Random(3) + 3;
+  //end;
+
   if Ini.Lids and (Random < 0.03)
     then RST := 559 + 10*Random(4)
     else RST := 599;

@@ -59,7 +59,7 @@ begin
 
   if Ini.RunMode = rmHst
     then MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent      Score  Chk')
-    else MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent      Pref   Chk');
+    else MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent');
   MainForm.RichEdit1.SelStart := 1;
   MainForm.RichEdit1.SelLength := Length(MainForm.RichEdit1.Lines[0]);
 //  MainForm.RichEdit1.Font.Style := [fsUnderline];
@@ -254,7 +254,15 @@ begin
   //wipe
   MainForm.WipeBoxes;
   //inc NR
-  Inc(Tst.Me.NR);
+
+  if Ini.ContestName = 'cqwpx' then
+  begin
+     //Inc(Tst.Me.NR);
+  end
+  else
+  begin
+       Tst.Me.NR := StrToInt(Ini.NR);
+  end;
 end;
 
 
@@ -266,11 +274,10 @@ var
 begin
   with QsoList[High(QsoList)] do
     S := FormatDateTime(' hh:nn:ss  ', t) +
-         Format('%-12s  %.3d %.4d  %.3d %.4d  %-5s  %-3s',
+         Format('%-12s  %.3d %.2d  %.3d %.2d',
          [Call, Rst, Nr, Tst.Me.Rst,
-         //Tst.Me.NR,
-         MainForm.RichEdit1.Lines.Count,
-         Pfx, Err]);
+         Tst.Me.NR]);
+        // MainForm.RichEdit1.Lines.Count]);
 
   MainForm.RichEdit1.Lines.Add(S);
   MainForm.RichEdit1.SelStart := Length(MainForm.RichEdit1.Text) - 5;
