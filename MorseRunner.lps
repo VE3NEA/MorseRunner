@@ -4,14 +4,13 @@
     <PathDelim Value="\"/>
     <Version Value="9"/>
     <BuildModes Active="Default"/>
-    <Units Count="125">
+    <Units Count="101">
       <Unit0>
         <Filename Value="MorseRunner.lpr"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="9"/>
-        <TopLine Value="13"/>
-        <CursorPos Y="38"/>
-        <UsageCount Value="98"/>
+        <TopLine Value="11"/>
+        <CursorPos X="15" Y="41"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit0>
@@ -21,10 +20,11 @@
         <ComponentName Value="MainForm"/>
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="7"/>
-        <TopLine Value="344"/>
-        <CursorPos Y="361"/>
-        <UsageCount Value="98"/>
+        <IsVisibleTab Value="True"/>
+        <EditorIndex Value="10"/>
+        <TopLine Value="540"/>
+        <CursorPos X="39" Y="564"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <LoadedDesigner Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
@@ -32,114 +32,124 @@
       <Unit2>
         <Filename Value="Contest.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="217"/>
-        <CursorPos X="3" Y="231"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="14"/>
+        <TopLine Value="155"/>
+        <CursorPos X="14" Y="167"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit2>
       <Unit3>
         <Filename Value="RndFunc.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="2"/>
+        <CursorPos X="5" Y="17"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit3>
       <Unit4>
         <Filename Value="Ini.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="11"/>
-        <TopLine Value="64"/>
-        <CursorPos X="44" Y="75"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="3"/>
+        <TopLine Value="48"/>
+        <CursorPos X="15" Y="59"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit4>
       <Unit5>
         <Filename Value="Station.pas"/>
         <IsPartOfProject Value="True"/>
-        <IsVisibleTab Value="True"/>
-        <EditorIndex Value="3"/>
-        <TopLine Value="90"/>
-        <CursorPos X="112" Y="95"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="19"/>
+        <TopLine Value="32"/>
+        <CursorPos X="5" Y="47"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit5>
       <Unit6>
         <Filename Value="VCL\MorseKey.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="20"/>
+        <TopLine Value="119"/>
+        <CursorPos X="23" Y="136"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit6>
       <Unit7>
         <Filename Value="StnColl.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="23"/>
-        <CursorPos X="19" Y="37"/>
-        <UsageCount Value="98"/>
+        <TopLine Value="39"/>
+        <CursorPos X="26" Y="61"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit7>
       <Unit8>
         <Filename Value="DxStn.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="102"/>
-        <CursorPos Y="113"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="15"/>
+        <TopLine Value="50"/>
+        <CursorPos X="63" Y="67"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit8>
       <Unit9>
         <Filename Value="MyStn.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="105"/>
-        <CursorPos X="3" Y="120"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="17"/>
+        <TopLine Value="41"/>
+        <CursorPos X="8" Y="64"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit9>
       <Unit10>
         <Filename Value="CallLst.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="42"/>
-        <CursorPos X="89" Y="62"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="16"/>
+        <TopLine Value="60"/>
+        <CursorPos X="9" Y="75"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit10>
       <Unit11>
         <Filename Value="QrmStn.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="9"/>
+        <TopLine Value="26"/>
+        <CursorPos X="13" Y="32"/>
+        <UsageCount Value="121"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit11>
       <Unit12>
         <Filename Value="Log.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="5"/>
-        <TopLine Value="213"/>
-        <CursorPos X="28" Y="214"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="13"/>
+        <TopLine Value="242"/>
+        <CursorPos X="21" Y="258"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit12>
       <Unit13>
         <Filename Value="Qsb.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit13>
       <Unit14>
         <Filename Value="DxOper.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="10"/>
-        <TopLine Value="195"/>
-        <CursorPos X="75" Y="203"/>
-        <UsageCount Value="98"/>
+        <EditorIndex Value="18"/>
+        <TopLine Value="60"/>
+        <CursorPos X="27" Y="76"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit14>
@@ -147,7 +157,9 @@
         <Filename Value="QrnStn.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <TopLine Value="16"/>
+        <CursorPos X="44" Y="30"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit15>
       <Unit16>
@@ -157,970 +169,649 @@
         <HasResources Value="True"/>
         <ResourceBaseClass Value="Form"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <CursorPos X="103" Y="3"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit16>
       <Unit17>
         <Filename Value="VCL\BaseComp.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="86"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit17>
       <Unit18>
         <Filename Value="VCL\PermHint.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="4"/>
-        <TopLine Value="65"/>
-        <CursorPos X="3" Y="80"/>
-        <UsageCount Value="98"/>
-        <Loaded Value="True"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit18>
       <Unit19>
         <Filename Value="VCL\Crc32.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="96" Y="2"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit19>
       <Unit20>
         <Filename Value="VCL\SndTypes.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="66" Y="3"/>
-        <UsageCount Value="98"/>
+        <TopLine Value="7"/>
+        <CursorPos X="3" Y="22"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit20>
       <Unit21>
         <Filename Value="VCL\MorseTbl.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <CursorPos X="24" Y="10"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit21>
       <Unit22>
         <Filename Value="VCL\QuickAvg.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit22>
       <Unit23>
         <Filename Value="VCL\MovAvg.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit23>
       <Unit24>
         <Filename Value="VCL\Mixers.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="230"/>
-        <CursorPos Y="252"/>
-        <UsageCount Value="98"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit24>
       <Unit25>
         <Filename Value="VCL\VolumCtl.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <CursorPos X="28" Y="15"/>
-        <UsageCount Value="98"/>
+        <TopLine Value="323"/>
+        <CursorPos X="8" Y="338"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit25>
       <Unit26>
         <Filename Value="UdpHandler.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="2"/>
-        <TopLine Value="126"/>
-        <CursorPos X="25" Y="152"/>
-        <UsageCount Value="41"/>
+        <EditorIndex Value="7"/>
+        <TopLine Value="43"/>
+        <CursorPos X="19" Y="63"/>
+        <UsageCount Value="121"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit26>
       <Unit27>
-        <Filename Value="..\lazurus\synapse40\source\lib\asn1util.pas"/>
+        <Filename Value="VCL\WavFile.pas"/>
         <IsPartOfProject Value="True"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <UsageCount Value="121"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit27>
       <Unit28>
-        <Filename Value="..\lazurus\synapse40\source\lib\blcksock.pas"/>
+        <Filename Value="logerror.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="17"/>
-        <TopLine Value="2722"/>
-        <CursorPos Y="2741"/>
-        <UsageCount Value="41"/>
+        <UnitName Value="LogErrorx"/>
+        <EditorIndex Value="1"/>
+        <CursorPos X="12" Y="12"/>
+        <UsageCount Value="117"/>
         <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit28>
       <Unit29>
-        <Filename Value="..\lazurus\synapse40\source\lib\clamsend.pas"/>
+        <Filename Value="VCL\SndOut.pas"/>
         <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <EditorIndex Value="6"/>
+        <TopLine Value="22"/>
+        <CursorPos X="19" Y="39"/>
+        <UsageCount Value="65"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit29>
       <Unit30>
-        <Filename Value="..\lazurus\synapse40\source\lib\dnssend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\asn1util.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit30>
       <Unit31>
-        <Filename Value="..\lazurus\synapse40\source\lib\ftpsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\blcksock.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit31>
       <Unit32>
-        <Filename Value="..\lazurus\synapse40\source\lib\ftptsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\clamsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit32>
       <Unit33>
-        <Filename Value="..\lazurus\synapse40\source\lib\httpsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\dnssend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit33>
       <Unit34>
-        <Filename Value="..\lazurus\synapse40\source\lib\imapsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ftpsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit34>
       <Unit35>
-        <Filename Value="..\lazurus\synapse40\source\lib\laz_synapse.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ftptsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit35>
       <Unit36>
-        <Filename Value="..\lazurus\synapse40\source\lib\ldapsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\httpsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit36>
       <Unit37>
-        <Filename Value="..\lazurus\synapse40\source\lib\mimeinln.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\imapsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit37>
       <Unit38>
-        <Filename Value="..\lazurus\synapse40\source\lib\mimemess.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\laz_synapse.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit38>
       <Unit39>
-        <Filename Value="..\lazurus\synapse40\source\lib\mimepart.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ldapsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit39>
       <Unit40>
-        <Filename Value="..\lazurus\synapse40\source\lib\nntpsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\mimeinln.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit40>
       <Unit41>
-        <Filename Value="..\lazurus\synapse40\source\lib\pingsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\mimemess.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit41>
       <Unit42>
-        <Filename Value="..\lazurus\synapse40\source\lib\pop3send.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\mimepart.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit42>
       <Unit43>
-        <Filename Value="..\lazurus\synapse40\source\lib\slogsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\nntpsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit43>
       <Unit44>
-        <Filename Value="..\lazurus\synapse40\source\lib\smtpsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\pingsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit44>
       <Unit45>
-        <Filename Value="..\lazurus\synapse40\source\lib\snmpsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\pop3send.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit45>
       <Unit46>
-        <Filename Value="..\lazurus\synapse40\source\lib\sntpsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\slogsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit46>
       <Unit47>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssdotnet.inc"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\smtpsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit47>
       <Unit48>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssfpc.inc"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\snmpsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit48>
       <Unit49>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssl_cryptlib.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\sntpsend.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit49>
       <Unit50>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssl_openssl.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssdotnet.inc"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit50>
       <Unit51>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssl_openssl_lib.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssfpc.inc"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit51>
       <Unit52>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssl_sbb.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="1"/>
-        <TopLine Value="79"/>
-        <UsageCount Value="41"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssl_cryptlib.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit52>
       <Unit53>
-        <Filename Value="..\lazurus\synapse40\source\lib\ssl_streamsec.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssl_openssl.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit53>
       <Unit54>
-        <Filename Value="..\lazurus\synapse40\source\lib\sslinux.inc"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssl_openssl_lib.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit54>
       <Unit55>
-        <Filename Value="..\lazurus\synapse40\source\lib\sswin32.inc"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="18"/>
-        <TopLine Value="887"/>
-        <CursorPos X="3" Y="902"/>
-        <UsageCount Value="41"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssl_sbb.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit55>
       <Unit56>
-        <Filename Value="..\lazurus\synapse40\source\lib\synachar.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\ssl_streamsec.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit56>
       <Unit57>
-        <Filename Value="..\lazurus\synapse40\source\lib\synacode.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\sslinux.inc"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit57>
       <Unit58>
-        <Filename Value="..\lazurus\synapse40\source\lib\synacrypt.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="1993"/>
-        <CursorPos X="61" Y="2005"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\sswin32.inc"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit58>
       <Unit59>
-        <Filename Value="..\lazurus\synapse40\source\lib\synadbg.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synachar.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit59>
       <Unit60>
-        <Filename Value="..\lazurus\synapse40\source\lib\synafpc.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synacode.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit60>
       <Unit61>
-        <Filename Value="..\lazurus\synapse40\source\lib\synaicnv.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synacrypt.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit61>
       <Unit62>
-        <Filename Value="..\lazurus\synapse40\source\lib\synaip.pas"/>
-        <IsPartOfProject Value="True"/>
-        <UsageCount Value="41"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synadbg.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit62>
       <Unit63>
-        <Filename Value="..\lazurus\synapse40\source\lib\synamisc.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synafpc.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit63>
       <Unit64>
-        <Filename Value="..\lazurus\synapse40\source\lib\synaser.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synaicnv.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit64>
       <Unit65>
-        <Filename Value="..\lazurus\synapse40\source\lib\synautil.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synaip.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit65>
       <Unit66>
-        <Filename Value="..\lazurus\synapse40\source\lib\synsock.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synamisc.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit66>
       <Unit67>
-        <Filename Value="..\lazurus\synapse40\source\lib\tlntsend.pas"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="31" Y="4"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synaser.pas"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit67>
       <Unit68>
-        <Filename Value="..\lazurus\synapse40\source\lib\blcksock.o"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
-        <DefaultSyntaxHighlighter Value="None"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synautil.pas"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit68>
       <Unit69>
-        <Filename Value="..\lazurus\synapse40\source\lib\blcksock.ppu"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
-        <DefaultSyntaxHighlighter Value="None"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synsock.pas"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit69>
       <Unit70>
-        <Filename Value="..\lazurus\synapse40\source\lib\synacode.o"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
-        <DefaultSyntaxHighlighter Value="None"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\tlntsend.pas"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit70>
       <Unit71>
-        <Filename Value="..\lazurus\synapse40\source\lib\synacode.ppu"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\blcksock.o"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit71>
       <Unit72>
-        <Filename Value="..\lazurus\synapse40\source\lib\synafpc.o"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\blcksock.ppu"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit72>
       <Unit73>
-        <Filename Value="..\lazurus\synapse40\source\lib\synafpc.ppu"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synacode.o"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit73>
       <Unit74>
-        <Filename Value="..\lazurus\synapse40\source\lib\synaip.o"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synacode.ppu"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit74>
       <Unit75>
-        <Filename Value="..\lazurus\synapse40\source\lib\synaip.ppu"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synafpc.o"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit75>
       <Unit76>
-        <Filename Value="..\lazurus\synapse40\source\lib\synautil.o"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synafpc.ppu"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit76>
       <Unit77>
-        <Filename Value="..\lazurus\synapse40\source\lib\synautil.ppu"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synaip.o"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit77>
       <Unit78>
-        <Filename Value="..\lazurus\synapse40\source\lib\synsock.o"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synaip.ppu"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit78>
       <Unit79>
-        <Filename Value="..\lazurus\synapse40\source\lib\synsock.ppu"/>
-        <IsPartOfProject Value="True"/>
-        <EditorIndex Value="-1"/>
-        <WindowIndex Value="-1"/>
-        <TopLine Value="-1"/>
-        <CursorPos X="-1" Y="-1"/>
-        <UsageCount Value="41"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synautil.o"/>
+        <UsageCount Value="11"/>
         <DefaultSyntaxHighlighter Value="None"/>
       </Unit79>
       <Unit80>
-        <Filename Value="VCL\VolmSldr.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="146"/>
-        <CursorPos Y="158"/>
-        <UsageCount Value="36"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synautil.ppu"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit80>
       <Unit81>
-        <Filename Value="VCL\SndCustm.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="180"/>
-        <CursorPos X="8" Y="192"/>
-        <UsageCount Value="37"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synsock.o"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit81>
       <Unit82>
-        <Filename Value="VCL\SndOut.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="190"/>
-        <CursorPos Y="207"/>
-        <UsageCount Value="31"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <Filename Value="..\lazurus\synapse40\source\lib\synsock.ppu"/>
+        <UsageCount Value="11"/>
+        <DefaultSyntaxHighlighter Value="None"/>
       </Unit82>
       <Unit83>
-        <Filename Value="VCL\WavFile.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="663"/>
-        <CursorPos X="15" Y="24"/>
-        <UsageCount Value="32"/>
+        <Filename Value="VCL\SndCustm.pas"/>
+        <EditorIndex Value="5"/>
+        <TopLine Value="84"/>
+        <CursorPos Y="101"/>
+        <UsageCount Value="60"/>
+        <Loaded Value="True"/>
         <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit83>
       <Unit84>
-        <Filename Value="..\lazurus\lcl\stdctrls.pp"/>
-        <UnitName Value="StdCtrls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="269"/>
-        <CursorPos X="27" Y="286"/>
-        <UsageCount Value="10"/>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\objpas\classes\classesh.inc"/>
+        <EditorIndex Value="8"/>
+        <TopLine Value="670"/>
+        <CursorPos X="14" Y="688"/>
+        <UsageCount Value="37"/>
+        <Loaded Value="True"/>
       </Unit84>
       <Unit85>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\inc\systemh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="583"/>
-        <CursorPos X="11" Y="594"/>
-        <UsageCount Value="19"/>
-      </Unit85>
-      <Unit86>
-        <Filename Value="..\lazurus\lcl\comctrls.pp"/>
-        <UnitName Value="ComCtrls"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="223"/>
-        <CursorPos X="36" Y="1637"/>
-        <UsageCount Value="17"/>
-      </Unit86>
-      <Unit87>
-        <Filename Value="Main.lfm"/>
-        <ComponentName Value="MainForm"/>
-        <HasResources Value="True"/>
-        <ResourceBaseClass Value="Form"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="430"/>
-        <CursorPos X="69" Y="434"/>
-        <UsageCount Value="10"/>
-        <DefaultSyntaxHighlighter Value="LFM"/>
-      </Unit87>
-      <Unit88>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\objpas\classes\classesh.inc"/>
-        <EditorIndex Value="6"/>
-        <TopLine Value="1650"/>
-        <CursorPos X="5" Y="1665"/>
-        <UsageCount Value="25"/>
-        <Loaded Value="True"/>
-      </Unit88>
-      <Unit89>
-        <Filename Value="morserunner.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="20" Y="10"/>
-        <UsageCount Value="10"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit89>
-      <Unit90>
-        <Filename Value="morse-pkg\SndOut.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="76"/>
-        <CursorPos X="24" Y="85"/>
-        <UsageCount Value="13"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit90>
-      <Unit91>
-        <Filename Value="morse-pkg\SndCustm.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="56"/>
-        <CursorPos X="40" Y="56"/>
-        <UsageCount Value="11"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit91>
-      <Unit92>
-        <Filename Value="morse-pkg\Ini.pas"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="6"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit92>
-      <Unit93>
-        <Filename Value="morse-pkg\WavFile.pas"/>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\win\wininc\base.inc"/>
         <EditorIndex Value="-1"/>
         <TopLine Value="175"/>
-        <UsageCount Value="11"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <CursorPos X="6" Y="189"/>
+        <UsageCount Value="34"/>
+      </Unit85>
+      <Unit86>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\win\wininc\struct.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="1516"/>
+        <CursorPos X="90" Y="1539"/>
+        <UsageCount Value="3"/>
+      </Unit86>
+      <Unit87>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\objpas\sysutils\syspchh.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="16"/>
+        <CursorPos X="10" Y="38"/>
+        <UsageCount Value="2"/>
+      </Unit87>
+      <Unit88>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\win\wininc\ascdef.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="176"/>
+        <CursorPos X="10" Y="190"/>
+        <UsageCount Value="2"/>
+      </Unit88>
+      <Unit89>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\win\wininc\defines.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="4720"/>
+        <CursorPos X="52" Y="4742"/>
+        <UsageCount Value="31"/>
+      </Unit89>
+      <Unit90>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\packages\fcl-base\src\inifiles.pp"/>
+        <UnitName Value="IniFiles"/>
+        <EditorIndex Value="4"/>
+        <TopLine Value="198"/>
+        <CursorPos X="10" Y="214"/>
+        <UsageCount Value="52"/>
+        <Loaded Value="True"/>
+      </Unit90>
+      <Unit91>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\packages\winunits-base\src\mmsystem.pp"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2452"/>
+        <CursorPos X="20" Y="2476"/>
+        <UsageCount Value="30"/>
+      </Unit91>
+      <Unit92>
+        <Filename Value="..\lazarus\lcl\include\menuitem.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="69"/>
+        <CursorPos Y="84"/>
+        <UsageCount Value="17"/>
+      </Unit92>
+      <Unit93>
+        <Filename Value="..\lazarus\fpc\2.6.4\source\rtl\inc\systemh.inc"/>
+        <EditorIndex Value="11"/>
+        <TopLine Value="580"/>
+        <CursorPos X="11" Y="596"/>
+        <UsageCount Value="28"/>
+        <Loaded Value="True"/>
       </Unit93>
       <Unit94>
-        <Filename Value="morse-pkg\VolmSldr.pas"/>
+        <Filename Value="..\lazarus\lcl\include\control.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="216"/>
-        <CursorPos X="25" Y="228"/>
-        <UsageCount Value="15"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <TopLine Value="3250"/>
+        <CursorPos Y="3267"/>
+        <UsageCount Value="11"/>
       </Unit94>
       <Unit95>
-        <Filename Value="..\lazurus\lcl\controls.pp"/>
-        <UnitName Value="Controls"/>
+        <Filename Value="..\lazarus\lcl\include\wincontrol.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="1621"/>
-        <CursorPos X="14" Y="1631"/>
-        <UsageCount Value="12"/>
+        <TopLine Value="5611"/>
+        <CursorPos Y="5627"/>
+        <UsageCount Value="16"/>
       </Unit95>
       <Unit96>
-        <Filename Value="morse-pkg\SndTypes.pas"/>
+        <Filename Value="..\lazarus\lcl\interfaces\win32\win32object.inc"/>
         <EditorIndex Value="-1"/>
-        <UsageCount Value="11"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
+        <TopLine Value="352"/>
+        <CursorPos Y="367"/>
+        <UsageCount Value="10"/>
       </Unit96>
       <Unit97>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\objpas\objpas.pp"/>
+        <Filename Value="..\lazarus\lcl\interfaces\win32\win32callback.inc"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="80"/>
-        <CursorPos X="62" Y="90"/>
-        <UsageCount Value="11"/>
+        <TopLine Value="1181"/>
+        <CursorPos Y="1196"/>
+        <UsageCount Value="15"/>
       </Unit97>
       <Unit98>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\objpas\sysutils\finah.inc"/>
+        <Filename Value="..\lazarus\lcl\stdctrls.pp"/>
+        <UnitName Value="StdCtrls"/>
         <EditorIndex Value="-1"/>
-        <TopLine Value="9"/>
-        <CursorPos X="10" Y="20"/>
-        <UsageCount Value="8"/>
+        <TopLine Value="901"/>
+        <CursorPos X="14" Y="915"/>
+        <UsageCount Value="15"/>
       </Unit98>
       <Unit99>
-        <Filename Value="..\lazurus\lcl\include\customform.inc"/>
-        <EditorIndex Value="12"/>
-        <TopLine Value="189"/>
-        <CursorPos Y="213"/>
-        <UsageCount Value="19"/>
-        <Loaded Value="True"/>
+        <Filename Value="..\lazarus\lcl\interfaces\win32\win32winapi.inc"/>
+        <EditorIndex Value="-1"/>
+        <TopLine Value="2703"/>
+        <CursorPos Y="2719"/>
+        <UsageCount Value="9"/>
       </Unit99>
       <Unit100>
-        <Filename Value="..\lazurus\lcl\include\application.inc"/>
-        <EditorIndex Value="13"/>
-        <TopLine Value="1071"/>
-        <CursorPos Y="1088"/>
-        <UsageCount Value="20"/>
+        <Filename Value="VCL\VolmSldr.pas"/>
+        <EditorIndex Value="12"/>
+        <TopLine Value="32"/>
+        <CursorPos X="14" Y="48"/>
+        <UsageCount Value="23"/>
         <Loaded Value="True"/>
+        <DefaultSyntaxHighlighter Value="Delphi"/>
       </Unit100>
-      <Unit101>
-        <Filename Value="ConverterBackup\SndCustm.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="153"/>
-        <CursorPos Y="166"/>
-        <UsageCount Value="8"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit101>
-      <Unit102>
-        <Filename Value="ConverterBackup\SndOut.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="74"/>
-        <CursorPos X="38" Y="82"/>
-        <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit102>
-      <Unit103>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\packages\fcl-base\src\inifiles.pp"/>
-        <UnitName Value="IniFiles"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="470"/>
-        <CursorPos X="14" Y="488"/>
-        <UsageCount Value="14"/>
-      </Unit103>
-      <Unit104>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\packages\winunits-base\src\mmsystem.pp"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2467"/>
-        <CursorPos X="44" Y="2471"/>
-        <UsageCount Value="9"/>
-      </Unit104>
-      <Unit105>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\objpas\sysutils\sysutilh.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="279"/>
-        <CursorPos X="13" Y="290"/>
-        <UsageCount Value="7"/>
-      </Unit105>
-      <Unit106>
-        <Filename Value="..\lazurus\lcl\dialogs.pp"/>
-        <UnitName Value="Dialogs"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="511"/>
-        <CursorPos X="11" Y="522"/>
-        <UsageCount Value="13"/>
-      </Unit106>
-      <Unit107>
-        <Filename Value="ConverterBackup\WavFile.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="559"/>
-        <CursorPos X="7" Y="563"/>
-        <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit107>
-      <Unit108>
-        <Filename Value="ConverterBackup\VolmSldr.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="214"/>
-        <CursorPos X="22" Y="225"/>
-        <UsageCount Value="7"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit108>
-      <Unit109>
-        <Filename Value="ConverterBackup\Station.pas"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="27" Y="148"/>
-        <UsageCount Value="12"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit109>
-      <Unit110>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\objpas\math.pp"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="309"/>
-        <CursorPos X="10" Y="320"/>
-        <UsageCount Value="12"/>
-      </Unit110>
-      <Unit111>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\objpas\typinfo.pp"/>
-        <EditorIndex Value="15"/>
-        <UsageCount Value="21"/>
-        <Loaded Value="True"/>
-      </Unit111>
-      <Unit112>
-        <Filename Value="..\lazurus\lcl\graphics.pp"/>
-        <UnitName Value="Graphics"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="263"/>
-        <CursorPos X="3" Y="277"/>
-        <UsageCount Value="8"/>
-      </Unit112>
-      <Unit113>
-        <Filename Value="..\lazurus\lcl\extctrls.pp"/>
-        <UnitName Value="ExtCtrls"/>
-        <EditorIndex Value="-1"/>
-        <CursorPos X="3" Y="255"/>
-        <UsageCount Value="17"/>
-      </Unit113>
-      <Unit114>
-        <Filename Value="ConverterBackup\Main.pas"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="436"/>
-        <CursorPos X="52" Y="446"/>
-        <UsageCount Value="8"/>
-        <DefaultSyntaxHighlighter Value="Delphi"/>
-      </Unit114>
-      <Unit115>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\packages\fcl-net\src\ssockets.pp"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="97"/>
-        <UsageCount Value="10"/>
-      </Unit115>
-      <Unit116>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\packages\fcl-net\fpmake.pp"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="42"/>
-        <UsageCount Value="9"/>
-      </Unit116>
-      <Unit117>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\packages\fcl-net\examples\testnet.pp"/>
-        <UnitName Value="testhst"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="12"/>
-        <UsageCount Value="10"/>
-      </Unit117>
-      <Unit118>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\packages\fcl-net\examples\testproto.pp"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="6"/>
-        <CursorPos X="12" Y="20"/>
-        <UsageCount Value="10"/>
-      </Unit118>
-      <Unit119>
-        <Filename Value="..\lazurus\fpc\2.6.4\source\rtl\inc\objpash.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="205"/>
-        <CursorPos X="23" Y="192"/>
-        <UsageCount Value="9"/>
-      </Unit119>
-      <Unit120>
-        <Filename Value="..\lazurus\synapse40\source\lib\laz_synapse.lpk"/>
-        <EditorIndex Value="-1"/>
-        <UsageCount Value="19"/>
-        <DefaultSyntaxHighlighter Value="XML"/>
-      </Unit120>
-      <Unit121>
-        <Filename Value="..\MorseRunner-master\morse-pkg\SndCustm.pas"/>
-        <EditorIndex Value="16"/>
-        <TopLine Value="61"/>
-        <CursorPos Y="79"/>
-        <UsageCount Value="20"/>
-        <Loaded Value="True"/>
-      </Unit121>
-      <Unit122>
-        <Filename Value="..\lazurus\lcl\forms.pp"/>
-        <UnitName Value="Forms"/>
-        <EditorIndex Value="14"/>
-        <TopLine Value="1828"/>
-        <CursorPos Y="1842"/>
-        <UsageCount Value="19"/>
-        <Loaded Value="True"/>
-      </Unit122>
-      <Unit123>
-        <Filename Value="..\lazurus\lcl\buttons.pp"/>
-        <UnitName Value="Buttons"/>
-        <EditorIndex Value="8"/>
-        <TopLine Value="150"/>
-        <CursorPos X="3" Y="354"/>
-        <UsageCount Value="11"/>
-        <Loaded Value="True"/>
-      </Unit123>
-      <Unit124>
-        <Filename Value="..\lazurus\lcl\interfaces\win32\win32callback.inc"/>
-        <EditorIndex Value="-1"/>
-        <TopLine Value="2340"/>
-        <CursorPos Y="2356"/>
-        <UsageCount Value="10"/>
-      </Unit124>
     </Units>
     <JumpHistory Count="30" HistoryIndex="29">
       <Position1>
-        <Filename Value="Station.pas"/>
-        <Caret Line="19" Column="15" TopLine="4"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="716" Column="10" TopLine="700"/>
       </Position1>
       <Position2>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="130" Column="73" TopLine="122"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="678" Column="12" TopLine="662"/>
       </Position2>
       <Position3>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="144" TopLine="122"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="664" Column="5" TopLine="659"/>
       </Position3>
       <Position4>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="146" TopLine="122"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="852" Column="25" TopLine="837"/>
       </Position4>
       <Position5>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="148" TopLine="124"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="385" Column="61" TopLine="370"/>
       </Position5>
       <Position6>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="149" TopLine="125"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="104" Column="5" TopLine="98"/>
       </Position6>
       <Position7>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="148" TopLine="130"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="664" Column="5" TopLine="648"/>
       </Position7>
       <Position8>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="86" TopLine="71"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="723" Column="15" TopLine="708"/>
       </Position8>
       <Position9>
         <Filename Value="Main.pas"/>
-        <Caret Line="352" TopLine="328"/>
+        <Caret Line="664" Column="5" TopLine="648"/>
       </Position9>
       <Position10>
         <Filename Value="Main.pas"/>
-        <Caret Line="353" TopLine="329"/>
+        <Caret Line="385" Column="61" TopLine="370"/>
       </Position10>
       <Position11>
         <Filename Value="Main.pas"/>
-        <Caret Line="359" TopLine="344"/>
+        <Caret Line="723" Column="15" TopLine="708"/>
       </Position11>
       <Position12>
-        <Filename Value="Main.pas"/>
-        <Caret Line="361" TopLine="344"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="118" Column="5" TopLine="98"/>
       </Position12>
       <Position13>
         <Filename Value="Station.pas"/>
-        <Caret Line="96" TopLine="81"/>
+        <Caret Line="160" Column="43" TopLine="138"/>
       </Position13>
       <Position14>
         <Filename Value="Station.pas"/>
-        <Caret Line="97" TopLine="81"/>
+        <Caret Line="232" Column="14" TopLine="225"/>
       </Position14>
       <Position15>
         <Filename Value="Station.pas"/>
-        <Caret Line="98" TopLine="81"/>
+        <Caret Line="235" Column="6" TopLine="225"/>
       </Position15>
       <Position16>
         <Filename Value="Station.pas"/>
-        <Caret Line="100" TopLine="81"/>
+        <Caret Line="232" Column="35" TopLine="211"/>
       </Position16>
       <Position17>
         <Filename Value="Station.pas"/>
-        <Caret Line="123" TopLine="109"/>
+        <Caret Line="227" Column="21" TopLine="207"/>
       </Position17>
       <Position18>
-        <Filename Value="Main.pas"/>
-        <Caret Line="362" TopLine="344"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="160" Column="42" TopLine="144"/>
       </Position18>
       <Position19>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="87" TopLine="71"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="228" Column="40" TopLine="211"/>
       </Position19>
       <Position20>
-        <Filename Value="Main.pas"/>
-        <Caret Line="353" TopLine="344"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="232" TopLine="211"/>
       </Position20>
       <Position21>
-        <Filename Value="UdpHandler.pas"/>
-        <Caret Line="76" Column="60" TopLine="71"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="160" TopLine="144"/>
       </Position21>
       <Position22>
-        <Filename Value="Main.pas"/>
-        <Caret Line="353" TopLine="344"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="232" TopLine="216"/>
       </Position22>
       <Position23>
-        <Filename Value="Main.pas"/>
-        <Caret Line="359" TopLine="344"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="160" TopLine="144"/>
       </Position23>
       <Position24>
-        <Filename Value="Main.pas"/>
-        <Caret Line="361" TopLine="344"/>
+        <Filename Value="Station.pas"/>
+        <Caret Line="232" Column="35" TopLine="216"/>
       </Position24>
       <Position25>
-        <Filename Value="Station.pas"/>
-        <Caret Line="96" TopLine="81"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="755" Column="15" TopLine="739"/>
       </Position25>
       <Position26>
-        <Filename Value="Station.pas"/>
-        <Caret Line="97" TopLine="81"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="937" Column="10" TopLine="921"/>
       </Position26>
       <Position27>
-        <Filename Value="Station.pas"/>
-        <Caret Line="98" TopLine="81"/>
+        <Filename Value="Main.pas"/>
+        <Caret Line="1212" Column="17" TopLine="1197"/>
       </Position27>
       <Position28>
-        <Filename Value="Station.pas"/>
-        <Caret Line="89" Column="80" TopLine="81"/>
+        <Filename Value="MyStn.pas"/>
+        <Caret Line="57" Column="36" TopLine="41"/>
       </Position28>
       <Position29>
-        <Filename Value="Station.pas"/>
-        <Caret Line="103" TopLine="81"/>
+        <Filename Value="Log.pas"/>
+        <Caret Line="260" Column="17" TopLine="236"/>
       </Position29>
       <Position30>
-        <Filename Value="Station.pas"/>
-        <Caret Line="100" TopLine="90"/>
+        <Filename Value="Log.pas"/>
+        <Caret Line="264" Column="8" TopLine="248"/>
       </Position30>
     </JumpHistory>
   </ProjectSession>
+  <Debugging>
+    <BreakPoints Count="2">
+      <Item1>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Station.pas"/>
+        <Line Value="160"/>
+      </Item1>
+      <Item2>
+        <Kind Value="bpkSource"/>
+        <WatchScope Value="wpsLocal"/>
+        <WatchKind Value="wpkWrite"/>
+        <Source Value="Station.pas"/>
+        <Line Value="232"/>
+      </Item2>
+    </BreakPoints>
+  </Debugging>
 </CONFIG>
