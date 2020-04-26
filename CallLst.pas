@@ -10,13 +10,15 @@ unit CallLst;
 interface
 
 uses
-  SysUtils, Classes, Ini, FileUtil;
+  SysUtils, Classes, Ini, FileUtil, Logerrorx;
 
 procedure LoadCallList;
 function PickCall: string;
+function PickCallAndZone: string;
 
 var
   Calls: TStringList;
+  Zones: TStringList;
 
 
 
@@ -30,6 +32,55 @@ begin
 end;
 
 procedure LoadCallList;
+
+var
+  tfIn: TextFile;
+  s: string;
+  stringlist: TStringList;
+  numparsed: integer;
+  call: string;
+  zone: string;
+  FileName: string;
+begin
+     stringlist := TStringList.Create;
+     stringlist.Delimiter := ';';
+     Calls.Clear;
+     Zones.Clear;
+  Calls.Capacity := 20000;
+  Zones.Capacity := 20000;
+  FileName := ExtractFilePath(ParamStr(0)) + 'mr_db.txt';
+  // Set the name of the file that will be read
+  AssignFile(tfIn, FileName);
+
+    // Open the file for reading
+    reset(tfIn);
+
+    // Keep reading lines until the end of the file is reached
+    while not eof(tfIn) do
+    begin
+      readln(tfIn, s);
+      stringlist.DelimitedText := s;
+      numparsed := stringlist.Count;
+      if numparsed >= 2 then
+         begin
+         call := stringlist[0];
+         zone := stringlist[1];
+         if call <> '' then
+         begin
+         Calls.Add(call);
+         Zones.Add(zone);
+         end;
+      end;
+
+     // LogError(intToStr(numparsed));
+    end;
+
+    // Done so close the file
+    CloseFile(tfIn);
+
+end;
+
+procedure OldLoadCallList;
 const
   Chars = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789/';
   CHRCOUNT = Length(Chars);
@@ -103,13 +154,26 @@ begin
 
   if Ini.RunMode = rmHst then Calls.Delete(Idx);
 end;
+function PickCallAndZone: string;
+var
+  Idx: integer;
+begin
+  if Calls.Count = 0 then begin Result := 'P29SX'; Exit; end;
+
+  Idx := Random(Calls.Count);
+  Result := Calls[Idx] + ';' + Zones[Idx];
+
+  if Ini.RunMode = rmHst then Calls.Delete(Idx);
+end;
 
 
 initialization
   Calls := TStringList.Create;
+  Zones := TStringList.Create;
 
 finalization
   Calls.Free;
+  Zones.Free;
 
 end.
 

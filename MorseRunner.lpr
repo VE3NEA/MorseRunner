@@ -28,7 +28,8 @@ uses
   QuickAvg in 'VCL\QuickAvg.pas',
   MovAvg in 'VCL\MovAvg.pas',
   Mixers in 'VCL\Mixers.pas',
-  VolumCtl in 'VCL\VolumCtl.pas';
+  VolumCtl in 'VCL\VolumCtl.pas',
+  LogErrorx in 'logerror.pas';
 
 {$R *.res}
 

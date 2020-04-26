@@ -1,4 +1,4 @@
-//------------------------------------------------------------------------------
+                                                                                                         //------------------------------------------------------------------------------
 //This Source Code Form is subject to the terms of the Mozilla Public
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
@@ -17,7 +17,54 @@ uses
   WavFile, IniFiles, Windows, UdpHandler;
 
 const
-  WM_TBDOWN = WM_USER+1;
+    WM_TBDOWN = WM_USER+1;
+    WM_STOP  = 32768 + 2;
+    WM_CQWW  = 32768 + 3;
+    WM_CQWPX  = 32768 + 4;
+    WM_SETMYCALL  = 32768 + 5;
+    WM_SETMYZONE  = 32768 + 6;
+    WM_SETCALL  = 32768 + 7;
+    WM_SETRST  = 32768 + 8;
+    WM_SETNR  = 32768 + 9;
+    WM_SETCWSPEED  = 32768 + 10;
+    WM_SETAUDIO  = 32768 + 11;
+    WM_GETTXSTATUS  = 32768 + 12;
+    WM_SETMSGCQ  = 32768 + 13;
+    WM_SETMSGNR  = 32768 + 14;
+    WM_SETMSGTU  = 32768 + 15;
+    WM_SETACTIVITY  = 32768 + 16;
+    WM_SETQRN  = 32768 + 17;
+    WM_SETQRM  = 32768 + 18;
+    WM_SETQSB  = 32768 + 19;
+    WM_SETFLUTTER  = 32768 + 20;
+    WM_SETLIDS  = 32768 + 21;
+    WM_SETBC  = 32768 + 22;
+    WM_RITUP  = 32768 + 23;
+    WM_RITDOWN  = 32768 + 24;
+    WM_VOLUMEUP  = 32768 + 25;
+    WM_VOLUMEDOWN  = 32768 + 26;
+    WM_BWUP  = 32768 + 27;
+    WM_BWDOWN  = 32768 + 28;
+    WM_END  = 32768 + 29;
+    WM_SETDURATION  = 32768 + 30;
+    WM_PITCHUP  = 32768 + 32;
+    WM_PITCHDOWN  = 32768 + 33;
+    WM_COPYDATA = 74;
+    WM_SETFREQUENCY = 32768 + 31;
+    KeysF1 = 112;
+    KeysF2 = 113;
+    KeysF3 = 114;
+    KeysF4 = 115;
+    KeysF5 = 116;
+    KeysF6 = 117;
+    KeysF7 = 118;
+    KeysF8 = 119;
+    KeysF9 = 120;
+    KeysF10 = 121;
+    KeysF11 = 122;
+    KeysF12 = 123;
+    KeysInsert = 45;
+    KeysAdd = 107;
 
 type
 
@@ -25,6 +72,11 @@ type
 
   TMainForm = class(TForm)
     AlSoundOut1: TAlSoundOut;
+    Edit5: TEdit;
+    Label17: TLabel;
+    Label18: TLabel;
+    Label19: TLabel;
+    Label20: TLabel;
     MainMenu1: TMainMenu;
     File1: TMenuItem;
     N40dB1: TMenuItem;
@@ -212,10 +264,12 @@ type
     procedure FormKeyDown(Sender: TObject; var Key: Word;
       Shift: TShiftState);
     procedure Edit1Enter(Sender: TObject);
+    procedure FormShow(Sender: TObject);
     procedure N40dB1Click(Sender: TObject);
     procedure N50dB1Click(Sender: TObject);
     procedure SendClick(Sender: TObject);
     procedure Edit4Change(Sender: TObject);
+    procedure Edit5Change(Sender: TObject);
     procedure ComboBox2Change(Sender: TObject);
     procedure ComboBox1Change(Sender: TObject);
     procedure FormClose(Sender: TObject; var Action: TCloseAction);
@@ -241,6 +295,7 @@ type
     procedure Shape2MouseDown(Sender: TObject; Button: TMouseButton;
       Shift: TShiftState; X, Y: Integer);
     procedure Edit2Enter(Sender: TObject);
+    procedure Edit3Enter(Sender: TObject);
     procedure VolumeSliderDblClick(Sender: TObject);
     procedure VolumeSlider1Change(Sender: TObject);
     procedure WebPage1Click(Sender: TObject);
@@ -261,6 +316,7 @@ type
     procedure StopMNUClick(Sender: TObject);
   private
     MustAdvance: boolean;
+    Hide_form: boolean;
     procedure ProcessSpace;
     // procedure ProcessEnter;
     procedure EnableCtl(Ctl: TWinControl; AEnable: boolean);
@@ -269,6 +325,10 @@ type
     procedure UpdateRitIndicator;
     procedure DecSpeed;
     procedure IncSpeed;
+    procedure MonitorUp;
+    procedure MonitorDown;
+    procedure PitchUp;
+    procedure PitchDown;
   public
     CompetitionMode: boolean;
     NoRepeats: boolean;
@@ -281,6 +341,7 @@ type
 
     procedure SetQsk(Value: boolean);
     procedure SetMyCall(ACall: string);
+    procedure SetMyZone(AZone: string);
     procedure SetPitch(PitchNo: integer);
     procedure SetBw(BwNo: integer);
     procedure ReadCheckboxes;
@@ -291,21 +352,278 @@ type
 
 var
   MainForm: TMainForm;
+  PrevWndProc: WNDPROC;
+  recvdata: PCopyDataStruct;
+  msgtype: Integer;
+  msglen: Integer;
+  str: string;
+  tmpobj: TObject;
 
 implementation
 
-uses ScoreDlg;
+uses ScoreDlg, LogErrorx;
 
 {$R *.lfm}
 
-procedure TMainForm.FormCreate(Sender: TObject);
+function WndCallback(Ahwnd: HWND; uMsg: UINT; wParam: WParam; lParam: LParam):LRESULT; stdcall;
+var
+  strlen: integer;
 begin
+  // LogError('uMsg = ' + intToStr(uMsg));
+  case uMsg of
+     WM_KEYDOWN:
+          case wParam of
+               KeysF1:
+               begin
+                    MainForm.SendMsg(TStationMessage.msgCQ);
+                    exit;
+               end;
+
+               KeysInsert:
+                 begin
+                      if CallSent = True then // correct call TU message
+                      begin
+                           MainForm.SendMsg(TStationMessage.msgHisCall);
+                           MainForm.SendMsg(TStationMessage.msgNr);
+                      end
+                      else
+                      begin
+                          MainForm.ProcessEnter;
+                      end;
+                      //MainForm.Advance;
+                      exit;
+                 end;
+               //KeysAdd:  // let it be handled by standalone code
+               //  begin
+               //       if not CallSent then MainForm.SendMsg(TStationMessage.msgHisCall);
+               //       MainForm.SendMsg(TStationMessage.msgTU);
+               //       Log.SaveQso;
+               //       exit;
+               //  end;
+
+          end;
+     WM_CQWW:
+       begin
+            Ini.ContestName := 'cqww';
+            MainForm.Run(rmPileUp);
+            exit;
+       end;
+     WM_CQWPX:
+       begin
+            Ini.ContestName := 'cqwpx';
+            MainForm.Run(rmPileUp);
+            exit;
+       end;
+     WM_STOP:
+       begin
+            MainForm.Run(rmStop);
+            exit;
+       end;
+     WM_END:
+       begin
+            MainForm.Close;
+            exit;
+       end;
+     WM_SETAUDIO:
+       begin
+            Ini.RadioAudio := lParam;
+            MainForm.AlSoundOut1.ChangeSoundLevel;
+            exit;
+            //LogError('setaudio = ' + intToStr(lParam));
+       end;
+     WM_GETTXSTATUS:
+      begin
+           if Tst.Me.State = stSending then
+             begin
+             result := 1;
+             exit;
+             end
+           else
+           begin
+             result := 0;
+             exit;
+           end;
+           exit;
+      end;
+     WM_RITUP:
+      begin
+           MainForm.IncRit(1);
+           exit;
+      end;
+     WM_RITDOWN:
+      begin
+           MainForm.IncRit(-1);
+           exit;
+      end;
+     WM_VOLUMEUP:
+      begin
+           MainForm.MonitorUp;
+           exit;
+      end;
+      WM_VOLUMEDOWN:
+      begin
+           MainForm.MonitorDown;
+           exit;
+      end;
+      WM_PITCHUP:
+      begin
+           MainForm.PitchUp;
+           exit;
+      end;
+      WM_PITCHDOWN:
+      begin
+           MainForm.PitchDown;
+           exit;
+      end;
+
+     WM_SETBC:
+       begin
+       //LogError('wParam = ' + intToStr(wParam));
+       //LogError('lParam = ' + intToStr(lParam));
+         Ini.Standalone := False; //controlled by N1MM or DXLog
+          case wParam of
+                  WM_SETQRM:
+                    begin
+                         MainForm.CheckBox3.Checked := strToBool(intToStr(lParam));
+                    end;
+                  WM_SETQRN:
+                    begin
+                         MainForm.CheckBox4.Checked := strToBool(intToStr(lParam));
+                    end;
+                  WM_SETQSB:
+                    begin
+                         MainForm.CheckBox2.Checked := strToBool(intToStr(lParam));
+                    end;
+                  WM_SETFLUTTER:
+                    begin
+                         MainForm.CheckBox5.Checked := strToBool(intToStr(lParam));
+                    end;
+                  WM_SETLIDS:
+                    begin
+                         MainForm.CheckBox6.Checked := strToBool(intToStr(lParam));
+                    end;
+          end;
+          MainForm.ReadCheckBoxes;
+          exit;
+       end;
+     WM_COPYDATA :
+       begin
+            //LogError('wParam = ' + intToStr(wParam));
+            recvdata := PCopyDataStruct(lParam);
+            msgtype := recvdata^.dwData;
+            msglen := recvdata^.cbData;
+            str := StrPas(PCHAR(Recvdata^.lpData));
+           //LogError('msgtype = ' + intToStr(msgtype));
+          // LogError('str = ' + str);
+           case msgtype of
+              WM_SETCWSPEED:
+                begin
+                     MainForm.SpinEdit1.Value := StrToInt(str);
+                     Tst.Me.Wpm := StrToInt(str);
+                     Wpm := StrToInt(str);
+                end;
+              WM_SETMYCALL:
+                begin
+                    MainForm.SetMyCall(str);
+                    Call := str;
+                end;
+              WM_SETMYZONE:
+                begin
+                    MainForm.SetMyZone(str);
+                    NR := str;
+                end;
+              WM_SETACTIVITY:
+                begin
+                     Activity := StrToInt(str);
+                     MainForm.SpinEdit3.Value := Activity;
+                end;
+              WM_SETDURATION:
+                begin
+                     Duration := StrToInt(str);
+                     MainForm.SpinEdit2.Value := Duration;
+                end;
+              WM_SETMSGCQ:
+                begin
+                     Ini.Messagecq := str;
+                end;
+              WM_SETCALL:
+                begin
+                     MainForm.Edit1.Text := str;
+                     MainForm.Edit1Change(tmpobj);
+                end;
+              WM_SETRST:
+                begin
+                     MainForm.Edit2.Text := str;
+                end;
+              WM_SETNR:
+                begin
+                     MainForm.Edit3.Text := str;
+                end;
+              WM_SETMSGNR:
+                begin
+                    strlen := Length(str);
+                    str := RightStr(str, (strlen-4));
+                    Tst.Me.NR := StrToInt(str);
+                end;
+           end;
+       end;
+    end;
+  result:=CallWindowProc(PrevWndProc,Ahwnd, uMsg, WParam, LParam);
+end;
+
+procedure TMainForm.FormCreate(Sender: TObject);
+var programname : Ansistring;
+  tfOut: TextFile;
+arg1 : Ansistring;
+arg2 : Ansistring;
+begin
+  PrevWndProc:=Windows.WNDPROC(SetWindowLongPtr(Self.Handle,GWL_WNDPROC,PtrInt(@WndCallback)));
   Randomize;
   Tst := TContest.Create;
-  LoadCallList;
-
-  AlSoundOut1.BufCount := 4;
+  arg1 := ParamStr(1);
+  arg2 := ParamStr(2);
+  If arg1 = '-h' then
+  begin
+     Ini.Standalone := False;
+  end;
   FromIni;
+  LoadCallList;
+  Ini.RadioAudio := 0;
+  programname := ParamStr(0);
+
+  //LogError('arg1 = ' + arg1);
+  //LogError('arg2 = ' + arg2);
+
+  Hide_form := False;
+  //arg1 := '';
+
+  If arg1 = '-h' then
+  begin
+  Hide_form := True;
+  end;
+
+  Name := '1';
+  If arg2 = '-r1' then
+  begin
+       MainForm.Caption := MainForm.Caption + ':  R1';
+       Ini.RadioAudio := 1;
+       Name := '1';
+  end;
+
+  If arg2 = '-r2' then
+  begin
+       MainForm.Caption := MainForm.Caption + ':  R2';
+       Ini.RadioAudio := 2;
+       Name := '2';
+  end;
+
+  // ParamCount;
+  //Randomize;
+  //Tst := TContest.Create;
+  //FromIni;
+  //LoadCallList;
+  //
+  AlSoundOut1.BufCount := 4;
 
   MakeKeyer;
   Keyer.Rate := DEFAULTRATE;
@@ -318,7 +636,10 @@ end;
 
 procedure TMainForm.FormDestroy(Sender: TObject);
 begin
-  ToIni;
+  If Ini.Standalone = true then
+  begin
+       ToIni;
+  end;
   Tst.Free;
   DestroyKeyer;
 end;
@@ -330,12 +651,14 @@ begin
   if AlSoundOut1.Enabled then
     try AlSoundOut1.PutData(Tst.GetAudio); except end;
 end;
-                                    
+
 
 procedure TMainForm.SendClick(Sender: TObject);
 var
   Msg: TStationMessage;
 begin
+ // If Ini.Standalone = False then
+  //  exit;
   Msg := TStationMessage((Sender as TComponent).Tag);
 
   SendMsg(Msg);
@@ -415,7 +738,9 @@ begin
       ProcessSpace;
 
     '\': // = F1
+      begin
       SendMsg(msgCQ);
+      end;
 
     else Exit;
   end;
@@ -495,11 +820,13 @@ begin
   if ActiveControl = Edit1 then
     begin
     if Edit2.Text = '' then Edit2.Text := '599';
+    if Edit3.Text = '' then Edit3.Text := '14';
     ActiveControl := Edit3;
     end
   else if ActiveControl = Edit2 then
     begin
     if Edit2.Text = '' then Edit2.Text := '599';
+    if Edit3.Text = '' then Edit3.Text := '14';
     ActiveControl := Edit3;
     end
   else
@@ -549,6 +876,15 @@ begin
     begin Edit1.SelStart := P-1; Edit1.SelLength := 1; end;
 end;
 
+procedure TMainForm.FormShow(Sender: TObject);
+begin
+  If Hide_form = True then
+    begin
+    Hide;
+    end;
+end;
+
+
 procedure TMainForm.N40dB1Click(Sender: TObject);
 begin
 
@@ -585,11 +921,40 @@ begin
   SetMyCall(Trim(Edit4.Text));
 end;
 
+procedure TMainForm.Edit5Change(Sender: TObject);
+begin
+  SetMyZone(Trim(Edit5.Text));
+end;
+
 procedure TMainForm.SetMyCall(ACall: string);
 begin
   Ini.Call := ACall;
   Edit4.Text := ACall;
   Tst.Me.MyCall := ACall;
+end;
+
+procedure TMainForm.SetMyZone(AZone: string);
+begin
+  Ini.NR := AZone;
+  Edit5.Text := AZone;
+  if (AZone = '') then AZone := '0';
+  Tst.Me.NR := StrToInt(AZone);
+end;
+
+procedure TMainForm.PitchUp;
+var
+  currpitch : integer;
+begin
+   currpitch := (Ini.Pitch - 300) div 50;
+   SetPitch(currpitch + 1);
+end;
+
+procedure TMainForm.PitchDown;
+var
+  currpitch : integer;
+begin
+   currpitch := (Ini.Pitch - 300) div 50;
+   SetPitch(currpitch - 1);
 end;
 
 procedure TMainForm.SetPitch(PitchNo: integer);
@@ -605,6 +970,7 @@ begin
   if (BwNo < 0) or (BwNo >= ComboBox2.Items.Count) then Exit;
 
   Ini.Bandwidth := 100 + BwNo * 50;
+  //LogError('Bandwidth = ' + IntToStr(Ini.Bandwidth));
   ComboBox2.ItemIndex := BwNo;
 
   Tst.Filt.Points := Round(0.7 * DEFAULTRATE / Ini.BandWidth);
@@ -694,7 +1060,7 @@ begin
   CallSent := false;
   NrSent := false;
 end;
-                                   
+
 
 procedure TMainForm.About1Click(Sender: TObject);
 const
@@ -702,8 +1068,8 @@ const
         'Copyright © 2004-2006 Alex Shovkoplyas, VE3NEA'#13#13 +
         've3nea@dxatlas.com'#13;
 begin
-  Application.MessageBox(Msg, 'Morse Runner 1.68+', MB_OK or MB_ICONINFORMATION);
-end;          
+  Application.MessageBox(Msg, 'Morse Runner 1.70+', MB_OK or MB_ICONINFORMATION);
+end;
 
 
 procedure TMainForm.Readme1Click(Sender: TObject);
@@ -719,7 +1085,10 @@ procedure TMainForm.Edit1Change(Sender: TObject);
 begin
   if Edit1.Text = '' then NrSent := false;
   if not Tst.Me.UpdateCallInMessage(Edit1.Text)
-    then CallSent := false;
+    then
+      begin
+      CallSent := false;
+      end;
 end;
 
 
@@ -731,11 +1100,15 @@ end;
 
 procedure TMainForm.Edit2Enter(Sender: TObject);
 begin
-  if Length(Edit2.Text) = 3 then
-    begin Edit2.SelStart := 1; Edit2.SelLength := 1; end;
+ if Length(Edit2.Text) = 3 then
+ begin Edit2.SelStart := 1; Edit2.SelLength := 1; end;
 end;
 
-
+procedure TMainForm.Edit3Enter(Sender: TObject);
+begin
+ if Length(Edit3.Text) > 0 then
+ begin Edit3.SelStart := 0; Edit3.SelLength := Length(Edit3.Text); end;
+end;
 
 procedure TMainForm.EnableCtl(Ctl: TWinControl; AEnable: boolean);
 const
@@ -762,6 +1135,7 @@ begin
 
   //main ctls
   EnableCtl(Edit4,  BStop);
+  EnableCtl(Edit5,  BStop);
   EnableCtl(SpinEdit2, BStop);
   SetToolbuttonDown(ToolButton1, not BStop);
 
@@ -821,7 +1195,7 @@ begin
   EnableCtl(SpinEdit3, RunMode <> rmHst);
   if RunMode = rmHst then SpinEdit3.Value := 4;
 
-  EnableCtl(ComboBox2, RunMode <> rmHst);                
+  EnableCtl(ComboBox2, RunMode <> rmHst);
   if RunMode = rmHst then begin ComboBox2.ItemIndex :=10; SetBw(10); end;
 
   if RunMode = rmHst then ListView1.Visible := false
@@ -837,7 +1211,14 @@ begin
     begin
     Tst.Me.AbortSend;
     Tst.BlockNumber := 0;
-    Tst.Me.Nr := 1;
+    if Ini.ContestName = 'cqwpx' then
+    begin
+         Tst.Me.Nr := 1;
+    end
+    else
+    begin
+         Tst.Me.Nr := StrToInt(Ini.NR);
+    end;
     Log.Clear;
     WipeBoxes;
     RichEdit1.Visible := true;
@@ -911,7 +1292,7 @@ begin
 
   S := S + '[' + IntToHex(CalculateCRC32(S, $C90C2086), 8) + ']';
 
-           
+
   FName := ChangeFileExt(ParamStr(0), '.lst');
   with TStringList.Create do
     try
@@ -997,9 +1378,9 @@ end;
 procedure TMainForm.IncRit(dF: integer);
 begin
   case dF of
-   -1: Inc(Ini.Rit, -50);
+   -1: Inc(Ini.Rit, -30);
     0: Ini.Rit := 0;
-    1: Inc(Ini.Rit, 50);
+    1: Inc(Ini.Rit, 30);
     end;
 
   Ini.Rit := Min(500, Max(-500, Ini.Rit));
@@ -1019,6 +1400,7 @@ begin
   if not MustAdvance then Exit;
 
   if Edit2.Text = '' then Edit2.Text := '599';
+  if Edit3.Text = '' then Edit3.Text := '14';
 
   if Pos('?', Edit1.Text) = 0 then ActiveControl := Edit3
   else if ActiveControl = Edit1 then Edit1Enter(nil)
@@ -1050,6 +1432,16 @@ begin
     end;
 end;
 
+procedure TMainForm.MonitorUp;
+
+begin
+  VolumeSlider1.Value := VolumeSlider1.Value + 0.1;
+end;
+
+procedure TMainForm.MonitorDown;
+begin
+  VolumeSlider1.Value := VolumeSlider1.Value - 0.1;
+end;
 
 procedure TMainForm.WebPage1Click(Sender: TObject);
 begin
@@ -1195,4 +1587,5 @@ begin
 end;
 
 end.
+
 

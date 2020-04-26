@@ -33,7 +33,7 @@ begin
   HisCall := Ini.Call;
   Amplitude := 5000 + 25000 * Random;
   Pitch := Round(RndGaussLim(0, 300));
-  Wpm := 30 + Random(20);
+  Wpm := 30 + Random(10);
 
   case Random(7) of
     0: SendMsg(MsgQrl);

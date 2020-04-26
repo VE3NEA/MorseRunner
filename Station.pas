@@ -97,6 +97,8 @@ begin
   if AMsg = msgNone then begin State := stListening; Exit; End;
   Include(Msg, AMsg);
 
+  if Ini.Standalone = True then
+  begin
   case AMsg of
     msgCQ: SendText('CQ <my>');
     msgNR: SendText('<#>');
@@ -120,7 +122,35 @@ begin
     msqQsy: SendText('<his>  QSY QSY');
     msgAgn: SendText('AGN');
     end;
-end;
+  end
+  else  //controlled by N1MM or DXLog
+  begin
+  case AMsg of
+    msgCQ: SendText(Ini.Messagecq);
+    msgNR: SendText('<#>');
+    msgTU: SendText('TU <my>');
+    msgMyCall: SendText('<my>');
+    msgHisCall: SendText('<his>');
+    msgB4: SendText('QSO B4');
+    msgQm: SendText('?');
+    msgNil: SendText('NIL');
+    msgR_NR: SendText('R <#>');
+    msgR_NR2: SendText('R <#> <#>');
+    msgDeMyCall1: SendText('DE <my>');
+    msgDeMyCall2: SendText('DE <my> <my>');
+    msgDeMyCallNr1: SendText('DE <my> <#>');
+    msgDeMyCallNr2: SendText('DE <my> <my> <#>');
+    msgMyCallNr2: SendText('<my> <my> <#>');
+    msgNrQm: SendText('NR?');
+    msgLongCQ: SendText('CQ CQ TEST <my> <my>');
+    msgQrl: SendText('QRL?');
+    msgQrl2: SendText('QRL?   QRL?');
+    msqQsy: SendText('<his>  QSY QSY');
+    msgAgn: SendText('AGN');
+    end;
+  end;
+  end;
+
 
 procedure TStation.SendText(AMsg: string);
 begin
@@ -156,7 +186,6 @@ begin
     SendPos := 0;
     FBfo := 0;
     end;
-    
   Keyer.Wpm := Wpm;
   Keyer.MorseMsg := AMorse;
   Envelope := Keyer.Envelope;
@@ -199,7 +228,9 @@ function TStation.NrAsText: string;
 var
   Idx: integer;
 begin
-  Result := Format('%d%.3d', [RST, NR]);
+  // Result := Format('%d%.2d', [RST, NR]);
+  Result := Format('%d%d', [RST, NR]);
+
 
   if NrWithError then
     begin
@@ -219,19 +250,20 @@ begin
     begin
     Result := StringReplace(Result, '000', 'TTT', [rfReplaceAll]);
     Result := StringReplace(Result, '00', 'TT', [rfReplaceAll]);
+//
+//    if Random < 0.4
+//      then Result := StringReplace(Result, '0', 'O', [rfReplaceAll])
+//    else if Random < 0.97
+//      then Result := StringReplace(Result, '0', 'T', [rfReplaceAll]);
+//
+//    if Random < 0.97
+//      then Result := StringReplace(Result, '9', 'N', [rfReplaceAll]);
+//    end;
 
-    if Random < 0.4
-      then Result := StringReplace(Result, '0', 'O', [rfReplaceAll])
-    else if Random < 0.97
-      then Result := StringReplace(Result, '0', 'T', [rfReplaceAll]);
-
-    if Random < 0.97
-      then Result := StringReplace(Result, '9', 'N', [rfReplaceAll]);
+    Result := StringReplace(Result, '0', 'T', [rfReplaceAll]);
+    Result := StringReplace(Result, '1', 'A', [rfReplaceAll]);
+    Result := StringReplace(Result, '9', 'N', [rfReplaceAll]);
     end;
-end;
-
-
-
-
+  end;
 end.
 
