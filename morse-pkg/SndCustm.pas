@@ -104,8 +104,9 @@ begin
       Owner.BufferDone(PWaveHdr(Msg.lParam));
   except on E: Exception do
     begin
-    Application.ShowException(E);
-    Terminate;
+    Raise Exception.Create('morse-pkg');
+    //Application.ShowException(E);
+    //Terminate;
     end;
   end;
 end;
