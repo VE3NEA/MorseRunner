@@ -10,7 +10,7 @@ unit MorseKey;
 interface
 
 uses
-  SysUtils, Classes, SndTypes, MorseTbl, Math, Ini;
+  SysUtils, Classes, SndTypes, MorseTbl, Math, Ini, Logerrorx;
 
 
 type
@@ -177,6 +177,7 @@ var
   end;
 
 begin
+  //logerror('in Tkeyer.GetEnvelope');
   //count units
   UnitCnt := 0;
   for i:=1 to Length(MorseMsg) do
