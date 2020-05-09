@@ -10,7 +10,7 @@ unit Station;
 interface
 
 uses
-  SysUtils, Classes, Math, SndTypes, Ini, MorseKey;
+  SysUtils, Classes, Math, SndTypes, Ini, MorseKey, Logerrorx;
 
 const
   NEVER = MAXINT;
@@ -92,11 +92,12 @@ end;
 
 
 procedure TStation.SendMsg(AMsg: TStationMessage);
+var
+  tempstr:String;
 begin
   if Envelope = nil then Msg := [];
   if AMsg = msgNone then begin State := stListening; Exit; End;
   Include(Msg, AMsg);
-
   if Ini.Standalone = True then
   begin
   case AMsg of
@@ -125,10 +126,13 @@ begin
   end
   else  //controlled by N1MM or DXLog
   begin
+ // WriteStr(tempstr, AMsg);
+  // logerror('in TStation.SendMsg ' + tempstr);
+  // raise Exception.Create('in Tstation.SendMsg');
   case AMsg of
     msgCQ: SendText(Ini.Messagecq);
     msgNR: SendText('<#>');
-    msgTU: SendText('TU <my>');
+    msgTU: SendText(Ini.Messagetu);
     msgMyCall: SendText('<my>');
     msgHisCall: SendText('<his>');
     msgB4: SendText('QSO B4');
@@ -173,6 +177,7 @@ begin
   if MsgText <> ''
     then MsgText := MsgText + ' ' + AMsg
     else MsgText := AMsg;
+  //logerror('Tstation.SendText ' + MsgText);
   SendMorse(Keyer.Encode(MsgText));
 end;
 

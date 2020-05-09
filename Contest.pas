@@ -11,7 +11,7 @@ interface
 
 uses
   SysUtils, SndTypes, Station, StnColl, MyStn, Math,  Ini,
-  MovAvg, Mixers, VolumCtl, RndFunc, TypInfo, DxStn, DxOper, Log;
+  MovAvg, Mixers, VolumCtl, RndFunc, TypInfo, DxStn, DxOper, Log, Logerrorx;
 
 type
   TContest = class
@@ -289,9 +289,10 @@ begin
   //the stations heard my CQ and want to call
   if (not (RunMode in [rmSingle, RmHst])) then
     if (msgCQ in Me.Msg) or
-       ((QsoList <> nil) and ((msgTU in Me.Msg) or (msgMyCall in Me.Msg)))then
-    for i:=1 to RndPoisson(Activity / 2) - DxCount do Stations.AddCaller;
+       ((QsoList <> nil) and (msgTU in Me.Msg) and (msgMyCall in Me.Msg))then
+    for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
 
+ // logerror('in TContest.OnMeFinishedSending, count = ' + inttostr(Stations.Count));
   //tell callers that I finished sending
   for i:=Stations.Count-1 downto 0 do
     Stations[i].ProcessEvent(evMeFinished);

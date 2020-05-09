@@ -11,7 +11,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Forms, SyncObjs, MMSystem, SndTypes,
-  Windows, Station, blcksock;
+  Windows, Station, blcksock, logerrorx;
 
 Type
     TUdpThread = class(TThread)
@@ -70,6 +70,7 @@ Implementation
 
   procedure TUdpThread.SendEnter;
   begin
+     //LogError('in TUdpThread.SendEnter');
      MainForm.ProcessEnter;
   end;
 

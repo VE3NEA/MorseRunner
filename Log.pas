@@ -214,8 +214,13 @@ var
 begin
   with MainForm do
     begin
+    if Edit3.Text = '' then
+    Edit3.Text := '14';  //kludge for corrected call
     if (Length(Edit1.Text) < 3) or (Length(Edit2.Text) <> 3) or (Edit3.Text = '')
-      then begin Beep; Exit; end;
+      then begin
+      // Beep;
+      Exit;
+      end;
 
     //add new entry to log
     SetLength(QsoList, Length(QsoList)+1);

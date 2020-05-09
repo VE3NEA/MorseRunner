@@ -253,7 +253,7 @@ type
     ListView1: TListView;
     Operator1: TMenuItem;
     VolumeSlider1: TVolumeSlider;
-    UdpThread : TUdpThread;
+    //UdpThread : TUdpThread;
     procedure FormCreate(Sender: TObject);
     procedure AlSoundOut1BufAvailable(Sender: TObject);
     procedure FormDestroy(Sender: TObject);
@@ -370,11 +370,13 @@ var
   strlen: integer;
 begin
   // LogError('uMsg = ' + intToStr(uMsg));
+  //LogError('wParam = ' + intToStr(wParam));
   case uMsg of
      WM_KEYDOWN:
           case wParam of
                KeysF1:
                begin
+                    //logerror('received msgCQ');
                     MainForm.SendMsg(TStationMessage.msgCQ);
                     exit;
                end;
@@ -478,7 +480,7 @@ begin
 
      WM_SETBC:
        begin
-       //LogError('wParam = ' + intToStr(wParam));
+       // LogError('wParam = ' + intToStr(wParam));
        //LogError('lParam = ' + intToStr(lParam));
          Ini.Standalone := False; //controlled by N1MM or DXLog
           case wParam of
@@ -518,62 +520,82 @@ begin
            case msgtype of
               WM_SETCWSPEED:
                 begin
+                    //LogError('setting CW speed');
                      MainForm.SpinEdit1.Value := StrToInt(str);
                      Tst.Me.Wpm := StrToInt(str);
                      Wpm := StrToInt(str);
+                     exit;
                 end;
               WM_SETMYCALL:
                 begin
                     MainForm.SetMyCall(str);
                     Call := str;
+                    exit;
                 end;
               WM_SETMYZONE:
                 begin
                     MainForm.SetMyZone(str);
                     NR := str;
+                    exit;
                 end;
               WM_SETACTIVITY:
                 begin
                      Activity := StrToInt(str);
                      MainForm.SpinEdit3.Value := Activity;
+                     exit;
                 end;
               WM_SETDURATION:
                 begin
                      Duration := StrToInt(str);
                      MainForm.SpinEdit2.Value := Duration;
+                     exit;
                 end;
               WM_SETMSGCQ:
                 begin
                      Ini.Messagecq := str;
+                     exit;
                 end;
               WM_SETCALL:
                 begin
                      MainForm.Edit1.Text := str;
                      MainForm.Edit1Change(tmpobj);
+                     exit;
                 end;
               WM_SETRST:
                 begin
                      MainForm.Edit2.Text := str;
+                     exit;
                 end;
               WM_SETNR:
                 begin
                      MainForm.Edit3.Text := str;
+                     exit;
+                end;
+              WM_SETMSGTU:
+                begin
+                    Ini.Messagetu := str;
+                    exit;
                 end;
               WM_SETMSGNR:
                 begin
                     strlen := Length(str);
                     str := RightStr(str, (strlen-4));
                     Tst.Me.NR := StrToInt(str);
+                    exit;
                 end;
            end;
        end;
     end;
+  //LogError('uMsg = ' + intToStr(uMsg));
+  //LogError('wParam = ' + intToStr(wParam));
+  //LogError('lParam = ' + intToStr(lParam));
   result:=CallWindowProc(PrevWndProc,Ahwnd, uMsg, WParam, LParam);
 end;
 
 procedure TMainForm.FormCreate(Sender: TObject);
 var programname : Ansistring;
   tfOut: TextFile;
+  userdir:string;
 arg1 : Ansistring;
 arg2 : Ansistring;
 begin
@@ -657,9 +679,12 @@ procedure TMainForm.SendClick(Sender: TObject);
 var
   Msg: TStationMessage;
 begin
- // If Ini.Standalone = False then
-  //  exit;
   Msg := TStationMessage((Sender as TComponent).Tag);
+    //If Ini.Standalone = False then
+    //begin
+    //    // LogError('TMainForm.SendClick exit ' + inttoStr((Sender as TComponent).Tag ));
+    //exit;
+    //end;
 
   SendMsg(Msg);
 
@@ -739,6 +764,7 @@ begin
 
     '\': // = F1
       begin
+    //  LogError('in FormKeyPress F1');
       SendMsg(msgCQ);
       end;
 
@@ -844,7 +870,12 @@ begin
     then begin Log.SaveQso; Exit; end;
 
   //no QSO in progress, send CQ
-  if Edit1.Text = '' then begin SendMsg(msgCq); Exit; end;
+  if Edit1.Text = '' then
+  begin
+     //  LogError('in ProcessEnter sendCQ');
+       SendMsg(msgCq);
+       Exit;
+  end;
 
   //current state
   C := CallSent;
@@ -1240,11 +1271,11 @@ begin
       if SaveWav then AlWavFile1.OpenWrite;
       end;
 
-  UdpThread := TUdpThread.Create(True); // This way it doesn't start automatically
+//  UdpThread := TUdpThread.Create(True); // This way it doesn't start automatically
     //...
     //[Here the code initialises anything required before the threads starts executing]
     //...
-  UdpThread.Start;
+//  UdpThread.Start;
 
   AlSoundOut1.Enabled := not BStop;
 end;
@@ -1256,7 +1287,7 @@ begin
     else
     begin
       Tst.FStopPressed := true;
-      UdpThread.Terminate;
+   //   UdpThread.Terminate;
     end;
 end;
 

@@ -14,8 +14,11 @@ procedure LogError(msg:string);
 var
   Fn: String;
   F: TextFile;
+  userdir: string;
 begin
-  Fn := 'debug.txt';
+  userdir := GetUserDir;
+  Fn := userdir + 'Documents\N1MM Logger+\debug.txt';
+  // Fn := 'debug.txt';
   AssignFile(F, Fn);
   if FileExists(Fn) then
      Append(F)

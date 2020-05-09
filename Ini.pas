@@ -55,6 +55,7 @@ var
   Messagecq: string;
   Messagehiscall: string;
   Messagenr: string;
+  Messagetu: string;
   Standalone: boolean = true;
   ContestName: string = 'cqww';
 
