@@ -289,8 +289,15 @@ begin
   //the stations heard my CQ and want to call
   if (not (RunMode in [rmSingle, RmHst])) then
     if (msgCQ in Me.Msg) or
-       ((QsoList <> nil) and (msgTU in Me.Msg) and (msgMyCall in Me.Msg))then
-    for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
+    //   ((QsoList <> nil) and (msgTU in Me.Msg) and (msgMyCall in Me.Msg))then
+    //for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
+          ((QsoList <> nil) and ((msgTU in Me.Msg) or (msgMyCall in Me.Msg)))then
+            begin
+                 if DXCount < Activity/2 then
+                   begin
+                        for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
+                   end;
+            end;
 
  // logerror('in TContest.OnMeFinishedSending, count = ' + inttostr(Stations.Count));
   //tell callers that I finished sending

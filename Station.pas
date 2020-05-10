@@ -130,7 +130,14 @@ begin
   // logerror('in TStation.SendMsg ' + tempstr);
   // raise Exception.Create('in Tstation.SendMsg');
   case AMsg of
-    msgCQ: SendText(Ini.Messagecq);
+    msgCQ:
+      begin
+      if Ini.Messagecq = 'CQ' then
+      begin
+           Ini.Messagecq := 'CQ '+ Ini.Call;
+      end;
+      SendText(Ini.Messagecq);
+      end;
     msgNR: SendText('<#>');
     msgTU: SendText(Ini.Messagetu);
     msgMyCall: SendText('<my>');

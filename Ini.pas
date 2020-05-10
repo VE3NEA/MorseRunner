@@ -27,7 +27,7 @@ type
   TRunMode = (rmStop, rmPileup, rmSingle, rmWpx, rmHst);
 
 var
-  Call: string = 'VE3NEA';
+  Call: string = 'N2IC';
   NR: string = '8';
   HamName: string;
   Wpm: integer = 30;
@@ -52,10 +52,10 @@ var
   SaveWav: boolean = false;
   CallsFromKeyer: boolean = false;
   RadioAudio: integer = 0;
-  Messagecq: string;
+  Messagecq: string = 'CQ';
   Messagehiscall: string;
   Messagenr: string;
-  Messagetu: string;
+  Messagetu: string = 'TU';
   Standalone: boolean = true;
   ContestName: string = 'cqww';
 
