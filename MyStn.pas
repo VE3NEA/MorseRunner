@@ -10,7 +10,7 @@ unit MyStn;
 interface
 
 uses
-  SysUtils, Classes, Station, RndFunc, Ini, SndTypes, MorseKey;
+  SysUtils, Classes, Station, RndFunc, Ini, SndTypes, MorseKey, Forms;
 
 type
   TMyStation = class(TStation)
@@ -92,6 +92,10 @@ begin
   AddToPieces(AMsg);
   if State <> stSending then
     begin
+    if AMsg = '' then
+      begin
+           Application.MessageBox('TMyStation.SendText AMsg is null','MorseRunner');
+      end;
     SendNextPiece;
     Tst.OnMeStartedSending;
     end;
