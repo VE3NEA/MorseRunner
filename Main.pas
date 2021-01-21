@@ -51,6 +51,7 @@ const
     WM_PITCHDOWN  = 32768 + 33;
     WM_COPYDATA = 74;
     WM_SETFREQUENCY = 32768 + 31;
+    WM_PITCHSET = 32768 + 34;
     KeysF1 = 112;
     KeysF2 = 113;
     KeysF3 = 114;
@@ -376,13 +377,14 @@ begin
           case wParam of
                KeysF1:
                begin
-                    //logerror('received msgCQ');
+                    // logerror('received msgCQ');
                     MainForm.SendMsg(TStationMessage.msgCQ);
                     exit;
                end;
 
                KeysInsert:
                  begin
+                     // logerror('received KeysInsert');
                       if CallSent = True then // correct call TU message
                       begin
                            MainForm.SendMsg(TStationMessage.msgHisCall);
@@ -430,8 +432,9 @@ begin
        begin
             Ini.RadioAudio := lParam;
             MainForm.AlSoundOut1.ChangeSoundLevel;
-            exit;
             //LogError('setaudio = ' + intToStr(lParam));
+            exit;
+
        end;
      WM_GETTXSTATUS:
       begin
@@ -583,6 +586,12 @@ begin
                     Tst.Me.NR := StrToInt(str);
                     exit;
                 end;
+              WM_PITCHSET:
+                begin
+                    Sidetone := (StrToInt(str) div 50) - 6;
+                    MainForm.SetPitch(Sidetone);
+                    exit;
+                end;
            end;
        end;
     end;
@@ -621,7 +630,7 @@ begin
 
   If arg1 = '-h' then
   begin
-  Hide_form := True;
+   Hide_form := True;
   end;
 
   Name := '1';
