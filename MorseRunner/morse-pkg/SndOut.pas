@@ -11,7 +11,7 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  BaseComp, MMSystem, SndTypes, SndCustm, Math, Ini;
+  MMSystem, SndTypes, SndCustm, Math;
 
 type
   TAlSoundOut = class(TCustomSoundInOut)
@@ -29,7 +29,6 @@ type
   public
     function PutData(Data: TSingleArray): boolean;
     procedure Purge;
-    procedure ChangeSoundLevel;
   published
     property Enabled;
     property DeviceID;
@@ -69,25 +68,8 @@ begin
     else Err('Unknown error: ' + IntToStr(rc));
 end;
 
-procedure TAlSoundOut.ChangeSoundLevel;
-begin
-     if Ini.RadioAudio = 1 then
-     begin
-       waveOutSetVolume(DeviceID, $0000FFFF);
-     end
-     else if Ini.RadioAudio = 2 then
-     begin
-       waveOutSetVolume(DeviceID, $FFFF0000);
-     end
-     else if Ini.RadioAudio = 0 then
-     begin
-       waveOutSetVolume(DeviceID, $FFFFFFFF);
-     end
-     else if Ini.RadioAudio = 3 then
-     begin
-       waveOutSetVolume(DeviceID, $00000000);
-     end;
-end;
+
+
 
 
 
@@ -98,33 +80,13 @@ procedure TAlSoundOut.Start;
 var
   i: integer;
   numdev: integer;
-
-  begin
+begin
   //open device
   numdev := waveoutgetnumdevs();
 
-  if DeviceID > (numdev - 1) Then
-    begin
-    if DeviceID <> WAVE_MAPPER Then
-      begin
-      ShowMessage('SoundDevice must be less than the number of sound output devices - 1');
-      Halt;
-      end;
-  end;
+  if DeviceID > (numdev - 1) Then ShowMessage('SoundDevice exceeds the number of sound output devices');
 
-  //open device
   rc := waveOutOpen(@DeviceHandle, DeviceID, @WaveFmt, GetThreadID, 0, CALLBACK_THREAD);
-
-  waveOutSetVolume(DeviceID, $FFFFFFFF);
-  if Ini.RadioAudio = 1 then
-    begin
-       waveOutSetVolume(DeviceID, $0000FFFF);
-    end
-  else if Ini.RadioAudio = 2 then
-  begin
-      waveOutSetVolume(DeviceID, $FFFF0000);
-  end;
-
   CheckErr;
 
   //send all buffers to the player

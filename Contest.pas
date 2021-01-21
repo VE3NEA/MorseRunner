@@ -5,11 +5,13 @@
 //------------------------------------------------------------------------------
 unit Contest;
 
+{$MODE Delphi}
+
 interface
 
 uses
   SysUtils, SndTypes, Station, StnColl, MyStn, Math,  Ini,
-  MovAvg, Mixers, VolumCtl, RndFunc, TypInfo, DxStn, DxOper, Log;
+  MovAvg, Mixers, VolumCtl, RndFunc, TypInfo, DxStn, DxOper, Log, Logerrorx;
 
 type
   TContest = class
@@ -104,6 +106,7 @@ var
   i, Stn: integer;
   Bfo: Single;
   Smg, Rfg: Single;
+  Temp: Single;
 begin
   //minimize audio output delay
   SetLength(Result, 1);
@@ -157,6 +160,7 @@ begin
     begin
     Blk := Me.GetBlock;
     //self-mon. gain
+    Temp := MainForm.VolumeSlider1.Value;
     Smg := Power(10, (MainForm.VolumeSlider1.Value - 0.75) * 4);
     Rfg := 1;
     for i:=0 to High(Blk) do
@@ -285,9 +289,17 @@ begin
   //the stations heard my CQ and want to call
   if (not (RunMode in [rmSingle, RmHst])) then
     if (msgCQ in Me.Msg) or
-       ((QsoList <> nil) and (msgTU in Me.Msg) and (msgMyCall in Me.Msg))then
-    for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
+    //   ((QsoList <> nil) and (msgTU in Me.Msg) and (msgMyCall in Me.Msg))then
+    //for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
+          ((QsoList <> nil) and ((msgTU in Me.Msg) or (msgMyCall in Me.Msg)))then
+            begin
+                 if DXCount < Activity/2 then
+                   begin
+                        for i:=1 to RndPoisson(Activity / 2) do Stations.AddCaller;
+                   end;
+            end;
 
+ // logerror('in TContest.OnMeFinishedSending, count = ' + inttostr(Stations.Count));
   //tell callers that I finished sending
   for i:=Stations.Count-1 downto 0 do
     Stations[i].ProcessEvent(evMeFinished);

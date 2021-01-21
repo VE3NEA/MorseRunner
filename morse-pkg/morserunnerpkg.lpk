@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CONFIG>
+  <Package Version="4">
+    <PathDelim Value="\"/>
+    <Name Value="morserunnerpkg"/>
+    <Type Value="RunAndDesignTime"/>
+    <CompilerOptions>
+      <Version Value="11"/>
+      <PathDelim Value="\"/>
+      <SearchPaths>
+        <OtherUnitFiles Value="."/>
+        <UnitOutputDirectory Value="lib\$(TargetCPU)-$(TargetOS)"/>
+      </SearchPaths>
+      <CodeGeneration>
+        <SmartLinkUnit Value="True"/>
+      </CodeGeneration>
+      <Linking>
+        <Debugging>
+          <GenerateDebugInfo Value="False"/>
+          <UseLineInfoUnit Value="False"/>
+        </Debugging>
+      </Linking>
+    </CompilerOptions>
+    <Files Count="5">
+      <Item1>
+        <Filename Value="SndOut.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="SndOut"/>
+      </Item1>
+      <Item2>
+        <Filename Value="WavFile.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="WavFile"/>
+      </Item2>
+      <Item3>
+        <Filename Value="SndTypes.pas"/>
+        <UnitName Value="SndTypes"/>
+      </Item3>
+      <Item4>
+        <Filename Value="SndCustm.pas"/>
+        <UnitName Value="SndCustm"/>
+      </Item4>
+      <Item5>
+        <Filename Value="VolmSldr.pas"/>
+        <HasRegisterProc Value="True"/>
+        <UnitName Value="VolmSldr"/>
+      </Item5>
+    </Files>
+    <RequiredPkgs Count="2">
+      <Item1>
+        <PackageName Value="LCLBase"/>
+      </Item1>
+      <Item2>
+        <PackageName Value="FCL"/>
+      </Item2>
+    </RequiredPkgs>
+    <UsageOptions>
+      <UnitPath Value="$(PkgOutDir)"/>
+    </UsageOptions>
+    <PublishOptions>
+      <Version Value="2"/>
+    </PublishOptions>
+    <CustomOptions Items="ExternHelp" Version="2">
+      <_ExternHelp Items="Count"/>
+    </CustomOptions>
+  </Package>
+</CONFIG>

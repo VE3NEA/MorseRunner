@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit ScoreDlg;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
+  LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
   StdCtrls;
 
 type
@@ -30,7 +32,7 @@ implementation
 
 uses Main;
 
-{$R *.DFM}
+{$R *.lfm}
 
 procedure TScoreDialog.Button1Click(Sender: TObject);
 begin

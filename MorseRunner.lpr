@@ -1,7 +1,9 @@
 program MorseRunner;
 
+{$MODE Delphi}
+
 uses
-  Forms,
+  Forms, Interfaces,
   Main in 'Main.pas' {MainForm},
   Contest in 'Contest.pas',
   RndFunc in 'RndFunc.pas',
@@ -21,18 +23,15 @@ uses
   BaseComp in 'VCL\BaseComp.pas',
   PermHint in 'VCL\PermHint.pas',
   Crc32 in 'VCL\Crc32.pas',
-  SndCustm in 'VCL\SndCustm.pas',
   SndTypes in 'VCL\SndTypes.pas',
-  SndOut in 'VCL\SndOut.pas',
   MorseTbl in 'VCL\MorseTbl.pas',
   QuickAvg in 'VCL\QuickAvg.pas',
   MovAvg in 'VCL\MovAvg.pas',
   Mixers in 'VCL\Mixers.pas',
   VolumCtl in 'VCL\VolumCtl.pas',
-  VolmSldr in 'VCL\VolmSldr.pas',
-  WavFile in 'VCL\WavFile.pas';
+  LogErrorx in 'logerror.pas';
 
-{$R *.RES}
+{$R *.res}
 
 begin
   Application.Initialize;
