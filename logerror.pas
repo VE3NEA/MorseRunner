@@ -5,7 +5,7 @@ unit LogErrorx;
 interface
 
 uses
-  SysUtils;
+  SysUtils, Ini;
 procedure LogError(msg:string);
 
 implementation
@@ -17,8 +17,11 @@ var
   userdir: string;
 begin
   userdir := GetUserDir;
-  Fn := userdir + 'Documents\N1MM Logger+\debug.txt';
+  // if Ini.Wpm < 40 then Fn := userdir + 'Documents\N1MM Logger+\debug1.txt'
+  // else Fn := userdir + 'Documents\N1MM Logger+\debug2.txt';
+
   // Fn := 'debug.txt';
+  Fn := userdir + 'Documents\N1MM Logger+\mrdebug.txt';
   AssignFile(F, Fn);
   if FileExists(Fn) then
      Append(F)
