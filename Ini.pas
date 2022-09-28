@@ -43,6 +43,7 @@ var
   Qsb: boolean = true;
   Flutter: boolean = true;
   Lids: boolean = true;
+  Sidetone: integer = 400;
 
   Duration: integer = 30;
   RunMode: TRunMode = rmStop;
