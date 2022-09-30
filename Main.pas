@@ -1336,7 +1336,7 @@ begin
   FName := ChangeFileExt(ParamStr(0), '.lst');
   with TStringList.Create do
     try
-      if FileExistsUTF8(FName) { *Converted from FileExists* } then LoadFromFile(FName);
+      if FileExists(FName) { *Converted from FileExists* } then LoadFromFile(FName);
       Add(S);
       SaveToFile(FName);
     finally Free; end;
@@ -1367,7 +1367,7 @@ begin
   FName := ExtractFilePath(ParamStr(0)) + 'HstResults.txt';
   with TStringList.Create do
     try
-      if FileExistsUTF8(FName) { *Converted from FileExists* } then LoadFromFile(FName);
+      if FileExists(FName) { *Converted from FileExists* } then LoadFromFile(FName);
       Add(S);
       SaveToFile(FName);
     finally Free; end;
@@ -1393,7 +1393,7 @@ var
 begin
   RichEdit1.Clear;
   FName := ChangeFileExt(ParamStr(0), '.lst');
-  if FileExistsUTF8(FName) { *Converted from FileExists* }
+  if FileExists(FName) { *Converted from FileExists* }
     then RichEdit1.Lines.LoadFromFile(FName)
     else RichEdit1.Lines.Add('Your score table is empty');
   RichEdit1.Visible := true;
@@ -1541,7 +1541,7 @@ begin
   Stp := RunMode = rmStop;
 
   AudioRecordingEnabled1.Enabled := Stp;
-  PlayRecordedAudio1.Enabled := Stp and FileExistsUTF8(ChangeFileExt(ParamStr(0), '.wav')); { *Converted from FileExists* }
+  PlayRecordedAudio1.Enabled := Stp and FileExists(ChangeFileExt(ParamStr(0), '.wav')); { *Converted from FileExists* }
 
   AudioRecordingEnabled1.Checked := Ini.SaveWav;
 end;
