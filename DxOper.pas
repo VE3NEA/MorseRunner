@@ -5,6 +5,8 @@
 //------------------------------------------------------------------------------
 unit DxOper;
 
+{$MODE Delphi}
+
 interface
 
 uses
@@ -43,7 +45,7 @@ type
 implementation
 
 uses
-  Contest;
+  Contest, Main;
 
 { TDxOperator }
 
@@ -68,12 +70,13 @@ function TDxOperator.GetWpm: integer;
 begin
   if RunMode = rmHst
     then Result := Ini.Wpm
-    else Result := Round(Ini.Wpm * 0.5 * (1 + Random));
+    else Result := Round((Ini.Wpm - 10) + Random(12));
 end;
 
 function TDxOperator.GetNR: integer;
 begin
-  Result := 1 + Round(Random * Tst.Minute * Skills);
+  // Result := 1 + Round(Random * Tst.Minute * Skills);
+  Result := 1 + Round(Random(1000));
 end;
 
 function TDxOperator.GetReplyTimeout: integer;
@@ -231,9 +234,11 @@ begin
     case State of
       osNeedPrevEnd: ;
       osNeedQso: State := osNeedPrevEnd;
-      osNeedNr: if (Random < 0.9) or (RunMode = rmHst) then SetState(osNeedEnd);
+      osNeedNr: if (Random < 0.9) or (RunMode = rmHst) Or MainForm.NoRepeats then SetState(osNeedEnd);
+      // osNeedNr: SetState(osNeedEnd);
       osNeedCall: ;
-      osNeedCallNr: if (Random < 0.9) or (RunMode = rmHst) then SetState(osNeedCall);
+      osNeedCallNr: if (Random < 0.9) or (RunMode = rmHst) Or MainForm.NoRepeats then SetState(osNeedCall);
+      // osNeedCallNr: SetState(osNeedEnd);
       osNeedEnd: ;
       end;
 

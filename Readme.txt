@@ -1,10 +1,12 @@
-                              MORSE RUNNER  1.68
+                              MORSE RUNNER  1.68+
 
                               Contest Simulator
 
                                   freeware
 
-               Copyright (C) 2004-2006 Alex Shovkoplyas, VE3NEA
+               Copyright (C) 2004-2016 Alex Shovkoplyas, VE3NEA
+	
+                           Modified by N2IC, 2016.
 
                       http://www.dxatlas.com/MorseRunner/
 
@@ -13,7 +15,7 @@
 
 PLATFORMS
 
-  - Windows 95/98/ME/NT4/2000/XP;
+  - Windows 95 and later.
   - works on Linux systems under WINE (info TNX F8BQQ).
 
 
@@ -52,7 +54,19 @@ CONFIGURATION
       the audio in the MorseRunner.wav file. If this file already
       exists, MR overwrites it.
 
+    There are also MorseRunner.ini options that you can change:
 
+     In the [Station] section, enter the Name of the MorseRunner instance. For example 14000 for 14 MHz.
+
+     In the [Station] section, you can change the volume of the monitor audio that you are sending by
+     editing the SelfMonVolume .
+
+  For running 2 instances of Morse Runner on the same computer, edit MorseRunner.ini:
+
+     In the [System] section, enter the SoundDevice number. The computer default sound card is always -1.
+     For non-default sound cards, you will have to experiment, beginning with 0. The maximum SoundDevice number is
+     the (number of installed sound cards - 1). So, if you have 2 sound cards, try 0 and 1 for the SoundDevice
+     number of the non-default sound card.
 
   Band Conditions
 
@@ -217,6 +231,10 @@ command.
 
 
 VERSION HISTORY
+
+1.68+
+  - Added capability to have 2 Morse Runner instances running simultaneously, each sending output to its own
+    sound card. (N2IC)
 
 
 1.68

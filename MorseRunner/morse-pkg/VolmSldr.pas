@@ -6,12 +6,11 @@ interface
 
 uses
   LCLIntf, LCLType, LMessages, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Math, PermHint;
+  Math;
 
 type
   TVolumeSlider = class(TGraphicControl)
   private
-    FHintWin: TPermanentHintWindow;
     FMargin: integer;
     FValue: Single;
     FOnChange: TNotifyEvent;
@@ -81,7 +80,6 @@ begin
   Width := 60;
   Height := 20;
   ControlStyle := [csCaptureMouse, csClickEvents, csDoubleClicks, csOpaque];
-  FHintWin := TPermanentHintWindow.Create(Self);
   FShowHint := true;
 
   FDbMax := 0;
@@ -153,8 +151,7 @@ end;
 
 procedure TVolumeSlider.SetValue(const Value: Single);
 begin
-  // FValue := Max(0, Min(1, Value));
-  FValue := Value;
+  FValue := Max(0, Min(1, Value));
   UpdateHint;
   Invalidate;
 end;
@@ -179,10 +176,6 @@ begin
     MouseCapture := false;
     end;
 
-  if (PtInRect(ClientRect, POINT(X,Y)) or (csClicked in ControlState)) and FShowHint
-    then FHintWin.ShowHint(Hint)
-    else FHintWin.HideHint;
-
   if not (csClicked in ControlState) then Exit;
 
   Value := FDownValue + (X - FDownX) / (Width - 2 * FMargin);
@@ -202,8 +195,7 @@ end;
 
 procedure TVolumeSlider.CMMouseLeave(var Message: TMessage);
 begin
-  if not (csClicked in ControlState)
-    then FHintWin.HideHint;
+
 end;
 
 procedure TVolumeSlider.SetShowHint(const Value: boolean);
@@ -241,7 +233,7 @@ end;
 procedure TVolumeSlider.MouseUp(Button: TMouseButton; Shift: TShiftState;
   X, Y: Integer);
 begin
-  FHintWin.HideHint;
+
   inherited;
 end;
 

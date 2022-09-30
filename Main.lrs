@@ -1,0 +1,387 @@
+{ This is an automatically generated lazarus resource file }
+
+LazarusResources.Add('TMainForm','FORMDATA',[
+  'TPF0'#9'TMainForm'#8'MainForm'#4'Left'#3#190#3#6'Height'#3#187#1#3'Top'#3#172
+  +#1#5'Width'#3#247#2#11'BorderIcons'#11#12'biSystemMenu'#0#11'BorderStyle'#7#8
+  +'bsSingle'#7'Caption'#6#12'Morse Runner'#12'ClientHeight'#3#167#1#11'ClientW'
+  +'idth'#3#247#2#5'Color'#7#9'clBtnFace'#10'Font.Color'#7#12'clWindowText'#11
+  +'Font.Height'#2#245#9'Font.Name'#6#13'MS Sans Serif'#10'KeyPreview'#9#4'Menu'
+  +#7#9'MainMenu1'#7'OnClose'#7#9'FormClose'#8'OnCreate'#7#10'FormCreate'#9'OnD'
+  +'estroy'#7#11'FormDestroy'#9'OnKeyDown'#7#11'FormKeyDown'#10'OnKeyPress'#7#12
+  +'FormKeyPress'#7'OnKeyUp'#7#9'FormKeyUp'#8'Position'#7#15'poDesktopCenter'#10
+  +'LCLVersion'#6#7'1.4.4.0'#0#6'TBevel'#6'Bevel1'#4'Left'#2#0#6'Height'#2#2#3
+  +'Top'#2#0#5'Width'#3#247#2#5'Align'#7#5'alTop'#0#0#6'TPanel'#6'Panel1'#4'Lef'
+  +'t'#2#0#6'Height'#2'w'#3'Top'#3'0'#1#5'Width'#3#247#2#5'Align'#7#8'alBottom'
+  +#10'BevelInner'#7#8'bvRaised'#10'BevelOuter'#7#9'bvLowered'#12'ClientHeight'
+  +#2'w'#11'ClientWidth'#3#247#2#8'TabOrder'#2#0#0#6'TLabel'#6'Label1'#4'Left'#2
+  +#14#6'Height'#2#13#3'Top'#2#10#5'Width'#2#17#7'Caption'#6#4'Call'#11'ParentC'
+  +'olor'#8#0#0#12'TSpeedButton'#12'SpeedButton4'#3'Tag'#2#1#4'Left'#2#10#6'Hei'
+  +'ght'#2#17#3'Top'#2'B'#5'Width'#2'='#7'Caption'#6#6'F1  CQ'#7'OnClick'#7#9'S'
+  +'endClick'#0#0#12'TSpeedButton'#12'SpeedButton5'#3'Tag'#2#2#4'Left'#2'J'#6'H'
+  +'eight'#2#17#3'Top'#2'B'#5'Width'#2'='#7'Caption'#6#7'F2  <#>'#7'OnClick'#7#9
+  +'SendClick'#0#0#12'TSpeedButton'#12'SpeedButton6'#3'Tag'#2#3#4'Left'#3#138#0
+  +#6'Height'#2#17#3'Top'#2'B'#5'Width'#2'='#7'Caption'#6#6'F3  TU'#7'OnClick'#7
+  +#9'SendClick'#0#0#12'TSpeedButton'#12'SpeedButton7'#3'Tag'#2#4#4'Left'#3#202
+  +#0#6'Height'#2#17#3'Top'#2'B'#5'Width'#2'='#7'Caption'#6#8'F4  <my>'#7'OnCli'
+  +'ck'#7#9'SendClick'#0#0#12'TSpeedButton'#12'SpeedButton8'#3'Tag'#2#5#4'Left'
+  +#2#10#6'Height'#2#17#3'Top'#2'Z'#5'Width'#2'='#7'Caption'#6#9'F5  <his>'#7'O'
+  +'nClick'#7#9'SendClick'#0#0#12'TSpeedButton'#12'SpeedButton9'#3'Tag'#2#6#4'L'
+  +'eft'#2'J'#6'Height'#2#17#3'Top'#2'Z'#5'Width'#2'='#7'Caption'#6#6'F6  B4'#7
+  +'OnClick'#7#9'SendClick'#0#0#12'TSpeedButton'#13'SpeedButton10'#3'Tag'#2#7#4
+  +'Left'#3#138#0#6'Height'#2#17#3'Top'#2'Z'#5'Width'#2'='#7'Caption'#6#5'F7  ?'
+  +#7'OnClick'#7#9'SendClick'#0#0#12'TSpeedButton'#13'SpeedButton11'#3'Tag'#2#8
+  +#4'Left'#3#202#0#6'Height'#2#17#3'Top'#2'Z'#5'Width'#2'='#7'Caption'#6#7'F8 '
+  +' NIL'#7'OnClick'#7#9'SendClick'#0#0#6'TLabel'#6'Label2'#4'Left'#3#170#0#6'H'
+  +'eight'#2#13#3'Top'#2#10#5'Width'#2#22#7'Caption'#6#3'RST'#11'ParentColor'#8
+  +#0#0#6'TLabel'#6'Label3'#4'Left'#3#222#0#6'Height'#2#13#3'Top'#2#10#5'Width'
+  +#2#14#7'Caption'#6#3'Nr.'#11'ParentColor'#8#0#0#6'TBevel'#6'Bevel2'#4'Left'#3
+  +#19#1#6'Height'#2'k'#3'Top'#2#4#5'Width'#2#2#0#0#5'TEdit'#5'Edit1'#4'Left'#2
+  +#10#6'Height'#2#28#3'Top'#2#26#5'Width'#3#149#0#10'AutoSelect'#8#8'CharCase'
+  +#7#11'ecUppercase'#10'Font.Color'#7#12'clWindowText'#11'Font.Height'#2#240#9
+  +'Font.Name'#6#13'MS Sans Serif'#10'Font.Style'#11#6'fsBold'#0#9'MaxLength'#2
+  +#12#8'OnChange'#7#11'Edit1Change'#7'OnEnter'#7#10'Edit1Enter'#10'OnKeyPress'
+  +#7#13'Edit1KeyPress'#10'ParentFont'#8#8'TabOrder'#2#0#0#0#5'TEdit'#5'Edit2'#4
+  +'Left'#3#166#0#6'Height'#2#28#3'Top'#2#26#5'Width'#2'-'#10'AutoSelect'#8#10
+  +'Font.Color'#7#12'clWindowText'#11'Font.Height'#2#240#9'Font.Name'#6#13'MS S'
+  +'ans Serif'#10'Font.Style'#11#6'fsBold'#0#9'MaxLength'#2#3#7'OnEnter'#7#10'E'
+  +'dit2Enter'#10'OnKeyPress'#7#13'Edit2KeyPress'#10'ParentFont'#8#8'TabOrder'#2
+  +#1#0#0#5'TEdit'#5'Edit3'#4'Left'#3#218#0#6'Height'#2#28#3'Top'#2#26#5'Width'
+  +#2'-'#10'AutoSelect'#8#10'Font.Color'#7#12'clWindowText'#11'Font.Height'#2
+  +#240#9'Font.Name'#6#13'MS Sans Serif'#10'Font.Style'#11#6'fsBold'#0#9'MaxLen'
+  +'gth'#2#4#10'OnKeyPress'#7#13'Edit3KeyPress'#10'ParentFont'#8#8'TabOrder'#2#2
+  +#0#0#6'TPanel'#6'Panel2'#4'Left'#3#15#2#6'Height'#2#31#3'Top'#2#6#5'Width'#3
+  +#163#0#10'BevelOuter'#7#9'bvLowered'#7'Caption'#6#8'00:00:00'#5'Color'#7#7'c'
+  +'lBlack'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#4' '#240#215#0#11
+  +'Font.Height'#2#232#9'Font.Name'#6#5'Arial'#11'ParentColor'#8#10'ParentFont'
+  +#8#8'TabOrder'#2#3#0#0#6'TPanel'#6'Panel3'#4'Left'#3'"'#1#6'Height'#2'='#3'T'
+  +'op'#2'!'#5'Width'#3#225#0#10'BevelOuter'#7#9'bvLowered'#12'ClientHeight'#2
+  +'='#11'ClientWidth'#3#225#0#8'TabOrder'#2#4#0#9'TPaintBox'#9'PaintBox1'#4'Le'
+  +'ft'#2#1#6'Height'#2';'#3'Top'#2#1#5'Width'#3#223#0#5'Align'#7#8'alClient'#5
+  +'Color'#7#8'clInfoBk'#11'ParentColor'#8#7'OnPaint'#7#14'PaintBox1Paint'#0#0#0
+  +#6'TPanel'#6'Panel4'#4'Left'#3'"'#1#6'Height'#2#21#3'Top'#2#6#5'Width'#2'r'
+  +#10'BevelOuter'#7#9'bvLowered'#10'Font.Color'#7#5'clRed'#11'Font.Height'#2
+  +#245#9'Font.Name'#6#13'MS Sans Serif'#10'Font.Style'#11#6'fsBold'#0#10'Paren'
+  +'tFont'#8#8'TabOrder'#2#5#0#0#6'TPanel'#6'Panel7'#4'Left'#3#154#1#6'Height'#2
+  +#21#3'Top'#2#6#5'Width'#2'h'#10'BevelOuter'#7#9'bvLowered'#8'TabOrder'#2#6#0
+  +#0#6'TPanel'#6'Panel8'#6'Cursor'#7#11'crHandPoint'#4'Left'#3'"'#1#6'Height'#2
+  +#9#4'Hint'#6#3'RIT'#3'Top'#2'e'#5'Width'#3#225#0#10'BevelOuter'#7#9'bvLowere'
+  ,'d'#12'ClientHeight'#2#9#11'ClientWidth'#3#225#0#14'ParentShowHint'#8#8'Show'
+  +'Hint'#9#8'TabOrder'#2#7#11'OnMouseDown'#7#15'Panel8MouseDown'#0#6'TShape'#6
+  +'Shape2'#6'Cursor'#7#11'crHandPoint'#4'Left'#2'O'#6'Height'#2#7#3'Top'#2#0#5
+  +'Width'#2' '#11'Brush.Color'#4#31#224#196#0#11'OnMouseDown'#7#15'Shape2Mouse'
+  +'Down'#0#0#0#6'TPanel'#7'Panel11'#4'Left'#3#15#2#6'Height'#2'D'#3'Top'#2'*'#5
+  +'Width'#3#163#0#10'BevelOuter'#7#9'bvLowered'#7'Caption'#6#1'0'#12'ClientHei'
+  +'ght'#2'D'#11'ClientWidth'#3#163#0#10'Font.Color'#7#12'clWindowText'#11'Font'
+  +'.Height'#2#237#9'Font.Name'#6#13'MS Sans Serif'#10'Font.Style'#11#6'fsBold'
+  +#0#10'ParentFont'#8#8'TabOrder'#2#8#0#9'TListView'#9'ListView1'#4'Left'#2#1#6
+  +'Height'#2'B'#3'Top'#2#1#5'Width'#3#161#0#5'Align'#7#8'alClient'#11'BorderSt'
+  +'yle'#7#6'bsNone'#7'Columns'#14#1#5'Width'#2')'#0#1#7'Caption'#6#3'Raw'#0#1#7
+  +'Caption'#6#8'Verified'#0#0#11'ColumnClick'#8#10'Font.Color'#7#12'clWindowTe'
+  +'xt'#11'Font.Height'#2#245#9'Font.Name'#6#13'MS Sans Serif'#13'Items.LazData'
+  +#10#128#0#0#0#128#0#0#0#3#0#0#0#255#255#255#255#255#255#255#255#255#255#255
+  +#255#2#0#0#0#3#0#0#0'Pts'#0#0#0#0#0#0#0#0#255#255#255#255#255#255#255#255#255
+  +#255#255#255#2#0#0#0#4#0#0#0'Mult'#0#0#0#0#0#0#0#0#255#255#255#255#255#255
+  +#255#255#255#255#255#255#2#0#0#0#5#0#0#0'Score'#0#0#0#0#0#0#0#0#255#255#255
+  +#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255#255
+  +#255#255#10'ParentFont'#8#8'ReadOnly'#9#9'RowSelect'#9#7'TabStop'#8#8'TabOrd'
+  +'er'#2#0#9'ViewStyle'#7#8'vsReport'#0#0#0#0#6'TPanel'#6'Panel5'#4'Left'#2#0#6
+  +'Height'#2#8#3'Top'#3'('#1#5'Width'#3#247#2#5'Align'#7#8'alBottom'#10'BevelO'
+  +'uter'#7#6'bvNone'#8'TabOrder'#2#1#0#0#6'TPanel'#6'Panel6'#4'Left'#2#0#6'Hei'
+  +'ght'#3'&'#1#3'Top'#2#2#5'Width'#3'#'#2#5'Align'#7#8'alClient'#10'BevelOuter'
+  +#7#6'bvNone'#11'BorderStyle'#7#8'bsSingle'#12'ClientHeight'#3'"'#1#11'Client'
+  +'Width'#3#31#2#8'TabOrder'#2#2#0#6'TShape'#6'Shape1'#4'Left'#2#0#6'Height'#3
+  +#249#0#3'Top'#2#0#5'Width'#3#31#2#5'Align'#7#8'alClient'#11'Brush.Color'#4
+  +#233#254#254#0#9'Pen.Style'#7#7'psClear'#0#0#6'TLabel'#7'Label14'#4'Left'#2
+  +'J'#6'Height'#2'('#3'Top'#2':'#5'Width'#3'J'#1#7'Caption'#6#18'Morse Runner '
+  +'1.68+'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#4#188#188#188#0#11
+  +'Font.Height'#2#221#9'Font.Name'#6#5'Arial'#10'Font.Style'#11#6'fsBold'#8'fs'
+  +'Italic'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#7'Label12'#4'Lef'
+  +'t'#2'E'#6'Height'#2'('#3'Top'#2'6'#5'Width'#3'J'#1#7'Caption'#6#18'Morse Ru'
+  +'nner 1.68+'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#6'clAqua'
+  +#11'Font.Height'#2#221#9'Font.Name'#6#5'Arial'#10'Font.Style'#11#6'fsBold'#8
+  +'fsItalic'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#7'Label13'#4'L'
+  +'eft'#2'D'#6'Height'#2'('#3'Top'#2'5'#5'Width'#3'J'#1#7'Caption'#6#18'Morse '
+  +'Runner 1.68+'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.Color'#7#7'clGree'
+  +'n'#11'Font.Height'#2#221#9'Font.Name'#6#5'Arial'#10'Font.Style'#11#6'fsBold'
+  +#8'fsItalic'#0#11'ParentColor'#8#10'ParentFont'#8#0#0#6'TLabel'#7'Label15'#4
+  +'Left'#2'h'#6'Height'#2#13#3'Top'#2'j'#5'Width'#3#245#0#7'Caption'#6'/Copyri'
+  +'ght '#194#169' 2004-2016 Alex Shovkoplyas, VE3NEA'#11'ParentColor'#8#0#0#6
+  +'TLabel'#7'Label16'#4'Left'#3#196#0#6'Height'#2#13#3'Top'#3#152#0#5'Width'#2
+  +'='#7'Caption'#6#8'FREEWARE'#11'ParentColor'#8#0#0#5'TMemo'#9'RichEdit1'#4'L'
+  +'eft'#2#0#6'Height'#2')'#3'Top'#3#249#0#5'Width'#3#31#2#5'Align'#7#8'alBotto'
+  +'m'#11'BorderStyle'#7#6'bsNone'#12'Font.CharSet'#7#12'ANSI_CHARSET'#10'Font.'
+  +'Color'#7#12'clWindowText'#11'Font.Height'#2#243#9'Font.Name'#6#11'Courier N'
+  +'ew'#10'ParentFont'#8#8'ReadOnly'#9#10'ScrollBars'#7#10'ssVertical'#8'TabOrd'
+  +'er'#2#0#7'TabStop'#8#7'Visible'#8#0#0#6'TLabel'#7'Label19'#4'Left'#3#176#0#6
+  +'Height'#2#13#3'Top'#3#128#0#5'Width'#2'o'#7'Caption'#6#22'Modified by N2IC,'
+  +' 2016'#11'ParentColor'#8#0#0#0#6'TPanel'#6'Panel9'#4'Left'#3'#'#2#6'Height'
+  +#3'&'#1#3'Top'#2#2#5'Width'#3#212#0#5'Align'#7#7'alRight'#10'BevelOuter'#7#6
+  +'bvNone'#12'ClientHeight'#3'&'#1#11'ClientWidth'#3#212#0#8'TabOrder'#2#3#0#9
+  +'TGroupBox'#9'GroupBox3'#4'Left'#2#7#6'Height'#2'Q'#3'Top'#3#168#0#5'Width'#3
+  +#194#0#7'Caption'#6#17' Band Conditions '#12'ClientHeight'#2'?'#11'ClientWid'
+  +'th'#3#190#0#8'TabOrder'#2#0#0#6'TLabel'#7'Label11'#4'Left'#3#142#0#6'Height'
+  +#2#13#3'Top'#2#2#5'Width'#2'"'#7'Caption'#6#8'Activity'#11'ParentColor'#8#0#0
+  +#9'TCheckBox'#9'CheckBox2'#4'Left'#2#10#6'Height'#2#19#3'Top'#2','#5'Width'#2
+  +'*'#7'Caption'#6#3'QSB'#7'Checked'#9#7'OnClick'#7#13'CheckBoxClick'#5'State'
+  +#7#9'cbChecked'#8'TabOrder'#2#0#7'TabStop'#8#0#0#9'TCheckBox'#9'CheckBox3'#4
+  +'Left'#2#10#6'Height'#2#19#3'Top'#2#24#5'Width'#2'-'#7'Caption'#6#3'QRM'#7'C'
+  +'hecked'#9#7'OnClick'#7#13'CheckBoxClick'#5'State'#7#9'cbChecked'#8'TabOrder'
+  +#2#1#7'TabStop'#8#0#0#9'TCheckBox'#9'CheckBox4'#4'Left'#2#10#6'Height'#2#19#3
+  +'Top'#2#4#5'Width'#2','#7'Caption'#6#3'QRN'#7'Checked'#9#7'OnClick'#7#13'Che'
+  +'ckBoxClick'#5'State'#7#9'cbChecked'#8'TabOrder'#2#2#7'TabStop'#8#0#0#9'TChe'
+  ,'ckBox'#9'CheckBox5'#4'Left'#2'J'#6'Height'#2#19#3'Top'#2#4#5'Width'#2'1'#7
+  +'Caption'#6#7'Flutter'#7'Checked'#9#7'OnClick'#7#13'CheckBoxClick'#5'State'#7
+  +#9'cbChecked'#8'TabOrder'#2#3#7'TabStop'#8#0#0#9'TCheckBox'#9'CheckBox6'#4'L'
+  +'eft'#2'J'#6'Height'#2#19#3'Top'#2#26#5'Width'#2','#7'Caption'#6#5'LID''s'#7
+  +'Checked'#9#7'OnClick'#7#13'CheckBoxClick'#5'State'#7#9'cbChecked'#8'TabOrde'
+  +'r'#2#4#7'TabStop'#8#0#0#9'TSpinEdit'#9'SpinEdit3'#4'Left'#3#142#0#6'Height'
+  +#2#21#3'Top'#2#18#5'Width'#2'%'#8'MaxValue'#2#9#8'MinValue'#2#1#8'OnChange'#7
+  +#15'SpinEdit3Change'#7'TabStop'#8#8'TabOrder'#2#5#5'Value'#2#3#0#0#0#9'TGrou'
+  +'pBox'#9'GroupBox1'#4'Left'#2#7#6'Height'#3#159#0#3'Top'#2#4#5'Width'#3#194#0
+  +#7'Caption'#6#9' Station '#12'ClientHeight'#3#141#0#11'ClientWidth'#3#190#0#8
+  +'TabOrder'#2#1#0#6'TLabel'#6'Label4'#4'Left'#2#10#6'Height'#2#13#3'Top'#2#6#5
+  +'Width'#2#17#7'Caption'#6#4'Call'#11'ParentColor'#8#0#0#6'TLabel'#6'Label5'#4
+  +'Left'#3#154#0#6'Height'#2#13#3'Top'#2'"'#5'Width'#2#27#7'Caption'#6#3'WPM'
+  +#11'ParentColor'#8#0#0#6'TLabel'#6'Label6'#4'Left'#2#10#6'Height'#2#13#3'Top'
+  +#2'"'#5'Width'#2'4'#7'Caption'#6#8'CW Speed'#11'ParentColor'#8#0#0#6'TLabel'
+  +#6'Label7'#4'Left'#2#10#6'Height'#2#13#3'Top'#2'>'#5'Width'#2'-'#7'Caption'#6
+  +#8'CW Pitch'#11'ParentColor'#8#0#0#6'TLabel'#6'Label9'#4'Left'#2#10#6'Height'
+  +#2#13#3'Top'#2'Z'#5'Width'#2'D'#7'Caption'#6#12'RX Bandwidth'#11'ParentColor'
+  +#8#0#0#5'TEdit'#5'Edit4'#4'Left'#2'"'#6'Height'#2#21#3'Top'#2#2#5'Width'#2'Y'
+  +#8'CharCase'#7#11'ecUppercase'#8'OnChange'#7#11'Edit4Change'#7'TabStop'#8#8
+  +'TabOrder'#2#0#4'Text'#6#6'VE3NEA'#0#0#9'TSpinEdit'#9'SpinEdit1'#4'Left'#2'V'
+  +#6'Height'#2#21#3'Top'#2#30#5'Width'#2'A'#8'MaxValue'#2'x'#8'MinValue'#2#10#8
+  +'OnChange'#7#15'SpinEdit1Change'#7'TabStop'#8#8'TabOrder'#2#1#5'Value'#2#30#0
+  +#0#9'TCheckBox'#9'CheckBox1'#4'Left'#3#138#0#6'Height'#2#19#3'Top'#2#4#5'Wid'
+  +'th'#2'*'#7'Caption'#6#3'QSK'#7'Checked'#9#7'OnClick'#7#14'CheckBox1Click'#5
+  +'State'#7#9'cbChecked'#8'TabOrder'#2#2#7'TabStop'#8#0#0#9'TComboBox'#9'Combo'
+  +'Box1'#4'Left'#2'V'#6'Height'#2#21#3'Top'#2':'#5'Width'#2'A'#13'DropDownCoun'
+  +'t'#2#12#10'ItemHeight'#2#13#13'Items.Strings'#1#6#6'300 Hz'#6#6'350 Hz'#6#6
+  +'400 Hz'#6#6'450 Hz'#6#6'500 Hz'#6#6'550 Hz'#6#6'600 Hz'#6#6'650 Hz'#6#6'700'
+  +' Hz'#6#6'750 Hz'#6#6'800 Hz'#6#6'850 Hz'#6#6'900 Hz'#0#8'OnChange'#7#15'Com'
+  +'boBox1Change'#5'Style'#7#14'csDropDownList'#8'TabOrder'#2#3#7'TabStop'#8#0#0
+  +#9'TComboBox'#9'ComboBox2'#4'Left'#2'V'#6'Height'#2#21#3'Top'#2'V'#5'Width'#2
+  +'A'#13'DropDownCount'#2#12#10'ItemHeight'#2#13#13'Items.Strings'#1#6#6'100 H'
+  +'z'#6#6'150 Hz'#6#6'200 Hz'#6#6'250 Hz'#6#6'300 Hz'#6#6'350 Hz'#6#6'400 Hz'#6
+  +#6'450 Hz'#6#6'500 Hz'#6#6'550 Hz'#6#6'600 Hz'#0#8'OnChange'#7#15'ComboBox2C'
+  +'hange'#5'Style'#7#14'csDropDownList'#8'TabOrder'#2#4#7'TabStop'#8#0#0#0#6'T'
+  +'Panel'#7'Panel10'#4'Left'#2#0#6'Height'#2#31#3'Top'#3#7#1#5'Width'#3#212#0#5
+  +'Align'#7#8'alBottom'#10'BevelOuter'#7#6'bvNone'#12'ClientHeight'#2#31#11'Cl'
+  +'ientWidth'#3#212#0#8'TabOrder'#2#2#0#6'TLabel'#6'Label8'#4'Left'#3#171#0#6
+  +'Height'#2#13#3'Top'#2#7#5'Width'#2#19#7'Caption'#6#4'min.'#11'ParentColor'#8
+  +#0#0#6'TLabel'#7'Label10'#4'Left'#2'e'#6'Height'#2#13#3'Top'#2#7#5'Width'#2
+  +#12#7'Caption'#6#3'for'#11'ParentColor'#8#0#0#9'TSpinEdit'#9'SpinEdit2'#4'Le'
+  +'ft'#2'x'#6'Height'#2#21#3'Top'#2#5#5'Width'#2'-'#8'MaxValue'#3#240#0#8'MinV'
+  +'alue'#2#1#8'OnChange'#7#15'SpinEdit2Change'#7'TabStop'#8#8'TabOrder'#2#0#5
+  +'Value'#2#30#0#0#8'TToolBar'#8'ToolBar1'#4'Left'#2#11#6'Height'#2#24#3'Top'#2
+  +#3#5'Width'#2'T'#5'Align'#7#6'alNone'#11'ButtonWidth'#2'A'#7'Caption'#6#8'To'
+  +'olBar1'#11'EdgeBorders'#11#0#6'Images'#7#10'ImageList1'#6'Indent'#2#3#4'Lis'
+  +'t'#9#12'ShowCaptions'#9#8'TabOrder'#2#1#0#11'TToolButton'#11'ToolButton1'#3
+  +'Tag'#2#1#4'Left'#2#3#3'Top'#2#0#10'AllowAllUp'#9#7'Caption'#6#9'   Run   '
+  +#12'DropdownMenu'#7#10'PopupMenu1'#7'Grouped'#9#10'ImageIndex'#2#0#7'OnClick'
+  +#7#11'RunBtnClick'#5'Style'#7#11'tbsDropDown'#0#0#0#0#0#13'TVolumeSlider'#13
+  +'VolumeSlider1'#4'Left'#3#128#2#6'Height'#2#20#4'Hint'#6#8'-15.0 dB'#3'Top'#3
+  +#136#0#5'Width'#2'<'#8'ShowHint'#9#6'Margin'#2#5#5'Value'#5#0#0#0#0#0#0#0#192
+  +#254'?'#10'Overloaded'#8#8'OnChange'#7#19'VolumeSlider1Change'#10'OnDblClick'
+  +#7#20'VolumeSliderDblClick'#5'DbMax'#5#0#0#0#0#0#0#0#0#0#0#7'DbScale'#5#0#0#0
+  +#0#0#0#0#240#4'@'#2'Db'#5#0#0#0#0#0#0#0#240#2#192#0#0#6'TLabel'#7'Label17'#4
+  +'Left'#2'h'#6'Height'#2#13#3'Top'#2'j'#5'Width'#3#245#0#7'Caption'#6'/Copyri'
+  +'ght '#194#169' 2004-2016 Alex Shovkoplyas, VE3NEA'#11'ParentColor'#8#0#0#6
+  +'TLabel'#7'Label18'#4'Left'#2#10#6'Height'#2#13#3'Top'#2#10#5'Width'#2'&'#7
+  +'Caption'#6#7'Label18'#11'ParentColor'#8#0#0#11'TAlSoundOut'#11'AlSoundOut1'
+  +#13'SamplesPerSec'#3#17'+'#8'BufCount'#2#8#14'OnBufAvailable'#7#23'AlSoundOu'
+  +'t1BufAvailable'#0#0#9'TMainMenu'#9'MainMenu1'#4'left'#3'd'#1#3'top'#3#148#0
+  +#0#9'TMenuItem'#5'File1'#7'Caption'#6#4'File'#7'OnClick'#7#10'File1Click'#0#9
+  +'TMenuItem'#15'ViewScoreTable1'#7'Caption'#6#16'View Score Table'#7'OnClick'
+  ,#7#20'ViewScoreTable1Click'#0#0#9'TMenuItem'#17'ViewScoreBoardMNU'#7'Caption'
+  +#6#25'View Hi-Score web page...'#7'OnClick'#7#22'ViewScoreBoardMNUClick'#0#0
+  +#9'TMenuItem'#2'N5'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#22'AudioRecordingEnab'
+  +'led1'#7'Caption'#6#23'Audio Recording Enabled'#7'OnClick'#7#27'AudioRecordi'
+  +'ngEnabled1Click'#0#0#9'TMenuItem'#18'PlayRecordedAudio1'#7'Caption'#6#19'Pl'
+  +'ay Recorded Audio'#7'Enabled'#8#7'OnClick'#7#23'PlayRecordedAudio1Click'#0#0
+  +#9'TMenuItem'#2'N8'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#5'Exit1'#7'Caption'#6
+  +#4'Exit'#7'OnClick'#7#10'Exit1Click'#0#0#0#9'TMenuItem'#4'Run1'#7'Caption'#6
+  +#3'Run'#0#9'TMenuItem'#7'PileUp1'#3'Tag'#2#1#7'Caption'#6#7'Pile-Up'#8'Short'
+  +'Cut'#2'x'#7'OnClick'#7#11'RunMNUClick'#0#0#9'TMenuItem'#12'SingleCalls1'#3
+  +'Tag'#2#2#7'Caption'#6#12'Single Calls'#7'OnClick'#7#11'RunMNUClick'#0#0#9'T'
+  +'MenuItem'#12'Competition1'#3'Tag'#2#3#7'Caption'#6#15'WPX Competition'#7'On'
+  +'Click'#7#11'RunMNUClick'#0#0#9'TMenuItem'#15'HSTCompetition2'#3'Tag'#2#4#7
+  +'Caption'#6#15'HST Competition'#8'ShortCut'#3'x@'#7'OnClick'#7#11'RunMNUClic'
+  +'k'#0#0#9'TMenuItem'#2'N4'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#8'Stop1MNU'#7
+  +'Caption'#6#4'Stop'#7'Enabled'#8#7'OnClick'#7#12'StopMNUClick'#0#0#0#9'TMenu'
+  +'Item'#5'Send1'#7'Caption'#6#4'Send'#0#9'TMenuItem'#3'CQ1'#3'Tag'#2#1#7'Capt'
+  +'ion'#6#2'CQ'#8'ShortCut'#2'p'#7'OnClick'#7#9'SendClick'#0#0#9'TMenuItem'#7
+  +'Number1'#3'Tag'#2#2#7'Caption'#6#6'Number'#8'ShortCut'#2'q'#7'OnClick'#7#9
+  +'SendClick'#0#0#9'TMenuItem'#3'TU1'#3'Tag'#2#3#7'Caption'#6#2'TU'#8'ShortCut'
+  +#2'r'#7'OnClick'#7#9'SendClick'#0#0#9'TMenuItem'#7'MyCall1'#3'Tag'#2#4#7'Cap'
+  +'tion'#6#7'My Call'#8'ShortCut'#2's'#7'OnClick'#7#9'SendClick'#0#0#9'TMenuIt'
+  +'em'#8'HisCall1'#3'Tag'#2#5#7'Caption'#6#8'His Call'#8'ShortCut'#2't'#7'OnCl'
+  +'ick'#7#9'SendClick'#0#0#9'TMenuItem'#6'QSOB41'#3'Tag'#2#6#7'Caption'#6#6'QS'
+  +'O B4'#8'ShortCut'#2'u'#7'OnClick'#7#9'SendClick'#0#0#9'TMenuItem'#2'N1'#3'T'
+  +'ag'#2#7#7'Caption'#6#3'<?>'#8'ShortCut'#2'v'#7'OnClick'#7#9'SendClick'#0#0#9
+  +'TMenuItem'#4'AGN1'#3'Tag'#2#8#7'Caption'#6#3'NIL'#8'ShortCut'#2'w'#7'OnClic'
+  +'k'#7#9'SendClick'#0#0#0#9'TMenuItem'#9'Settings1'#7'Caption'#6#8'Settings'#7
+  +'OnClick'#7#14'Settings1Click'#0#9'TMenuItem'#5'Call1'#7'Caption'#6#7'Call..'
+  +'.'#7'OnClick'#7#10'Call1Click'#0#0#9'TMenuItem'#4'QSK1'#7'Caption'#6#3'QSK'
+  +#7'OnClick'#7#9'QSK1Click'#0#0#9'TMenuItem'#8'CWSpeed1'#7'Caption'#6#8'CW Sp'
+  +'eed'#0#9'TMenuItem'#7'N10WPM1'#3'Tag'#2#10#7'Caption'#6#6'10 WPM'#7'OnClick'
+  +#7#9'NWPMClick'#0#0#9'TMenuItem'#7'N15WPM1'#3'Tag'#2#15#7'Caption'#6#6'15 WP'
+  +'M'#7'OnClick'#7#9'NWPMClick'#0#0#9'TMenuItem'#7'N20WPM1'#3'Tag'#2#20#7'Capt'
+  +'ion'#6#6'20 WPM'#7'OnClick'#7#9'NWPMClick'#0#0#9'TMenuItem'#7'N25WPM1'#3'Ta'
+  +'g'#2#25#7'Caption'#6#6'25 WPM'#7'OnClick'#7#9'NWPMClick'#0#0#9'TMenuItem'#7
+  +'N30WPM1'#3'Tag'#2#30#7'Caption'#6#6'30 WPM'#7'OnClick'#7#9'NWPMClick'#0#0#9
+  +'TMenuItem'#7'N35WPM1'#3'Tag'#2'#'#7'Caption'#6#6'35 WPM'#7'OnClick'#7#9'NWP'
+  +'MClick'#0#0#9'TMenuItem'#7'N40WPM1'#3'Tag'#2'('#7'Caption'#6#6'40 WPM'#7'On'
+  +'Click'#7#9'NWPMClick'#0#0#9'TMenuItem'#7'N45WPM1'#3'Tag'#2'-'#7'Caption'#6#6
+  +'45 WPM'#7'OnClick'#7#9'NWPMClick'#0#0#9'TMenuItem'#7'N50WPM1'#3'Tag'#2'2'#7
+  +'Caption'#6#6'50 WPM'#7'OnClick'#7#9'NWPMClick'#0#0#9'TMenuItem'#7'N55WPM1'#3
+  +'Tag'#2'7'#7'Caption'#6#6'55 WPM'#7'OnClick'#7#9'NWPMClick'#0#0#9'TMenuItem'
+  +#7'N60WPM1'#3'Tag'#2'<'#7'Caption'#6#6'60 WPM'#7'OnClick'#7#9'NWPMClick'#0#0
+  +#0#9'TMenuItem'#12'CWBandwidth1'#7'Caption'#6#8'CW Pitch'#0#9'TMenuItem'#7'N'
+  +'300Hz1'#7'Caption'#6#6'300 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'
+  +#7'N350Hz1'#3'Tag'#2#1#7'Caption'#6#6'350 Hz'#7'OnClick'#7#11'Pitch1Click'#0
+  +#0#9'TMenuItem'#7'N400Hz1'#3'Tag'#2#2#7'Caption'#6#6'400 Hz'#7'OnClick'#7#11
+  +'Pitch1Click'#0#0#9'TMenuItem'#7'N450Hz1'#3'Tag'#2#3#7'Caption'#6#6'450 Hz'#7
+  +'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'#7'N500Hz1'#3'Tag'#2#4#7'Caption'
+  +#6#6'500 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'#7'N550Hz1'#3'Tag'
+  +#2#5#7'Caption'#6#6'550 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'#7
+  +'N600Hz1'#3'Tag'#2#6#7'Caption'#6#6'600 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0
+  +#9'TMenuItem'#7'N650Hz1'#3'Tag'#2#7#7'Caption'#6#6'650 Hz'#7'OnClick'#7#11'P'
+  +'itch1Click'#0#0#9'TMenuItem'#7'N700Hz1'#3'Tag'#2#8#7'Caption'#6#6'700 Hz'#7
+  +'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'#7'N750Hz1'#3'Tag'#2#9#7'Caption'
+  +#6#6'750 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'#7'N800Hz1'#3'Tag'
+  +#2#10#7'Caption'#6#6'800 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0#9'TMenuItem'#7
+  +'N850Hz1'#3'Tag'#2#11#7'Caption'#6#6'850 Hz'#7'OnClick'#7#11'Pitch1Click'#0#0
+  +#9'TMenuItem'#7'N900Hz1'#3'Tag'#2#12#7'Caption'#6#6'900 Hz'#7'OnClick'#7#11
+  +'Pitch1Click'#0#0#0#9'TMenuItem'#12'CWBandwidth2'#7'Caption'#6#12'CW Bandwid'
+  +'th'#0#9'TMenuItem'#7'N100Hz1'#7'Caption'#6#6'100 Hz'#7'OnClick'#7#8'Bw1Clic'
+  +'k'#0#0#9'TMenuItem'#7'N150Hz1'#3'Tag'#2#1#7'Caption'#6#6'150 Hz'#7'OnClick'
+  +#7#8'Bw1Click'#0#0#9'TMenuItem'#7'N200Hz1'#3'Tag'#2#2#7'Caption'#6#6'200 Hz'
+  ,#7'OnClick'#7#8'Bw1Click'#0#0#9'TMenuItem'#7'N250Hz1'#3'Tag'#2#3#7'Caption'#6
+  +#6'250 Hz'#7'OnClick'#7#8'Bw1Click'#0#0#9'TMenuItem'#7'N300Hz2'#3'Tag'#2#4#7
+  +'Caption'#6#6'300 Hz'#7'OnClick'#7#8'Bw1Click'#0#0#9'TMenuItem'#7'N350Hz2'#3
+  +'Tag'#2#5#7'Caption'#6#6'350 Hz'#7'OnClick'#7#8'Bw1Click'#0#0#9'TMenuItem'#7
+  +'N400Hz2'#3'Tag'#2#6#7'Caption'#6#6'400 Hz'#7'OnClick'#7#8'Bw1Click'#0#0#9'T'
+  +'MenuItem'#7'N450Hz2'#3'Tag'#2#7#7'Caption'#6#6'450 Hz'#7'OnClick'#7#8'Bw1Cl'
+  +'ick'#0#0#9'TMenuItem'#7'N500Hz2'#3'Tag'#2#8#7'Caption'#6#6'500 Hz'#7'OnClic'
+  +'k'#7#8'Bw1Click'#0#0#9'TMenuItem'#7'N550Hz2'#3'Tag'#2#9#7'Caption'#6#6'550 '
+  +'Hz'#7'OnClick'#7#8'Bw1Click'#0#0#9'TMenuItem'#7'N600Hz2'#3'Tag'#2#10#7'Capt'
+  +'ion'#6#6'600 Hz'#7'OnClick'#7#8'Bw1Click'#0#0#0#9'TMenuItem'#9'MonLevel1'#3
+  +'Tag'#2#226#7'Caption'#6#10'Mon. Level'#0#9'TMenuItem'#6'N50dB1'#3'Tag'#2#156
+  +#7'Caption'#6#3'Off'#7'OnClick'#7#12'SelfMonClick'#0#0#9'TMenuItem'#6'N40dB1'
+  +#3'Tag'#2#176#7'Caption'#6#6'-80 dB'#7'OnClick'#7#12'SelfMonClick'#0#0#9'TMe'
+  +'nuItem'#6'N30dB1'#3'Tag'#2#196#7'Caption'#6#6'-60 dB'#7'OnClick'#7#12'SelfM'
+  +'onClick'#0#0#9'TMenuItem'#6'N20dB1'#3'Tag'#2#216#7'Caption'#6#6'-40 dB'#7'O'
+  +'nClick'#7#12'SelfMonClick'#0#0#9'TMenuItem'#6'N10dB1'#3'Tag'#2#236#7'Captio'
+  +'n'#6#6'-20 dB'#7'OnClick'#7#12'SelfMonClick'#0#0#9'TMenuItem'#5'N0dB1'#7'Ca'
+  +'ption'#6#4'0 dB'#7'OnClick'#7#12'SelfMonClick'#0#0#9'TMenuItem'#6'N10dB2'#3
+  +'Tag'#2#20#7'Caption'#6#6'+20 dB'#7'OnClick'#7#12'SelfMonClick'#0#0#0#9'TMen'
+  +'uItem'#2'N6'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#4'QRN1'#7'Caption'#6#3'QRN'
+  +#7'OnClick'#7#10'LIDS1Click'#0#0#9'TMenuItem'#4'QRM1'#7'Caption'#6#3'QRM'#7
+  +'OnClick'#7#10'LIDS1Click'#0#0#9'TMenuItem'#4'QSB1'#7'Caption'#6#3'QSB'#7'On'
+  +'Click'#7#10'LIDS1Click'#0#0#9'TMenuItem'#8'Flutter1'#7'Caption'#6#7'Flutter'
+  +#7'OnClick'#7#10'LIDS1Click'#0#0#9'TMenuItem'#5'LIDS1'#7'Caption'#6#4'LIDS'#7
+  +'OnClick'#7#10'LIDS1Click'#0#0#9'TMenuItem'#9'Activity1'#7'Caption'#6#8'Acti'
+  +'vity'#0#9'TMenuItem'#3'N11'#3'Tag'#2#1#7'Caption'#6#1'1'#7'OnClick'#7#14'Ac'
+  +'tivity1Click'#0#0#9'TMenuItem'#3'N21'#3'Tag'#2#2#7'Caption'#6#1'2'#7'OnClic'
+  +'k'#7#14'Activity1Click'#0#0#9'TMenuItem'#3'N31'#3'Tag'#2#3#7'Caption'#6#1'3'
+  +#7'OnClick'#7#14'Activity1Click'#0#0#9'TMenuItem'#3'N41'#3'Tag'#2#4#7'Captio'
+  +'n'#6#1'4'#7'OnClick'#7#14'Activity1Click'#0#0#9'TMenuItem'#3'N51'#3'Tag'#2#5
+  +#7'Caption'#6#1'5'#7'OnClick'#7#14'Activity1Click'#0#0#9'TMenuItem'#3'N61'#3
+  +'Tag'#2#6#7'Caption'#6#1'6'#7'OnClick'#7#14'Activity1Click'#0#0#9'TMenuItem'
+  +#3'N71'#3'Tag'#2#7#7'Caption'#6#1'7'#7'OnClick'#7#14'Activity1Click'#0#0#9'T'
+  +'MenuItem'#3'N81'#3'Tag'#2#8#7'Caption'#6#1'8'#7'OnClick'#7#14'Activity1Clic'
+  +'k'#0#0#9'TMenuItem'#3'N91'#3'Tag'#2#9#7'Caption'#6#1'9'#7'OnClick'#7#14'Act'
+  +'ivity1Click'#0#0#0#9'TMenuItem'#2'N7'#7'Caption'#6#1'-'#0#0#9'TMenuItem'#9
+  +'Duration1'#7'Caption'#6#8'Duration'#0#9'TMenuItem'#6'N5min1'#3'Tag'#2#5#7'C'
+  +'aption'#6#5'5 min'#7'OnClick'#7#14'Duration1Click'#0#0#9'TMenuItem'#7'N10mi'
+  +'n1'#3'Tag'#2#10#7'Caption'#6#6'10 min'#7'OnClick'#7#14'Duration1Click'#0#0#9
+  +'TMenuItem'#7'N15min1'#3'Tag'#2#15#7'Caption'#6#6'15 min'#7'OnClick'#7#14'Du'
+  +'ration1Click'#0#0#9'TMenuItem'#7'N30min1'#3'Tag'#2#30#7'Caption'#6#6'30 min'
+  +#7'OnClick'#7#14'Duration1Click'#0#0#9'TMenuItem'#7'N60min1'#3'Tag'#2'<'#7'C'
+  +'aption'#6#6'60 min'#7'OnClick'#7#14'Duration1Click'#0#0#9'TMenuItem'#7'N90m'
+  +'in1'#3'Tag'#2'Z'#7'Caption'#6#6'90 min'#7'OnClick'#7#14'Duration1Click'#0#0
+  +#9'TMenuItem'#8'N120min1'#3'Tag'#2'x'#7'Caption'#6#7'120 min'#7'OnClick'#7#14
+  +'Duration1Click'#0#0#0#9'TMenuItem'#9'Operator1'#7'Caption'#6#15'HST Operato'
+  +'r...'#7'OnClick'#7#14'Operator1Click'#0#0#0#9'TMenuItem'#5'Help1'#7'Caption'
+  +#6#4'Help'#0#9'TMenuItem'#8'WebPage1'#7'Caption'#6#11'Web Page...'#7'OnClick'
+  +#7#13'WebPage1Click'#0#0#9'TMenuItem'#7'Readme1'#7'Caption'#6#9'Readme...'#7
+  +'OnClick'#7#12'Readme1Click'#0#0#9'TMenuItem'#2'N2'#7'Caption'#6#1'-'#0#0#9
+  +'TMenuItem'#6'About1'#7'Caption'#6#8'About...'#7'OnClick'#7#11'About1Click'#0
+  +#0#0#0#10'TPopupMenu'#10'PopupMenu1'#4'left'#3'd'#1#3'top'#3#176#0#0#9'TMenu'
+  +'Item'#9'PileupMNU'#3'Tag'#2#1#7'Caption'#6#7'Pile-Up'#7'Default'#9#7'OnClic'
+  +'k'#7#11'RunMNUClick'#0#0#9'TMenuItem'#14'SingleCallsMNU'#3'Tag'#2#2#7'Capti'
+  +'on'#6#12'Single Calls'#7'OnClick'#7#11'RunMNUClick'#0#0#9'TMenuItem'#14'Com'
+  +'petitionMNU'#3'Tag'#2#3#7'Caption'#6#15'WPX Competition'#7'OnClick'#7#11'Ru'
+  +'nMNUClick'#0#0#9'TMenuItem'#15'HSTCompetition1'#3'Tag'#2#4#7'Caption'#6#15
+  +'HST Competition'#7'OnClick'#7#11'RunMNUClick'#0#0#9'TMenuItem'#2'N3'#7'Capt'
+  +'ion'#6#1'-'#0#0#9'TMenuItem'#7'StopMNU'#7'Caption'#6#4'Stop'#7'Enabled'#8#7
+  +'OnClick'#7#12'StopMNUClick'#0#0#0#10'TImageList'#10'ImageList1'#4'left'#3
+  +#128#1#3'top'#3#176#0#6'Bitmap'#10#14#8#0#0'Li'#2#0#0#0#16#0#0#0#16#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  ,#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0
+  +#255#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255
+  +#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255#0#255#0#255
+  +#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255#0#255#0#255#0#255#0
+  +#255#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255#0#255#0#255#0#255#0#255
+  +#0#255#0#255#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255#0#255#0#255#0#255#0#255
+  +#0#255#0#255#0#255#0#255#0#255#0#0#0#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255#0#255#0#255#0#255#0
+  +#255#0#255#0#255#0#255#0#0#0#255#132#132#132#255#132#132#132#255#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0#255#0#255#0
+  +#255#0#255#0#255#0#255#0#255#0#0#0#255#132#132#132#255#132#132#132#255#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255#0#255#0
+  +#255#0#255#0#255#0#255#0#255#0#0#0#255#132#132#132#255#132#132#132#255#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255
+  +#0#255#0#255#0#255#0#255#0#0#0#255#132#132#132#255#132#132#132#255#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#255#0#255#0#255#0#0#0#255#132#132#132#255#132#132#132#255#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#255#0#0#0#255#132#132#132#255#132#132#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#255
+  +#132#132#132#255#132#132#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132
+  +#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#132#132#132#255#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255#132#132#132#255#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255#198#198#198#255#132#132
+  +#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255#198#198#198#255
+  +#198#198#198#255#132#132#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255
+  +#198#198#198#255#198#198#198#255#198#198#198#255#132#132#132#255#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132
+  +#132#255#255#255#255#255#198#198#198#255#198#198#198#255#198#198#198#255#198
+  +#198#198#255#132#132#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255#198#198#198#255#198
+  +#198#198#255#198#198#198#255#198#198#198#255#198#198#198#255#132#132#132#255
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132
+  +#255#255#255#255#255#198#198#198#255#198#198#198#255#198#198#198#255#198#198
+  +#198#255#132#132#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255#198#198#198#255#198#198
+  +#198#255#198#198#198#255#132#132#132#255#255#255#255#255#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#255#255
+  +#255#255#198#198#198#255#198#198#198#255#132#132#132#255#255#255#255#255#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#132#132#132#255#255#255#255#255#198#198#198#255#132#132#132#255#255#255#255
+  +#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#132#132#132#255#255#255#255#255#132#132#132#255#255#255#255
+  +#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#132#132#132#255#255#255#255#255#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#132#132#132#255#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0
+  +#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#0#10'TAlWavFile'#10'AlWavFile1'#0#0#0
+]);

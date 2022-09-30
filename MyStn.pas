@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit MyStn;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, Classes, Station, RndFunc, Ini, SndTypes, MorseKey;
+  SysUtils, Classes, Station, RndFunc, Ini, SndTypes, MorseKey, Forms;
 
 type
   TMyStation = class(TStation)
@@ -53,7 +55,14 @@ end;
 procedure TMyStation.Init;
 begin
   MyCall := Ini.Call;
-  NR := 1;
+  if Ini.ContestName = 'cqwpx' then
+  begin
+       NR := 1;
+  end
+  else
+  begin
+       NR := StrToInt(Ini.NR);
+  end;
   RST := 599;
   Pitch := Ini.Pitch;
   Wpm := Ini.Wpm;
@@ -83,6 +92,10 @@ begin
   AddToPieces(AMsg);
   if State <> stSending then
     begin
+    if AMsg = '' then
+      begin
+           Application.MessageBox('TMyStation.SendText AMsg is null','MorseRunner');
+      end;
     SendNextPiece;
     Tst.OnMeStartedSending;
     end;

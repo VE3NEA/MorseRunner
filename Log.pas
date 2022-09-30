@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit Log;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  Windows, SysUtils, Classes, Graphics, RndFunc, Math;
+  LCLIntf, LCLType, LMessages, SysUtils, Classes, Graphics, RndFunc, Math;
 
 
 procedure SaveQso;
@@ -57,11 +59,11 @@ begin
 
   if Ini.RunMode = rmHst
     then MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent      Score  Chk')
-    else MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent      Pref   Chk');
+    else MainForm.RichEdit1.Lines.Add(' UTC       Call          Recv      Sent');
   MainForm.RichEdit1.SelStart := 1;
   MainForm.RichEdit1.SelLength := Length(MainForm.RichEdit1.Lines[0]);
-  MainForm.RichEdit1.SelAttributes.Style := [fsUnderline];
-  MainForm.RichEdit1.SelAttributes.Color := clBlue;
+//  MainForm.RichEdit1.Font.Style := [fsUnderline];
+  MainForm.RichEdit1.Font.Color := clBlack;
 
   if Ini.RunMode = rmHst then Empty := '' else Empty := '0';
 
@@ -212,8 +214,13 @@ var
 begin
   with MainForm do
     begin
+    if Edit3.Text = '' then
+    Edit3.Text := '14';  //kludge for corrected call
     if (Length(Edit1.Text) < 3) or (Length(Edit2.Text) <> 3) or (Edit3.Text = '')
-      then begin Beep; Exit; end;
+      then begin
+      // Beep;
+      Exit;
+      end;
 
     //add new entry to log
     SetLength(QsoList, Length(QsoList)+1);
@@ -252,7 +259,15 @@ begin
   //wipe
   MainForm.WipeBoxes;
   //inc NR
-  Inc(Tst.Me.NR);
+
+  if Ini.ContestName = 'cqwpx' then
+  begin
+     //Inc(Tst.Me.NR);
+  end
+  else
+  begin
+       Tst.Me.NR := StrToInt(Ini.NR);
+  end;
 end;
 
 
@@ -264,16 +279,15 @@ var
 begin
   with QsoList[High(QsoList)] do
     S := FormatDateTime(' hh:nn:ss  ', t) +
-         Format('%-12s  %.3d %.4d  %.3d %.4d  %-5s  %-3s',
+         Format('%-12s  %.3d %.2d  %.3d %.2d',
          [Call, Rst, Nr, Tst.Me.Rst,
-         //Tst.Me.NR,
-         MainForm.RichEdit1.Lines.Count,
-         Pfx, Err]);
+         Tst.Me.NR]);
+        // MainForm.RichEdit1.Lines.Count]);
 
   MainForm.RichEdit1.Lines.Add(S);
   MainForm.RichEdit1.SelStart := Length(MainForm.RichEdit1.Text) - 5;
   MainForm.RichEdit1.SelLength := 3;
-  MainForm.RichEdit1.SelAttributes.Color := clRed;
+  MainForm.RichEdit1.Font.Color := clBlack;
   MainForm.RichEdit1.Perform(EM_SCROLLCARET, 0, 0);
 end;
 

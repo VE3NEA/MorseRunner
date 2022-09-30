@@ -5,10 +5,12 @@
 //------------------------------------------------------------------------------
 unit Station;
 
+{$MODE Delphi}
+
 interface
 
 uses
-  SysUtils, Classes, Math, SndTypes, Ini, MorseKey;
+  SysUtils, Classes, Math, SndTypes, Ini, MorseKey, Logerrorx;
 
 const
   NEVER = MAXINT;
@@ -90,15 +92,18 @@ end;
 
 
 procedure TStation.SendMsg(AMsg: TStationMessage);
+var
+  tempstr:String;
 begin
   if Envelope = nil then Msg := [];
   if AMsg = msgNone then begin State := stListening; Exit; End;
   Include(Msg, AMsg);
-
+  if Ini.Standalone = True then
+  begin
   case AMsg of
-    msgCQ: SendText('CQ <my> TEST');
+    msgCQ: SendText('CQ <my>');
     msgNR: SendText('<#>');
-    msgTU: SendText('TU');
+    msgTU: SendText('TU <my>');
     msgMyCall: SendText('<my>');
     msgHisCall: SendText('<his>');
     msgB4: SendText('QSO B4');
@@ -112,13 +117,51 @@ begin
     msgDeMyCallNr2: SendText('DE <my> <my> <#>');
     msgMyCallNr2: SendText('<my> <my> <#>');
     msgNrQm: SendText('NR?');
-    msgLongCQ: SendText('CQ CQ TEST <my> <my> TEST');
+    msgLongCQ: SendText('CQ CQ TEST <my> <my>');
     msgQrl: SendText('QRL?');
     msgQrl2: SendText('QRL?   QRL?');
     msqQsy: SendText('<his>  QSY QSY');
     msgAgn: SendText('AGN');
     end;
-end;
+  end
+  else  //controlled by N1MM or DXLog
+  begin
+ // WriteStr(tempstr, AMsg);
+  // logerror('in TStation.SendMsg ' + tempstr);
+  // raise Exception.Create('in Tstation.SendMsg');
+  case AMsg of
+    msgCQ:
+      begin
+      if Ini.Messagecq = 'CQ' then
+      begin
+           Ini.Messagecq := 'CQ '+ Ini.Call;
+      end;
+      SendText(Ini.Messagecq);
+      end;
+    msgNR: SendText('<#>');
+    msgTU: SendText(Ini.Messagetu);
+    msgMyCall: SendText('<my>');
+    msgHisCall: SendText('<his>');
+    msgB4: SendText('QSO B4');
+    msgQm: SendText('?');
+    msgNil: SendText('NIL');
+    msgR_NR: SendText('R <#>');
+    msgR_NR2: SendText('R <#> <#>');
+    msgDeMyCall1: SendText('DE <my>');
+    msgDeMyCall2: SendText('DE <my> <my>');
+    msgDeMyCallNr1: SendText('DE <my> <#>');
+    msgDeMyCallNr2: SendText('DE <my> <my> <#>');
+    msgMyCallNr2: SendText('<my> <my> <#>');
+    msgNrQm: SendText('NR?');
+    msgLongCQ: SendText('CQ CQ TEST <my> <my>');
+    msgQrl: SendText('QRL?');
+    msgQrl2: SendText('QRL?   QRL?');
+    msqQsy: SendText('<his>  QSY QSY');
+    msgAgn: SendText('AGN');
+    end;
+  end;
+  end;
+
 
 procedure TStation.SendText(AMsg: string);
 begin
@@ -141,6 +184,7 @@ begin
   if MsgText <> ''
     then MsgText := MsgText + ' ' + AMsg
     else MsgText := AMsg;
+  //logerror('Tstation.SendText ' + MsgText);
   SendMorse(Keyer.Encode(MsgText));
 end;
 
@@ -154,7 +198,6 @@ begin
     SendPos := 0;
     FBfo := 0;
     end;
-    
   Keyer.Wpm := Wpm;
   Keyer.MorseMsg := AMorse;
   Envelope := Keyer.Envelope;
@@ -186,7 +229,8 @@ begin
   //check timeout
   else if State <> stSending then
     begin
-    if TimeOut > -1 then Dec(TimeOut);
+    //if TimeOut > -1 then Dec(TimeOut);
+    TimeOut := TimeOut - 1;
     if TimeOut = 0 then ProcessEvent(evTimeout);
     end;
 end;
@@ -197,7 +241,9 @@ function TStation.NrAsText: string;
 var
   Idx: integer;
 begin
-  Result := Format('%d%.3d', [RST, NR]);
+  // Result := Format('%d%.2d', [RST, NR]);
+  Result := Format('%d%d', [RST, NR]);
+
 
   if NrWithError then
     begin
@@ -217,19 +263,20 @@ begin
     begin
     Result := StringReplace(Result, '000', 'TTT', [rfReplaceAll]);
     Result := StringReplace(Result, '00', 'TT', [rfReplaceAll]);
+//
+//    if Random < 0.4
+//      then Result := StringReplace(Result, '0', 'O', [rfReplaceAll])
+//    else if Random < 0.97
+//      then Result := StringReplace(Result, '0', 'T', [rfReplaceAll]);
+//
+//    if Random < 0.97
+//      then Result := StringReplace(Result, '9', 'N', [rfReplaceAll]);
+//    end;
 
-    if Random < 0.4
-      then Result := StringReplace(Result, '0', 'O', [rfReplaceAll])
-    else if Random < 0.97
-      then Result := StringReplace(Result, '0', 'T', [rfReplaceAll]);
-
-    if Random < 0.97
-      then Result := StringReplace(Result, '9', 'N', [rfReplaceAll]);
+    Result := StringReplace(Result, '0', 'T', [rfReplaceAll]);
+    Result := StringReplace(Result, '1', 'A', [rfReplaceAll]);
+    Result := StringReplace(Result, '9', 'N', [rfReplaceAll]);
     end;
-end;
-
-
-
-
+  end;
 end.
 
