@@ -229,7 +229,8 @@ begin
   //check timeout
   else if State <> stSending then
     begin
-    if TimeOut > -1 then Dec(TimeOut);
+    //if TimeOut > -1 then Dec(TimeOut);
+    TimeOut := TimeOut - 1;
     if TimeOut = 0 then ProcessEvent(evTimeout);
     end;
 end;
