@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg no Delphi 10 changes needed
+
 unit QrmStn;
 
 interface
@@ -27,7 +30,7 @@ begin
   inherited Create(nil);
 
   Patience := 1 + Random(5);
-  MyCall := PickCall;
+  MyCall := string(PickCall);
   HisCall := Ini.Call;
   Amplitude := 5000 + 25000 * Random;
   Pitch := Round(RndGaussLim(0, 300));

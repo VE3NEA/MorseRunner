@@ -341,11 +341,12 @@ object MainForm: TMainForm
         Font.Height = -11
         Font.Name = 'MS Sans Serif'
         Font.Style = []
-        Items.Data = {
-          650000000300000000000000FFFFFFFFFFFFFFFF020000000000000003507473
-          000000000000FFFFFFFFFFFFFFFF0200000000000000044D756C740000000000
-          00FFFFFFFFFFFFFFFF02000000000000000553636F72650000FFFFFFFFFFFFFF
-          FFFFFFFFFF}
+        Items.ItemData = {
+          05900000000300000000000000FFFFFFFFFFFFFFFF02000000FFFFFFFF000000
+          00035000740073000000000000000000000000000000FFFFFFFFFFFFFFFF0200
+          0000FFFFFFFF00000000044D0075006C00740000000000000000000000000000
+          00FFFFFFFFFFFFFFFF02000000FFFFFFFF0000000005530063006F0072006500
+          00000000000000000000FFFFFFFFFFFFFFFFFFFFFFFF}
         ReadOnly = True
         RowSelect = True
         ParentFont = False
@@ -429,7 +430,7 @@ object MainForm: TMainForm
       Top = 108
       Width = 245
       Height = 13
-      Caption = 'Copyright © 2004-2006 Alex Shovkoplyas, VE3NEA'
+      Caption = 'Copyright '#169' 2004-2006 Alex Shovkoplyas, VE3NEA'
       Transparent = True
     end
     object Label16: TLabel
@@ -458,6 +459,7 @@ object MainForm: TMainForm
       ScrollBars = ssVertical
       TabOrder = 0
       Visible = False
+      Zoom = 100
     end
   end
   object Panel9: TPanel
@@ -606,12 +608,12 @@ object MainForm: TMainForm
         Hint = '-15.0 dB'
         ShowHint = True
         Margin = 5
-        Value = 0.75
+        Value = 0.750000000000000000
         Overloaded = False
         OnChange = VolumeSlider1Change
         OnDblClick = VolumeSliderDblClick
-        DbScale = 60
-        Db = -15
+        DbScale = 60.000000000000000000
+        Db = -15.000000000000000000
       end
       object Label18: TLabel
         Left = 12
@@ -661,11 +663,10 @@ object MainForm: TMainForm
         Top = 72
         Width = 65
         Height = 21
-        TabStop = False
         Style = csDropDownList
         DropDownCount = 12
-        ItemHeight = 13
         TabOrder = 3
+        TabStop = False
         OnChange = ComboBox1Change
         Items.Strings = (
           '300 Hz'
@@ -687,11 +688,10 @@ object MainForm: TMainForm
         Top = 100
         Width = 65
         Height = 21
-        TabStop = False
         Style = csDropDownList
         DropDownCount = 12
-        ItemHeight = 13
         TabOrder = 4
+        TabStop = False
         OnChange = ComboBox2Change
         Items.Strings = (
           '100 Hz'
@@ -750,7 +750,6 @@ object MainForm: TMainForm
         Align = alNone
         ButtonWidth = 65
         Caption = 'ToolBar1'
-        EdgeBorders = []
         Images = ImageList1
         Indent = 3
         List = True
@@ -759,7 +758,7 @@ object MainForm: TMainForm
         object ToolButton1: TToolButton
           Tag = 1
           Left = 3
-          Top = 2
+          Top = 0
           AllowAllUp = True
           Caption = '   Run   '
           DropdownMenu = PopupMenu1
@@ -775,8 +774,8 @@ object MainForm: TMainForm
     SamplesPerSec = 11025
     BufCount = 8
     OnBufAvailable = AlSoundOut1BufAvailable
-    Left = 384
-    Top = 148
+    Left = 88
+    Top = 196
   end
   object MainMenu1: TMainMenu
     Left = 356
@@ -1290,7 +1289,7 @@ object MainForm: TMainForm
     Left = 384
     Top = 176
     Bitmap = {
-      494C010102000400040010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
+      494C010102000800080010001000FFFFFFFFFF10FFFFFFFFFFFFFFFF424D3600
       0000000000003600000028000000400000001000000001002000000000000010
       0000000000000000000000000000000000000000000000000000000000000000
       0000000000008484840000000000000000000000000000000000000000000000

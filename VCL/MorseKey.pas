@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1516 Delphi 10 Changes
+
 unit MorseKey;
 
 interface
@@ -137,7 +140,7 @@ var
 begin
   Result := '';
   for i:=1 to Length(Txt) do
-    if Txt[i] in [' ', '_']
+    if CharInSet(Txt[i], [' ', '_']) //grg1
       then Result := Result + ' '
       else Result := Result + Morse[Txt[i]];
   if Result <> '' then Result[Length(Result)] := '~';

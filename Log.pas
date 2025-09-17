@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1450 Delphi 10 Changes done
+
 unit Log;
 
 interface
@@ -184,8 +187,8 @@ begin
     S1 := Copy(Call, 1, p-1);
     S2 := Copy(Call, p+1, MAXINT);
 
-    if (Length(S1) = 1) and (S1[1] in DIGITS) then begin Dig := S1; Result := S2; end
-    else if (Length(S2) = 1) and (S2[1] in DIGITS) then begin Dig := S2; Result := S1; end
+    if (Length(S1) = 1) and CharInSet(S1[1], DIGITS) then begin Dig := S1; Result := S2; end //grg1
+    else if (Length(S2) = 1) and CharInSet(S2[1], DIGITS) then begin Dig := S2; Result := S1; end //grg1
     else if Length(S1) <= Length(S2) then Result := S1
     else Result := S2;
     end;
@@ -193,11 +196,11 @@ begin
 
   //delete trailing letters, retain at least 2 chars
   for p:= Length(Result) downto 3 do
-    if Result[p] in DIGITS then Break
+    if CharInSet(Result[p], DIGITS) then Break //grg1
     else Delete(Result, p, 1);
 
   //ensure digit
-  if not (Result[Length(Result)] in DIGITS) then Result := Result + '0';
+  if not CharInSet(Result[Length(Result)], DIGITS) then Result := Result + '0'; //grg1
   //replace digit
   if Dig <> '' then Result[Length(Result)] := Dig[1];
 
@@ -259,22 +262,27 @@ end;
 procedure LastQsoToScreen;
 const
   EM_SCROLLCARET = $B7;
+  EM_SCROLL = $B5; //grg test
+  SB_LINEDOWN = $01; //grg test
 var
   S: string;
 begin
   with QsoList[High(QsoList)] do
+    begin
     S := FormatDateTime(' hh:nn:ss  ', t) +
-         Format('%-12s  %.3d %.4d  %.3d %.4d  %-5s  %-3s',
+         Format('%-12s  %.3d %.4d  %.3d %.4d  %-5s  %-3s', // grg for Nr changed '%.4d' to %4s, was wrong type see TQSO, access violation
+
          [Call, Rst, Nr, Tst.Me.Rst,
          //Tst.Me.NR,
          MainForm.RichEdit1.Lines.Count,
          Pfx, Err]);
-
+	end;
   MainForm.RichEdit1.Lines.Add(S);
-  MainForm.RichEdit1.SelStart := Length(MainForm.RichEdit1.Text) - 5;
-  MainForm.RichEdit1.SelLength := 3;
-  MainForm.RichEdit1.SelAttributes.Color := clRed;
-  MainForm.RichEdit1.Perform(EM_SCROLLCARET, 0, 0);
+//grg fix later    MainForm.RichEdit1.SelStart := Length(MainForm.RichEdit1.Text) - 5;
+//grg fix later    MainForm.RichEdit1.SelLength := 3;
+//grg fix later    MainForm.RichEdit1.SelAttributes.Color := clRed;
+// grg broken in Delphi 10   MainForm.RichEdit1.Perform(EM_SCROLLCARET, 0, 0); //grg This original line does not scroll down in Delphi 10 anymore after logscreen care at bottom of RichEdit1
+  MainForm.RichEdit1.Perform(EM_SCROLL, SB_LINEDOWN, 0); //grg this scolls down when cursor at bottom line and new QSO logged
 end;
 
 

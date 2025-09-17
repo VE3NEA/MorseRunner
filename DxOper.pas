@@ -3,6 +3,9 @@
 //License, v. 2.0. If a copy of the MPL was not distributed with this
 //file, You can obtain one at http://mozilla.org/MPL/2.0/.
 //------------------------------------------------------------------------------
+
+//grg 26112015 1445 Delphi 10 Changes done
+
 unit DxOper;
 
 interface
@@ -141,7 +144,7 @@ begin
 
       D := M[x-1,y-1];
       //'?' matches any char
-      if not (C[x] in [C0[y], '?']) then Inc(D, W_D);
+      if not CharInSet(C[x], [C0[y], '?']) then Inc(D, W_D); //grg1
 
       M[x,y] := MinIntValue([T,D,L]);
       end;

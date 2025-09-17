@@ -1,10 +1,13 @@
 unit VolmSldr;
 
+//grg 26112015 1524 Delphi 10 Changes
+
+
 interface
 
 uses
   Windows, Messages, SysUtils, Classes, Graphics, Controls, Forms, Dialogs,
-  Math, PermHint;
+  Math, PermHint, System.Types; //grg System.Types added
 
 type
   TVolumeSlider = class(TGraphicControl)
